@@ -1,22 +1,22 @@
 #
-# OMNeT++/OMNEST Makefile for $(LIB_PREFIX)gpsr-intairnet
+# OMNeT++/OMNEST Makefile for $(LIB_PREFIX)IntAirNet-gpsr
 #
 # This file was generated with the command:
-#  opp_makemake --make-so -f --deep -KINET_4_2_5_PROJ=D:/omnetpp-5.6.2/samples/inet-4.2.5 -DINET_IMPORT -I$$\(INET_4_2_5_PROJ\)/src -L$$\(INET_4_2_5_PROJ\)/src -lINET$$\(D\)
+#  opp_makemake --make-so -f --deep -KINET_4_2_5_PROJ=D:/omnetpp-5.6.2/samples/inet-4.2.5 -KTDMA_PROJ=D:/omnetpp-5.6.2/samples/tdma -DINET_IMPORT -I$$\(INET_4_2_5_PROJ\)/src -I$$\(TDMA_PROJ\) -L$$\(INET_4_2_5_PROJ\)/src -L$$\(TDMA_PROJ\) -lINET$$\(D\) -ltdma$$\(D\)
 #
 
 # Name of target to be created (-o option)
-TARGET = $(LIB_PREFIX)gpsr-intairnet$(D)$(SHARED_LIB_SUFFIX)
+TARGET = $(LIB_PREFIX)IntAirNet-gpsr$(D)$(SHARED_LIB_SUFFIX)
 TARGET_DIR = .
 
 # C++ include paths (with -I)
-INCLUDE_PATH = -I$(INET_4_2_5_PROJ)/src
+INCLUDE_PATH = -I$(INET_4_2_5_PROJ)/src -I$(TDMA_PROJ)
 
 # Additional object and library files to link with
 EXTRA_OBJS =
 
 # Additional libraries (-L, -l options)
-LIBS = $(LDFLAG_LIBPATH)$(INET_4_2_5_PROJ)/src  -lINET$(D)
+LIBS = $(LDFLAG_LIBPATH)$(INET_4_2_5_PROJ)/src $(LDFLAG_LIBPATH)$(TDMA_PROJ)  -lINET$(D) -ltdma$(D)
 
 # Output directory
 PROJECT_OUTPUT_DIR = ../out
@@ -24,16 +24,18 @@ PROJECTRELATIVE_PATH = src
 O = $(PROJECT_OUTPUT_DIR)/$(CONFIGNAME)/$(PROJECTRELATIVE_PATH)
 
 # Object files for local .cc, .msg and .sm files
-OBJS = $O/gpsrModified.o
+OBJS = $O/Gpsr.o $O/PositionTable.o $O/Gpsr_m.o
 
 # Message files
-MSGFILES =
+MSGFILES = \
+    Gpsr.msg
 
 # SM files
 SMFILES =
 
 # Other makefile variables (-K)
 INET_4_2_5_PROJ=D:/omnetpp-5.6.2/samples/inet-4.2.5
+TDMA_PROJ=D:/omnetpp-5.6.2/samples/tdma
 
 #------------------------------------------------------------------------------
 
@@ -58,7 +60,7 @@ include $(CONFIGFILE)
 # Simulation kernel and user interface libraries
 OMNETPP_LIBS = -loppenvir$D $(KERNEL_LIBS) $(SYS_LIBS)
 ifneq ($(TOOLCHAIN_NAME),clangc2)
-LIBS += -Wl,-rpath,$(abspath $(INET_4_2_5_PROJ)/src)
+LIBS += -Wl,-rpath,$(abspath $(INET_4_2_5_PROJ)/src) -Wl,-rpath,$(abspath $(TDMA_PROJ))
 endif
 
 COPTS = $(CFLAGS) $(IMPORT_DEFINES) -DINET_IMPORT $(INCLUDE_PATH) -I$(OMNETPP_INCL_DIR)
@@ -76,6 +78,9 @@ endif
 #------------------------------------------------------------------------------
 # User-supplied makefile fragment(s)
 # >>>
+# inserted from file 'makefrag':
+MSGC:=$(MSGC) --msg6
+
 # <<<
 #------------------------------------------------------------------------------
 

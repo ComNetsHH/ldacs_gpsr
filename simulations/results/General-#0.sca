@@ -1,0 +1,1676 @@
+version 2
+run General-0-20211026-15:11:52-9764
+attr configname General
+attr datetime 20211026-15:11:52
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network IntAirNet
+attr processid 9764
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.configurator.typename "\"HostAutoConfigurator\""
+param **.configurator.interfaces "\"wlan0\""
+param **.hasStatus true
+param *.aircraft[*].numApps 10
+param *.aircraft[*].app[*].typename "\"UdpTraceBasedApp\""
+param *.host*.ipv4.arp.typename "\"GlobalArp\""
+param *.hostA.numApps 1
+param *.hostA.app[0].typename "\"UdpBasicApp\""
+param *.hostA.app[0].destAddresses "\"groundStation\""
+param *.hostA.app[0].destPort 5000
+param *.hostA.app[0].messageLength 1000B
+param *.hostA.app[0].sendInterval 2s
+param *.hostA.app[0].packetName "\"UDPData\""
+param *.groundStation.numApps 1
+param *.groundStation.app[0].typename "\"UdpSink\""
+param *.groundStation.app[0].localPort 5000
+param **.ipv4.arp.typename "\"GlobalArp\""
+param **.**.bitrate 100Mbps
+param **.wlan[0].radio.transmitter.communicationRange 200m
+param **.wlan[0].radio.receiver.ignoreInterference true
+param **.wlan[*].radio.transmitter.interferenceRange 0m
+param **.wlan[*].radio.transmitter.detectionRange 377000m
+param **.netmaskRoutes "\"\""
+param *.configurator.addStaticRoutes false
+param **.wlan[*].typename "\"TdmaInterface\""
+param **.slotDuration 2ms
+param **.frameLength 10
+param **.wlan[*].mac.headerLength 23B
+param **.wlan[*].mac.ackTimeout 1.99ms
+param **.rlc.typename "\"DummyRlc\""
+param *.*.routing.typename "\"GpsrModified\""
+param *.*.routing.beaconInterval 1s
+param *.*.routing.neighborValidityInterval 62.5s
+
+scalar IntAirNet.radioMedium.propagation "Arrival computation count" 156
+scalar IntAirNet.radioMedium "transmission count" 78
+scalar IntAirNet.radioMedium "signal send count" 156
+scalar IntAirNet.radioMedium "reception computation count" 156
+scalar IntAirNet.radioMedium "interference computation count" 627
+scalar IntAirNet.radioMedium "reception decision computation count" 108
+scalar IntAirNet.radioMedium "listening decision computation count" 363
+scalar IntAirNet.radioMedium "reception cache hit" 83.544303797468
+attr unit %
+scalar IntAirNet.radioMedium "interference cache hit" 66.666666666667
+attr unit %
+scalar IntAirNet.radioMedium "noise cache hit" 0
+attr unit %
+scalar IntAirNet.radioMedium "snir cache hit" 50
+attr unit %
+scalar IntAirNet.radioMedium "reception decision cache hit" 50
+attr unit %
+scalar IntAirNet.radioMedium "reception result cache hit" 0
+attr unit %
+statistic IntAirNet.scheduler utilization:histogram
+field count 1000
+field mean 0.2415
+field stddev 0.087609505337179
+field min 0
+field max 0.3
+field sum 241.5
+field sqrsum 65.990000000001
+attr interpolationmode none
+attr title "utilization, histogram"
+bin	-inf	0
+bin	0	44
+bin	0.005	0
+bin	0.01	0
+bin	0.015	0
+bin	0.02	0
+bin	0.025	0
+bin	0.03	0
+bin	0.035	0
+bin	0.04	0
+bin	0.045	0
+bin	0.05	0
+bin	0.055	0
+bin	0.06	0
+bin	0.065	0
+bin	0.07	0
+bin	0.075	0
+bin	0.08	0
+bin	0.085	0
+bin	0.09	0
+bin	0.095	0
+bin	0.1	130
+bin	0.105	0
+bin	0.11	0
+bin	0.115	0
+bin	0.12	0
+bin	0.125	0
+bin	0.13	0
+bin	0.135	0
+bin	0.14	0
+bin	0.145	0
+bin	0.15	0
+bin	0.155	0
+bin	0.16	0
+bin	0.165	0
+bin	0.17	0
+bin	0.175	0
+bin	0.18	0
+bin	0.185	0
+bin	0.19	0
+bin	0.195	0
+bin	0.2	193
+bin	0.205	0
+bin	0.21	0
+bin	0.215	0
+bin	0.22	0
+bin	0.225	0
+bin	0.23	0
+bin	0.235	0
+bin	0.24	0
+bin	0.245	0
+bin	0.25	0
+bin	0.255	0
+bin	0.26	0
+bin	0.265	0
+bin	0.27	0
+bin	0.275	0
+bin	0.28	0
+bin	0.285	0
+bin	0.29	0
+bin	0.295	0
+bin	0.3	633
+bin	0.305	0
+bin	0.31	0
+bin	0.315	0
+bin	0.32	0
+bin	0.325	0
+bin	0.33	0
+bin	0.335	0
+bin	0.34	0
+bin	0.345	0
+bin	0.35	0
+bin	0.355	0
+bin	0.36	0
+bin	0.365	0
+bin	0.37	0
+bin	0.375	0
+scalar IntAirNet.scheduler utilization:timeavg 0.24144437215354
+attr interpolationmode none
+attr title "utilization, timeavg"
+statistic IntAirNet.scheduler schedule:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "schedule, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar IntAirNet.hostA.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar IntAirNet.hostA.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar IntAirNet.hostA.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar IntAirNet.hostA.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar IntAirNet.hostA.wlan[0].mac.queue packetPopped:count 28
+attr interpolationmode none
+attr title "packet popped, count"
+scalar IntAirNet.hostA.wlan[0].mac.queue packetPopped:sum(packetBytes) 10372
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic IntAirNet.hostA.wlan[0].mac.queue queueingTime:histogram
+field count 28
+field mean 0.013255322538107
+field stddev 0.0080303520608879
+field min 0.000284133403
+field max 0.024
+field sum 0.371149031067
+field sqrsum 0.0066608370804878
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	1
+bin	0.0005	0
+bin	0.001	0
+bin	0.0015	0
+bin	0.002	1
+bin	0.0025	1
+bin	0.003	1
+bin	0.0035	0
+bin	0.004	3
+bin	0.0045	1
+bin	0.005	0
+bin	0.0055	1
+bin	0.006	0
+bin	0.0065	0
+bin	0.007	1
+bin	0.0075	1
+bin	0.008	0
+bin	0.0085	0
+bin	0.009	0
+bin	0.0095	0
+bin	0.01	0
+bin	0.0105	0
+bin	0.011	0
+bin	0.0115	1
+bin	0.012	0
+bin	0.0125	0
+bin	0.013	1
+bin	0.0135	0
+bin	0.014	0
+bin	0.0145	0
+bin	0.015	0
+bin	0.0155	1
+bin	0.016	1
+bin	0.0165	0
+bin	0.017	2
+bin	0.0175	0
+bin	0.018	0
+bin	0.0185	1
+bin	0.019	0
+bin	0.0195	0
+bin	0.02	3
+bin	0.0205	2
+bin	0.021	0
+bin	0.0215	0
+bin	0.022	3
+bin	0.0225	1
+bin	0.023	0
+bin	0.0235	0
+bin	0.024	1
+bin	0.0245	0
+bin	0.025	0
+bin	0.0255	0
+bin	0.026	0
+bin	0.0265	0
+bin	0.027	0
+bin	0.0275	0
+bin	0.028	0
+bin	0.0285	0
+bin	0.029	0
+bin	0.0295	0
+bin	0.03	0
+scalar IntAirNet.hostA.wlan[0].mac.queue queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar IntAirNet.hostA.wlan[0].mac.queue queueLength:timeavg 0.019662028631758
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar IntAirNet.hostA.wlan[0].mac.queue packetPushed:count 29
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar IntAirNet.hostA.wlan[0].mac.queue packetPushed:sum(packetBytes) 11440
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar IntAirNet.hostA.wlan[0].mac.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar IntAirNet.hostA.wlan[0].mac.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar IntAirNet.hostA.wlan[0].mac.queue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar IntAirNet.hostA.wlan[0].mac.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar IntAirNet.hostA.wlan[0].mac rcvdPkFromLl:count 30
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, count"
+scalar IntAirNet.hostA.wlan[0].mac rcvdPkFromLl:sum(packetBytes) 11142
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar IntAirNet.hostA.wlan[0].mac sentDownPk:count 28
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, count"
+scalar IntAirNet.hostA.wlan[0].mac sentDownPk:sum(packetBytes) 11016
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, sum(packetBytes)"
+scalar IntAirNet.hostA.wlan[0].mac rcvdPkFromHl:count 29
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar IntAirNet.hostA.wlan[0].mac rcvdPkFromHl:sum(packetBytes) 11440
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar IntAirNet.hostA.wlan[0].mac passedUpPk:count 21
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar IntAirNet.hostA.wlan[0].mac passedUpPk:sum(packetBytes) 840
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar IntAirNet.hostA.wlan[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar IntAirNet.hostA.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar IntAirNet.hostA.wlan[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar IntAirNet.hostA.wlan[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar IntAirNet.hostA.wlan[0].mac packetDropNotAddressedToUs:count 9
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar IntAirNet.hostA.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 9819
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar IntAirNet.hostA.wlan[0].mac linkBroken:count 0
+attr interpolationmode none
+attr source linkBroken
+attr title "link break, count"
+statistic IntAirNet.hostA.wlan[0].radio minSnir:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source minimumSnir(packetSentToUpper)
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic IntAirNet.hostA.wlan[0].radio packetErrorRate:histogram
+field count 30
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate(packetSentToUpper)
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	30
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic IntAirNet.hostA.wlan[0].radio bitErrorRate:histogram
+field count 30
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source bitErrorRate(packetSentToUpper)
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	30
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic IntAirNet.hostA.wlan[0].radio symbolErrorRate:histogram
+field count 30
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate(packetSentToUpper)
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	30
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar IntAirNet.hostA.wlan[0].radio transmissionState:count 57
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+scalar IntAirNet.hostA.wlan[0].radio receptionState:count 101
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar IntAirNet.hostA.wlan[0].radio radioMode:count 3
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar IntAirNet.hostA.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar IntAirNet.hostA.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar IntAirNet.hostA.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar IntAirNet.hostA.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar IntAirNet.hostA.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar IntAirNet.hostA.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar IntAirNet.hostA.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar IntAirNet.hostA.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar IntAirNet.hostA.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar IntAirNet.hostA.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar IntAirNet.hostA.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar IntAirNet.hostA.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar IntAirNet.hostA.udp packetReceived:count 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar IntAirNet.hostA.udp packetReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar IntAirNet.hostA.udp packetSent:count 10
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar IntAirNet.hostA.udp packetSent:sum(packetBytes) 10080
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar IntAirNet.hostA.udp passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar IntAirNet.hostA.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar IntAirNet.hostA.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+scalar IntAirNet.hostA.app[0] "packets sent" 10
+scalar IntAirNet.hostA.app[0] "packets received" 0
+scalar IntAirNet.hostA.app[0] packetReceived:count 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar IntAirNet.hostA.app[0] packetReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+statistic IntAirNet.hostA.app[0] rcvdPkLifetime:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "received packet lifetime, stats"
+attr unit s
+scalar IntAirNet.hostA.app[0] packetSent:count 10
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar IntAirNet.hostA.app[0] packetSent:sum(packetBytes) 10000
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar IntAirNet.hostB.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar IntAirNet.hostB.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar IntAirNet.hostB.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar IntAirNet.hostB.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar IntAirNet.hostB.wlan[0].mac.queue packetPopped:count 30
+attr interpolationmode none
+attr title "packet popped, count"
+scalar IntAirNet.hostB.wlan[0].mac.queue packetPopped:sum(packetBytes) 10452
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic IntAirNet.hostB.wlan[0].mac.queue queueingTime:histogram
+field count 30
+field mean 0.0097689465252667
+field stddev 0.0069947216603231
+field min 0.000606275921
+field max 0.023372311328
+field sum 0.293068395758
+field sqrsum 0.004281827288462
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	0.0005	1
+bin	0.001	0
+bin	0.0015	5
+bin	0.002	0
+bin	0.0025	1
+bin	0.003	1
+bin	0.0035	3
+bin	0.004	0
+bin	0.0045	1
+bin	0.005	0
+bin	0.0055	0
+bin	0.006	1
+bin	0.0065	1
+bin	0.007	0
+bin	0.0075	0
+bin	0.008	0
+bin	0.0085	1
+bin	0.009	0
+bin	0.0095	2
+bin	0.01	1
+bin	0.0105	0
+bin	0.011	0
+bin	0.0115	0
+bin	0.012	0
+bin	0.0125	0
+bin	0.013	0
+bin	0.0135	0
+bin	0.014	1
+bin	0.0145	0
+bin	0.015	1
+bin	0.0155	3
+bin	0.016	0
+bin	0.0165	0
+bin	0.017	2
+bin	0.0175	3
+bin	0.018	0
+bin	0.0185	0
+bin	0.019	0
+bin	0.0195	0
+bin	0.02	0
+bin	0.0205	1
+bin	0.021	0
+bin	0.0215	0
+bin	0.022	0
+bin	0.0225	0
+bin	0.023	1
+bin	0.0235	0
+bin	0.024	0
+bin	0.0245	0
+bin	0.025	0
+bin	0.0255	0
+bin	0.026	0
+bin	0.0265	0
+bin	0.027	0
+bin	0.0275	0
+bin	0.028	0
+bin	0.0285	0
+bin	0.029	0
+bin	0.0295	0
+scalar IntAirNet.hostB.wlan[0].mac.queue queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar IntAirNet.hostB.wlan[0].mac.queue queueLength:timeavg 0.015544009222553
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar IntAirNet.hostB.wlan[0].mac.queue packetPushed:count 30
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar IntAirNet.hostB.wlan[0].mac.queue packetPushed:sum(packetBytes) 10452
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar IntAirNet.hostB.wlan[0].mac.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar IntAirNet.hostB.wlan[0].mac.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar IntAirNet.hostB.wlan[0].mac.queue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar IntAirNet.hostB.wlan[0].mac.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar IntAirNet.hostB.wlan[0].mac rcvdPkFromLl:count 48
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, count"
+scalar IntAirNet.hostB.wlan[0].mac rcvdPkFromLl:sum(packetBytes) 12276
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar IntAirNet.hostB.wlan[0].mac sentDownPk:count 30
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, count"
+scalar IntAirNet.hostB.wlan[0].mac sentDownPk:sum(packetBytes) 11142
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, sum(packetBytes)"
+scalar IntAirNet.hostB.wlan[0].mac rcvdPkFromHl:count 30
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar IntAirNet.hostB.wlan[0].mac rcvdPkFromHl:sum(packetBytes) 10452
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar IntAirNet.hostB.wlan[0].mac passedUpPk:count 48
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar IntAirNet.hostB.wlan[0].mac passedUpPk:sum(packetBytes) 11172
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar IntAirNet.hostB.wlan[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar IntAirNet.hostB.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar IntAirNet.hostB.wlan[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar IntAirNet.hostB.wlan[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar IntAirNet.hostB.wlan[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar IntAirNet.hostB.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar IntAirNet.hostB.wlan[0].mac linkBroken:count 0
+attr interpolationmode none
+attr source linkBroken
+attr title "link break, count"
+statistic IntAirNet.hostB.wlan[0].radio minSnir:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source minimumSnir(packetSentToUpper)
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic IntAirNet.hostB.wlan[0].radio packetErrorRate:histogram
+field count 48
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate(packetSentToUpper)
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	48
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic IntAirNet.hostB.wlan[0].radio bitErrorRate:histogram
+field count 48
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source bitErrorRate(packetSentToUpper)
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	48
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic IntAirNet.hostB.wlan[0].radio symbolErrorRate:histogram
+field count 48
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate(packetSentToUpper)
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	48
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar IntAirNet.hostB.wlan[0].radio transmissionState:count 61
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+scalar IntAirNet.hostB.wlan[0].radio receptionState:count 97
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar IntAirNet.hostB.wlan[0].radio radioMode:count 3
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar IntAirNet.hostB.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar IntAirNet.hostB.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar IntAirNet.hostB.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar IntAirNet.hostB.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar IntAirNet.hostB.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar IntAirNet.hostB.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar IntAirNet.hostB.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar IntAirNet.hostB.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar IntAirNet.hostB.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar IntAirNet.hostB.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar IntAirNet.hostB.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar IntAirNet.hostB.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar IntAirNet.hostB.udp packetReceived:count 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar IntAirNet.hostB.udp packetReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar IntAirNet.hostB.udp packetSent:count 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar IntAirNet.hostB.udp packetSent:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar IntAirNet.hostB.udp passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar IntAirNet.hostB.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar IntAirNet.hostB.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+scalar IntAirNet.groundStation.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar IntAirNet.groundStation.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar IntAirNet.groundStation.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar IntAirNet.groundStation.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar IntAirNet.groundStation.wlan[0].mac.queue packetPopped:count 20
+attr interpolationmode none
+attr title "packet popped, count"
+scalar IntAirNet.groundStation.wlan[0].mac.queue packetPopped:sum(packetBytes) 800
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic IntAirNet.groundStation.wlan[0].mac.queue queueingTime:histogram
+field count 20
+field mean 0.0090485186175
+field stddev 0.0060670305864998
+field min 0.00161948917
+field max 0.019570463868
+field sum 0.18097037235
+field sqrsum 0.0023368821260379
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	0.0005	0
+bin	0.001	0
+bin	0.0015	2
+bin	0.002	3
+bin	0.0025	1
+bin	0.003	0
+bin	0.0035	0
+bin	0.004	0
+bin	0.0045	1
+bin	0.005	0
+bin	0.0055	0
+bin	0.006	0
+bin	0.0065	2
+bin	0.007	1
+bin	0.0075	0
+bin	0.008	1
+bin	0.0085	0
+bin	0.009	0
+bin	0.0095	0
+bin	0.01	0
+bin	0.0105	0
+bin	0.011	0
+bin	0.0115	2
+bin	0.012	0
+bin	0.0125	0
+bin	0.013	0
+bin	0.0135	2
+bin	0.014	1
+bin	0.0145	0
+bin	0.015	0
+bin	0.0155	2
+bin	0.016	0
+bin	0.0165	0
+bin	0.017	0
+bin	0.0175	0
+bin	0.018	0
+bin	0.0185	1
+bin	0.019	0
+bin	0.0195	1
+bin	0.02	0
+bin	0.0205	0
+bin	0.021	0
+bin	0.0215	0
+bin	0.022	0
+bin	0.0225	0
+bin	0.023	0
+bin	0.0235	0
+bin	0.024	0
+bin	0.0245	0
+scalar IntAirNet.groundStation.wlan[0].mac.queue queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar IntAirNet.groundStation.wlan[0].mac.queue queueLength:timeavg 0.0094671472085132
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar IntAirNet.groundStation.wlan[0].mac.queue packetPushed:count 20
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar IntAirNet.groundStation.wlan[0].mac.queue packetPushed:sum(packetBytes) 800
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar IntAirNet.groundStation.wlan[0].mac.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar IntAirNet.groundStation.wlan[0].mac.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar IntAirNet.groundStation.wlan[0].mac.queue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar IntAirNet.groundStation.wlan[0].mac.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar IntAirNet.groundStation.wlan[0].mac rcvdPkFromLl:count 30
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, count"
+scalar IntAirNet.groundStation.wlan[0].mac rcvdPkFromLl:sum(packetBytes) 11142
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar IntAirNet.groundStation.wlan[0].mac sentDownPk:count 20
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, count"
+scalar IntAirNet.groundStation.wlan[0].mac sentDownPk:sum(packetBytes) 1260
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, sum(packetBytes)"
+scalar IntAirNet.groundStation.wlan[0].mac rcvdPkFromHl:count 20
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar IntAirNet.groundStation.wlan[0].mac rcvdPkFromHl:sum(packetBytes) 800
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar IntAirNet.groundStation.wlan[0].mac passedUpPk:count 30
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar IntAirNet.groundStation.wlan[0].mac passedUpPk:sum(packetBytes) 10452
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar IntAirNet.groundStation.wlan[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar IntAirNet.groundStation.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar IntAirNet.groundStation.wlan[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar IntAirNet.groundStation.wlan[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar IntAirNet.groundStation.wlan[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar IntAirNet.groundStation.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar IntAirNet.groundStation.wlan[0].mac linkBroken:count 0
+attr interpolationmode none
+attr source linkBroken
+attr title "link break, count"
+statistic IntAirNet.groundStation.wlan[0].radio minSnir:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source minimumSnir(packetSentToUpper)
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic IntAirNet.groundStation.wlan[0].radio packetErrorRate:histogram
+field count 30
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate(packetSentToUpper)
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	30
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic IntAirNet.groundStation.wlan[0].radio bitErrorRate:histogram
+field count 30
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source bitErrorRate(packetSentToUpper)
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	30
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic IntAirNet.groundStation.wlan[0].radio symbolErrorRate:histogram
+field count 30
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate(packetSentToUpper)
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	30
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar IntAirNet.groundStation.wlan[0].radio transmissionState:count 41
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+scalar IntAirNet.groundStation.wlan[0].radio receptionState:count 117
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar IntAirNet.groundStation.wlan[0].radio radioMode:count 3
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar IntAirNet.groundStation.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar IntAirNet.groundStation.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar IntAirNet.groundStation.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar IntAirNet.groundStation.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar IntAirNet.groundStation.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar IntAirNet.groundStation.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar IntAirNet.groundStation.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar IntAirNet.groundStation.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar IntAirNet.groundStation.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar IntAirNet.groundStation.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar IntAirNet.groundStation.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar IntAirNet.groundStation.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar IntAirNet.groundStation.udp packetReceived:count 9
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar IntAirNet.groundStation.udp packetReceived:sum(packetBytes) 9072
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar IntAirNet.groundStation.udp packetSent:count 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar IntAirNet.groundStation.udp packetSent:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar IntAirNet.groundStation.udp passedUpPk:count 9
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar IntAirNet.groundStation.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar IntAirNet.groundStation.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+scalar IntAirNet.groundStation.app[0] packetReceived:count 9
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar IntAirNet.groundStation.app[0] packetReceived:sum(packetBytes) 9000
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+statistic IntAirNet.groundStation.app[0] endToEndDelay:histogram
+field count 9
+field mean 0.022311129350222
+field stddev 0.0090798923145842
+field min 0.004088907128
+field max 0.040088907128
+field sum 0.200800164152
+field sqrsum 0.0051396339914967
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, histogram"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	0.001	0
+bin	0.002	0
+bin	0.003	0
+bin	0.004	1
+bin	0.005	0
+bin	0.006	0
+bin	0.007	0
+bin	0.008	0
+bin	0.009	0
+bin	0.01	0
+bin	0.011	0
+bin	0.012	0
+bin	0.013	0
+bin	0.014	0
+bin	0.015	0
+bin	0.016	0
+bin	0.017	0
+bin	0.018	0
+bin	0.019	0
+bin	0.02	1
+bin	0.021	0
+bin	0.022	4
+bin	0.023	0
+bin	0.024	2
+bin	0.025	0
+bin	0.026	0
+bin	0.027	0
+bin	0.028	0
+bin	0.029	0
+bin	0.03	0
+bin	0.031	0
+bin	0.032	0
+bin	0.033	0
+bin	0.034	0
+bin	0.035	0
+bin	0.036	0
+bin	0.037	0
+bin	0.038	0
+bin	0.039	0
+bin	0.04	1
+bin	0.041	0
+bin	0.042	0
+bin	0.043	0
+bin	0.044	0
+bin	0.045	0
+bin	0.046	0
+bin	0.047	0
+bin	0.048	0
+bin	0.049	0
+bin	0.05	0
+

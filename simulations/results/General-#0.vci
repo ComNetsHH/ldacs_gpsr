@@ -1,0 +1,269 @@
+file 65287 1635253917                                           
+version 2
+run General-0-20211026-15:11:52-9764
+attr configname General
+attr datetime 20211026-15:11:52
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network IntAirNet
+attr processid 9764
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.configurator.typename "\"HostAutoConfigurator\""
+param **.configurator.interfaces "\"wlan0\""
+param **.hasStatus true
+param *.aircraft[*].numApps 10
+param *.aircraft[*].app[*].typename "\"UdpTraceBasedApp\""
+param *.host*.ipv4.arp.typename "\"GlobalArp\""
+param *.hostA.numApps 1
+param *.hostA.app[0].typename "\"UdpBasicApp\""
+param *.hostA.app[0].destAddresses "\"groundStation\""
+param *.hostA.app[0].destPort 5000
+param *.hostA.app[0].messageLength 1000B
+param *.hostA.app[0].sendInterval 2s
+param *.hostA.app[0].packetName "\"UDPData\""
+param *.groundStation.numApps 1
+param *.groundStation.app[0].typename "\"UdpSink\""
+param *.groundStation.app[0].localPort 5000
+param **.ipv4.arp.typename "\"GlobalArp\""
+param **.**.bitrate 100Mbps
+param **.wlan[0].radio.transmitter.communicationRange 200m
+param **.wlan[0].radio.receiver.ignoreInterference true
+param **.wlan[*].radio.transmitter.interferenceRange 0m
+param **.wlan[*].radio.transmitter.detectionRange 377000m
+param **.netmaskRoutes "\"\""
+param *.configurator.addStaticRoutes false
+param **.wlan[*].typename "\"TdmaInterface\""
+param **.slotDuration 2ms
+param **.frameLength 10
+param **.wlan[*].mac.headerLength 23B
+param **.wlan[*].mac.ackTimeout 1.99ms
+param **.rlc.typename "\"DummyRlc\""
+param *.*.routing.typename "\"GpsrModified\""
+param *.*.routing.beaconInterval 1s
+param *.*.routing.neighborValidityInterval 62.5s
+
+vector 0 IntAirNet.hostA.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 1 IntAirNet.hostB.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 2 IntAirNet.groundStation.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 3 IntAirNet.hostA.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 4 IntAirNet.hostA.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 5 IntAirNet.hostB.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 6 IntAirNet.hostB.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 7 IntAirNet.groundStation.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 8 IntAirNet.groundStation.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 9 IntAirNet.scheduler utilization:vector ETV
+attr interpolationmode none
+attr title "utilization, vector"
+vector 10 IntAirNet.groundStation.wlan[0].mac rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 11 IntAirNet.groundStation.wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 12 IntAirNet.groundStation.wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 13 IntAirNet.groundStation.wlan[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 14 IntAirNet.groundStation.wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 15 IntAirNet.groundStation.wlan[0].mac sentDownPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 16 IntAirNet.hostB.wlan[0].mac rcvdPkFromLl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 17 IntAirNet.hostB.wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 18 IntAirNet.hostA.wlan[0].mac rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 19 IntAirNet.hostA.wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 20 IntAirNet.hostA.wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 21 IntAirNet.hostA.wlan[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 22 IntAirNet.hostA.wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 23 IntAirNet.hostA.wlan[0].mac sentDownPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 24 IntAirNet.hostB.wlan[0].mac rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 25 IntAirNet.hostB.wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 26 IntAirNet.hostB.wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 27 IntAirNet.hostB.wlan[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 28 IntAirNet.hostB.wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 29 IntAirNet.hostB.wlan[0].mac sentDownPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 30 IntAirNet.hostA.wlan[0].mac rcvdPkFromLl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 31 IntAirNet.hostA.wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 32 IntAirNet.groundStation.wlan[0].mac rcvdPkFromLl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 33 IntAirNet.groundStation.wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 34 IntAirNet.hostA.app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 35 IntAirNet.hostA.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 36 IntAirNet.hostA.wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 37 IntAirNet.groundStation.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 38 IntAirNet.groundStation.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 39 IntAirNet.groundStation.app[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 40 IntAirNet.groundStation.app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 41 IntAirNet.groundStation.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 42 IntAirNet.groundStation.app[0] rcvdPkSeqNo:vector ETV
+attr interpolationmode none
+attr source appPkSeqNo(packetReceived)
+attr title "received packet sequence number, vector"
+vector 43 IntAirNet.hostA.app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+0	10112 27 0 0 0 0 3 0 4 4 16
+1	10139 27 0 0 0 0 3 0 4 4 16
+2	10166 27 0 0 0 0 3 0 4 4 16
+3	10193 2535 0 4564 0 19.584006667128 101 1 3 181 401
+4	12728 1011 0 4598 0 19.664006 57 1 2 85 141
+5	13739 2431 0 4599 0 19.664006667128 97 1 3 193 481
+6	16170 1079 0 4563 0 19.584006 61 1 2 91 151
+7	17249 2942 0 4604 0 19.664007334256 117 1 3 205 441
+8	20191 712 0 4467 0 19.182006 41 1 2 61 101
+9	20903 18110 4 4670 0.019 19.999 1000 0 0.3 241.5 65.990000000001
+10	39013 542 51 4460 0.884381708223 19.168271645205 20 40 40 800 32000
+11	39555 542 51 4460 0.884381708223 19.168271645205 20 40 40 800 32000
+12	40097 861 51 4463 0.884381708223 19.182 40 0 1 20 20
+13	40958 359 53 4463 0.9 19.182 20 40 40 800 32000
+14	41317 597 53 4463 0.9 19.182 20 0.00161948917 0.019570463868 0.18097037235 0.0023368821260379
+15	41914 359 53 4463 0.9 19.182 20 63 63 1260 79380
+16	42273 1325 59 4600 0.900006667128 19.664006667128 48 63 1091 12276 10867320
+17	43598 1325 59 4600 0.900006667128 19.664006667128 48 40 1068 11172 10328016
+18	44923 680 90 4676 1.123563696397 20 29 40 1068 11440 11436640
+19	45603 680 90 4676 1.123563696397 20 29 40 1068 11440 11436640
+20	46283 1104 90 4676 1.123563696397 20 57 0 1 29 29
+21	47387 519 92 4594 1.14 19.664 28 40 1068 10372 10296016
+22	47906 753 92 4594 1.14 19.664 28 0.000284133403 0.024 0.371149031067 0.0066608370804878
+23	48659 519 92 4594 1.14 19.664 28 63 1091 11016 10787940
+24	49178 836 107 4554 1.145894115092 19.563238142987 30 40 1068 10452 10299216
+25	50014 836 107 4554 1.145894115092 19.563238142987 30 40 1068 10452 10299216
+26	50850 1291 107 4559 1.145894115092 19.584 60 0 1 30 30
+27	52141 551 110 4559 1.16 19.584 30 40 1068 10452 10299216
+28	52692 892 110 4559 1.16 19.584 30 0.000606275921 0.023372311328 0.293068395758 0.004281827288462
+29	53584 551 110 4559 1.16 19.584 30 63 1091 11142 10795878
+30	54135 837 117 4566 1.160006667128 19.584006667128 30 63 1091 11142 10795878
+31	54972 573 117 4566 1.160006667128 19.584006667128 21 40 40 840 33600
+32	55545 837 118 4567 1.160006667128 19.584006667128 30 63 1091 11142 10795878
+33	56382 837 118 4567 1.160006667128 19.584006667128 30 40 1068 10452 10299216
+34	57219 164 327 4671 2 20 10 1000 1000 10000 10000000
+35	57383 164 330 4673 2 20 10 1008 1008 10080 10160640
+36	57547 264 357 4158 2.004088907128 18.024088907128 9 1091 1091 9819 10712529
+37	57811 264 361 4162 2.004088907128 18.024088907128 9 1008 1008 9072 9144576
+38	58075 237 361 4162 2.004088907128 18.024088907128 9 1 9 45 285
+39	58312 264 362 4163 2.004088907128 18.024088907128 9 1000 1000 9000 9000000
+40	58576 3057 362 4677 0.1 20 200 0 80000 720000 57600000000
+41	61633 354 362 4163 2.004088907128 18.024088907128 9 0.004088907128 0.040088907128 0.200800164152 0.0051396339914967
+42	61987 237 362 4163 2.004088907128 18.024088907128 9 0 8 36 204
+43	62224 3061 4677 4677 0.1 20 200 0 0 0 0
+

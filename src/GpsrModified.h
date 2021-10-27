@@ -77,6 +77,7 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
   public:
     GpsrModified();
     virtual ~GpsrModified();
+    void processBeacon(Packet *packet);
 
   protected:
     // module interface
@@ -104,7 +105,6 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
     // handling beacons
     const Ptr<GpsrBeaconModified> createBeacon();
     void sendBeacon(const Ptr<GpsrBeaconModified>& beacon);
-    void processBeacon(Packet *packet);
 
     // handling packets
     GpsrOption *createGpsrOption(L3Address destination);

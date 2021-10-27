@@ -28,9 +28,9 @@
 #include "inet/networklayer/contract/INetfilter.h"
 #include "inet/networklayer/contract/IRoutingTable.h"
 #include "inet/routing/base/RoutingProtocolBase.h"
-#include "Gpsr_m.h"
-#include "PositionTable.h"
+#include "GpsrModified_m.h"
 #include "inet/transportlayer/udp/UdpHeader_m.h"
+#include "PositionTableModified.h"
 
 using namespace inet;
 

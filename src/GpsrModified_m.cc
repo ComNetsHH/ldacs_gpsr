@@ -1,5 +1,5 @@
 //
-// Generated file, do not edit! Created by nedtool 5.6 from Gpsr.msg.
+// Generated file, do not edit! Created by nedtool 5.6 from GpsrModified.msg.
 //
 
 // Disable warnings about unused variables, empty switch stmts, etc:
@@ -27,7 +27,7 @@
 #include <iostream>
 #include <sstream>
 #include <memory>
-#include "Gpsr_m.h"
+#include "GpsrModified_m.h"
 
 namespace omnetpp {
 

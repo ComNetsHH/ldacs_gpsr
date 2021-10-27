@@ -1,9 +1,9 @@
 //
-// Generated file, do not edit! Created by nedtool 5.6 from Gpsr.msg.
+// Generated file, do not edit! Created by nedtool 5.6 from GpsrModified.msg.
 //
 
-#ifndef __INET_GPSR_M_H
-#define __INET_GPSR_M_H
+#ifndef __INET_GPSRMODIFIED_M_H
+#define __INET_GPSRMODIFIED_M_H
 
 #if defined(__clang__)
 #  pragma clang diagnostic ignored "-Wreserved-id-macro"
@@ -34,14 +34,14 @@ class GpsrOption;
 #include "inet/networklayer/common/L3Address_m.h" // import inet.networklayer.common.L3Address
 
 // cplusplus {{
-#include "GpsrDefs.h"
+#include "GpsrModifiedDefs.h"
 // }}
 
 
 namespace inet {
 
 /**
- * Enum generated from <tt>Gpsr.msg:32</tt> by nedtool.
+ * Enum generated from <tt>GpsrModified.msg:32</tt> by nedtool.
  * <pre>
  * enum GpsrForwardingMode
  * {
@@ -56,7 +56,7 @@ enum GpsrForwardingMode {
 };
 
 /**
- * Enum generated from <tt>Gpsr.msg:37</tt> by nedtool.
+ * Enum generated from <tt>GpsrModified.msg:37</tt> by nedtool.
  * <pre>
  * enum GpsrPlanarizationMode
  * {
@@ -73,7 +73,7 @@ enum GpsrPlanarizationMode {
 };
 
 /**
- * Class generated from <tt>Gpsr.msg:48</tt> by nedtool.
+ * Class generated from <tt>GpsrModified.msg:48</tt> by nedtool.
  * <pre>
  * //
  * // The GPSR beacon packet is sent periodically by all GPSR routers to notify
@@ -121,7 +121,7 @@ inline void doParsimPacking(omnetpp::cCommBuffer *b, const GpsrBeaconModified& o
 inline void doParsimUnpacking(omnetpp::cCommBuffer *b, GpsrBeaconModified& obj) {obj.parsimUnpack(b);}
 
 /**
- * Class generated from <tt>Gpsr.msg:59</tt> by nedtool.
+ * Class generated from <tt>GpsrModified.msg:59</tt> by nedtool.
  * <pre>
  * //
  * // The GPSROption is used to add extra routing information for network datagrams.
@@ -196,5 +196,5 @@ inline void doParsimUnpacking(omnetpp::cCommBuffer *b, GpsrOption& obj) {obj.par
 
 } // namespace inet
 
-#endif // ifndef __INET_GPSR_M_H
+#endif // ifndef __INET_GPSRMODIFIED_M_H
 

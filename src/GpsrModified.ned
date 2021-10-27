@@ -47,6 +47,11 @@ simple GpsrModified like IManetRouting
         double maxJitter @unit(s) = default(0.5 * beaconInterval);
         double neighborValidityInterval @unit(s) = default(4.5 * beaconInterval);
         int positionByteLength @unit(B) = default(2 * 4B);
+        //////////////////////////////////////////////////////////////////////////
+        // The ground station communication range (Musab)
+        //////////////////////////////////////////////////////////////////////////
+        double groundStationRange @unit(m) = default(370400m);   // the range where the reception of transmissions produced by this transmitter is possible
+        
 
         // visualization parameters
         bool displayBubbles = default(false);	// display bubble messages about changes in routing state for packets

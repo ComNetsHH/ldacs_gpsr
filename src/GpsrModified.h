@@ -128,6 +128,10 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
     void storeSelfPositionInGlobalRegistry() const;
     Coord computeIntersectionInsideLineSegments(Coord& begin1, Coord& end1, Coord& begin2, Coord& end2) const;
     Coord getNeighborPosition(const L3Address& address) const;
+    //////////////////////////////////////////////////////////////////////////
+    // The ground station communication range (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    m groundStationRange;
 
     // angle
     double getVectorAngle(Coord vector) const;

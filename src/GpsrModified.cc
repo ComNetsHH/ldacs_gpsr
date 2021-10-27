@@ -106,6 +106,10 @@ void GpsrModified::initialize(int stage)
         positionByteLength = par("positionByteLength");
         // KLUDGE: implement position registry protocol
         globalPositionTable.clear();
+        //////////////////////////////////////////////////////////////////////////
+        // The ground station communication range (Musab)
+        //////////////////////////////////////////////////////////////////////////
+        groundStationRange = m(par("groundStationRange"));
     }
     else if (stage == INITSTAGE_ROUTING_PROTOCOLS) {
         registerService(Protocol::manet, nullptr, gate("ipIn"));
@@ -489,6 +493,13 @@ std::vector<L3Address> GpsrModified::getPlanarNeighborsCounterClockwise(double s
 
 L3Address GpsrModified::findNextHop(const L3Address& destination, GpsrOption *gpsrOption)
 {
+    //////////////////////////////////////////////////////////////////////////
+    // Check whether the GS is in communication range (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    m distanceToGroundStation = m(mobility->getCurrentPosition().distance(gpsrOption->getDestinationPosition()));
+    if (distanceToGroundStation <= groundStationRange) {
+        EV_INFO << "The ground station is within communication range" << endl;
+    }
     switch (gpsrOption->getRoutingMode()) {
         case GPSR_GREEDY_ROUTING: return findGreedyRoutingNextHop(destination, gpsrOption);
         case GPSR_PERIMETER_ROUTING: return findPerimeterRoutingNextHop(destination, gpsrOption);

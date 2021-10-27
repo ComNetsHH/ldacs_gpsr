@@ -1,1 +1,0 @@
--g -Wall -MMD -MP -MF .d    -isystem /usr/include -isystem /mingw64/include -fno-omit-frame-pointer  -DXMLPARSER=libxml -DPREFER_QTENV -DWITH_QTENV -DWITH_PARSIM -DWITH_NETBUILDER -DWITH_OSG -DWITH_OSGEARTH  -DINET_IMPORT -ID:/omnetpp-5.6.2/samples/inet-4.2.5/src -ID:/omnetpp-5.6.2/samples/tdma -ID:/omnetpp-5.6.2/include

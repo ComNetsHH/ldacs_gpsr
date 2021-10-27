@@ -1,14 +1,14 @@
 version 2
-run General-0-20211026-15:11:52-9764
+run General-0-20211027-11:15:10-127532
 attr configname General
-attr datetime 20211026-15:11:52
+attr datetime 20211027-11:15:10
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network IntAirNet
-attr processid 9764
+attr processid 127532
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -159,10 +159,10 @@ attr interpolationmode none
 attr title "utilization, timeavg"
 statistic IntAirNet.scheduler schedule:histogram
 field count 0
-field mean nan
-field stddev nan
-field min nan
-field max nan
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
 field sum 0
 field sqrsum 0
 attr interpolationmode none
@@ -354,12 +354,24 @@ scalar IntAirNet.hostA.wlan[0].mac linkBroken:count 0
 attr interpolationmode none
 attr source linkBroken
 attr title "link break, count"
+scalar IntAirNet.hostA.wlan[0].radio radioMode:count 3
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar IntAirNet.hostA.wlan[0].radio receptionState:count 101
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar IntAirNet.hostA.wlan[0].radio transmissionState:count 57
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
 statistic IntAirNet.hostA.wlan[0].radio minSnir:histogram
 field count 0
-field mean nan
-field stddev nan
-field min nan
-field max nan
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
 field sum 0
 field sqrsum 0
 attr source minimumSnir(packetSentToUpper)
@@ -553,18 +565,6 @@ bin	0.44	0
 bin	0.46	0
 bin	0.48	0
 bin	0.5	0
-scalar IntAirNet.hostA.wlan[0].radio transmissionState:count 57
-attr interpolationmode sample-hold
-attr source transmissionStateChanged
-attr title "Radio transmission state, count"
-scalar IntAirNet.hostA.wlan[0].radio receptionState:count 101
-attr interpolationmode sample-hold
-attr source receptionStateChanged
-attr title "Radio reception state, count"
-scalar IntAirNet.hostA.wlan[0].radio radioMode:count 3
-attr interpolationmode sample-hold
-attr source radioModeChanged
-attr title "Radio mode, count"
 scalar IntAirNet.hostA.ipv4.ip packetDropAddressResolutionFailed:count 0
 attr interpolationmode none
 attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
@@ -653,10 +653,10 @@ attr source packetReceived
 attr title "packets received, sum(packetBytes)"
 statistic IntAirNet.hostA.app[0] rcvdPkLifetime:stats
 field count 0
-field mean nan
-field stddev nan
-field min nan
-field max nan
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
 field sum 0
 field sqrsum 0
 attr interpolationmode none
@@ -854,12 +854,24 @@ scalar IntAirNet.hostB.wlan[0].mac linkBroken:count 0
 attr interpolationmode none
 attr source linkBroken
 attr title "link break, count"
+scalar IntAirNet.hostB.wlan[0].radio radioMode:count 3
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar IntAirNet.hostB.wlan[0].radio receptionState:count 97
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar IntAirNet.hostB.wlan[0].radio transmissionState:count 61
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
 statistic IntAirNet.hostB.wlan[0].radio minSnir:histogram
 field count 0
-field mean nan
-field stddev nan
-field min nan
-field max nan
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
 field sum 0
 field sqrsum 0
 attr source minimumSnir(packetSentToUpper)
@@ -1053,18 +1065,6 @@ bin	0.44	0
 bin	0.46	0
 bin	0.48	0
 bin	0.5	0
-scalar IntAirNet.hostB.wlan[0].radio transmissionState:count 61
-attr interpolationmode sample-hold
-attr source transmissionStateChanged
-attr title "Radio transmission state, count"
-scalar IntAirNet.hostB.wlan[0].radio receptionState:count 97
-attr interpolationmode sample-hold
-attr source receptionStateChanged
-attr title "Radio reception state, count"
-scalar IntAirNet.hostB.wlan[0].radio radioMode:count 3
-attr interpolationmode sample-hold
-attr source radioModeChanged
-attr title "Radio mode, count"
 scalar IntAirNet.hostB.ipv4.ip packetDropAddressResolutionFailed:count 0
 attr interpolationmode none
 attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
@@ -1314,12 +1314,24 @@ scalar IntAirNet.groundStation.wlan[0].mac linkBroken:count 0
 attr interpolationmode none
 attr source linkBroken
 attr title "link break, count"
+scalar IntAirNet.groundStation.wlan[0].radio radioMode:count 3
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar IntAirNet.groundStation.wlan[0].radio receptionState:count 117
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar IntAirNet.groundStation.wlan[0].radio transmissionState:count 41
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
 statistic IntAirNet.groundStation.wlan[0].radio minSnir:histogram
 field count 0
-field mean nan
-field stddev nan
-field min nan
-field max nan
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
 field sum 0
 field sqrsum 0
 attr source minimumSnir(packetSentToUpper)
@@ -1513,18 +1525,6 @@ bin	0.44	0
 bin	0.46	0
 bin	0.48	0
 bin	0.5	0
-scalar IntAirNet.groundStation.wlan[0].radio transmissionState:count 41
-attr interpolationmode sample-hold
-attr source transmissionStateChanged
-attr title "Radio transmission state, count"
-scalar IntAirNet.groundStation.wlan[0].radio receptionState:count 117
-attr interpolationmode sample-hold
-attr source receptionStateChanged
-attr title "Radio reception state, count"
-scalar IntAirNet.groundStation.wlan[0].radio radioMode:count 3
-attr interpolationmode sample-hold
-attr source radioModeChanged
-attr title "Radio mode, count"
 scalar IntAirNet.groundStation.ipv4.ip packetDropAddressResolutionFailed:count 0
 attr interpolationmode none
 attr source packetDropReasonIsAddressResolutionFailed(packetDropped)

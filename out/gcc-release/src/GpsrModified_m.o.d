@@ -1,5 +1,6 @@
 ../out/gcc-release/src/GpsrModified_m.o: GpsrModified_m.cc \
- GpsrModified_m.h /home/musab/omnetpp-5.6.2/include/omnetpp.h \
+ GpsrModified_m.h \
+ /home/musab/intairnet-data-link-layer-simulation-model/omnetpp-5.6.2/include/omnetpp.h \
  ../../inet4/src/inet/common/INETDefs_m.h \
  ../../inet4/src/inet/common/INETDefs.h \
  ../../inet4/src/inet/common/precompiled_release.h \
@@ -43,7 +44,7 @@
 
 GpsrModified_m.h:
 
-/home/musab/omnetpp-5.6.2/include/omnetpp.h:
+/home/musab/intairnet-data-link-layer-simulation-model/omnetpp-5.6.2/include/omnetpp.h:
 
 ../../inet4/src/inet/common/INETDefs_m.h:
 

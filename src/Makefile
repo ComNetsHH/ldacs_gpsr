@@ -2,7 +2,7 @@
 # OMNeT++/OMNEST Makefile for $(LIB_PREFIX)IntAirNet-gpsr
 #
 # This file was generated with the command:
-#  opp_makemake --make-so -f --deep -KTDMA_PROJ=/home/musab/omnetpp-5.6.2/workspace/tdma/tdma -KINET_PROJ=../../inet4 -I$$\(TDMA_PROJ\) -I$$\(INET_PROJ\)/src -L$$\(TDMA_PROJ\)/src -ltdma$$\(D\)
+#  opp_makemake --make-so -f --deep -KINET_PROJ=../../inet4 -KTDMA_PROJ=/home/musab/intairnet-data-link-layer-simulation-model/omnetpp-5.6.2/workspace/tdma/tdma -DINET_IMPORT -I$$\(INET_PROJ\)/src -I$$\(TDMA_PROJ\) -L$$\(INET_PROJ\)/src -L$$\(TDMA_PROJ\)/src -lINET$$\(D\) -ltdma$$\(D\)
 #
 
 # Name of target to be created (-o option)
@@ -10,13 +10,13 @@ TARGET = $(LIB_PREFIX)IntAirNet-gpsr$(D)$(SHARED_LIB_SUFFIX)
 TARGET_DIR = .
 
 # C++ include paths (with -I)
-INCLUDE_PATH = -I$(TDMA_PROJ) -I$(INET_PROJ)/src
+INCLUDE_PATH = -I$(INET_PROJ)/src -I$(TDMA_PROJ)
 
 # Additional object and library files to link with
 EXTRA_OBJS =
 
 # Additional libraries (-L, -l options)
-LIBS = $(LDFLAG_LIBPATH)$(TDMA_PROJ)/src  -ltdma$(D)
+LIBS = $(LDFLAG_LIBPATH)$(INET_PROJ)/src $(LDFLAG_LIBPATH)$(TDMA_PROJ)/src  -lINET$(D) -ltdma$(D)
 
 # Output directory
 PROJECT_OUTPUT_DIR = ../out
@@ -34,8 +34,8 @@ MSGFILES = \
 SMFILES =
 
 # Other makefile variables (-K)
-TDMA_PROJ=/home/musab/omnetpp-5.6.2/workspace/tdma/tdma
 INET_PROJ=../../inet4
+TDMA_PROJ=/home/musab/intairnet-data-link-layer-simulation-model/omnetpp-5.6.2/workspace/tdma/tdma
 
 #------------------------------------------------------------------------------
 
@@ -60,10 +60,10 @@ include $(CONFIGFILE)
 # Simulation kernel and user interface libraries
 OMNETPP_LIBS = -loppenvir$D $(KERNEL_LIBS) $(SYS_LIBS)
 ifneq ($(TOOLCHAIN_NAME),clangc2)
-LIBS += -Wl,-rpath,$(abspath $(TDMA_PROJ)/src)
+LIBS += -Wl,-rpath,$(abspath $(INET_PROJ)/src) -Wl,-rpath,$(abspath $(TDMA_PROJ)/src)
 endif
 
-COPTS = $(CFLAGS) $(IMPORT_DEFINES)  $(INCLUDE_PATH) -I$(OMNETPP_INCL_DIR)
+COPTS = $(CFLAGS) $(IMPORT_DEFINES) -DINET_IMPORT $(INCLUDE_PATH) -I$(OMNETPP_INCL_DIR)
 MSGCOPTS = $(INCLUDE_PATH)
 SMCOPTS =
 

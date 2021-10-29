@@ -499,6 +499,7 @@ L3Address GpsrModified::findNextHop(const L3Address& destination, GpsrOption *gp
     m distanceToGroundStation = m(mobility->getCurrentPosition().distance(gpsrOption->getDestinationPosition()));
     if (distanceToGroundStation <= groundStationRange) {
         EV_INFO << "The ground station is within communication range" << endl;
+        return destination;
     }
     switch (gpsrOption->getRoutingMode()) {
         case GPSR_GREEDY_ROUTING: return findGreedyRoutingNextHop(destination, gpsrOption);

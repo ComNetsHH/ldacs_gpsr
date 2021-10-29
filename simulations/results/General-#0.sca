@@ -1,14 +1,14 @@
 version 2
-run General-0-20211027-13:47:15-21731
+run General-0-20211029-16:02:09-21937
 attr configname General
-attr datetime 20211027-13:47:15
+attr datetime 20211029-16:02:09
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network IntAirNet
-attr processid 21731
+attr processid 21937
 attr repetition 0
 attr replication #0
 attr resultdir results

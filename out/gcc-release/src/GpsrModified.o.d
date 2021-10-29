@@ -3,7 +3,7 @@
  ../../inet4/src/inet/common/INETDefs.h \
  ../../inet4/src/inet/common/precompiled_release.h \
  ../../inet4/src/inet/common/precompiled.h \
- /home/musab/omnetpp-5.6.2/include/omnetpp.h \
+ /home/musab/intairnet-data-link-layer-simulation-model/omnetpp-5.6.2/include/omnetpp.h \
  ../../inet4/src/inet/opp_defines.h ../../inet4/src/inet/features.h \
  ../../inet4/src/inet/common/Compat.h \
  ../../inet4/src/inet/common/InitStages.h \
@@ -95,7 +95,7 @@
 
 ../../inet4/src/inet/common/precompiled.h:
 
-/home/musab/omnetpp-5.6.2/include/omnetpp.h:
+/home/musab/intairnet-data-link-layer-simulation-model/omnetpp-5.6.2/include/omnetpp.h:
 
 ../../inet4/src/inet/opp_defines.h:
 

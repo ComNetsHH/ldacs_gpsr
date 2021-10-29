@@ -3,7 +3,7 @@
 	<name>IntAirNet-gpsr</name>
 	<comment></comment>
 	<projects>
-		<project>inet-4.2.5</project>
+		<project>inet</project>
 		<project>tdma</project>
 	</projects>
 	<buildSpec>

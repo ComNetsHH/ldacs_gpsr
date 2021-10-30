@@ -17,12 +17,21 @@ package gpsr_intairnet.simulations;
 
 import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
 import inet.node.inet.ManetRouter;
+import inet.node.inet.StandardHost;
 import inet.physicallayer.contract.packetlevel.IRadioMedium;
 import inet.visualizer.integrated.IntegratedMultiVisualizer;
 import inet.visualizer.contract.IIntegratedVisualizer;
 import tdma.scheduler.TdmaScheduler;
+import inet.node.ethernet.Eth1G;
+import inet.node.ethernet.EtherSwitch;
 
 
+//module AircraftManet extends ManetRouter {
+//    connections: // network node internal connections
+//        at.out++ --> eth[0].upperLayerIn;
+//        at.in++ <-- eth[0].upperLayerOut;
+//        eth[0].phys <--> ethg[0]; // Ethernet sends frames to cable
+//}
 
 network IntAirNet
 {
@@ -37,7 +46,7 @@ network IntAirNet
         visualizer: IntegratedMultiVisualizer {
             @display("p=100,200");
         }
-        
+
         configurator: Ipv4NetworkConfigurator {
             parameters:
                 @display("p=100,100;is=s");
@@ -53,14 +62,28 @@ network IntAirNet
             parameters:
                 @display("p=50,325");
         }
-        
+
         hostB: ManetRouter {
             parameters:
                 @display("p=250,325");
         }
 
-        groundStation: ManetRouter {
+        groundStation: StandardHost {
             parameters:
-                @display("p=450,325");
+                @display("p=250,125");
         }
+        
+        switch1: EtherSwitch {
+            parameters:
+                @display("p=250,200");
+            gates:
+                ethg[];
+        }
+    connections:
+        switch1.ethg++  <--> Eth1G <--> hostA.ethg++;
+        switch1.ethg++  <--> Eth1G <--> hostB.ethg++;
+        groundStation.ethg++ <--> Eth1G <--> switch1.ethg++ ;
+//        hostA.ethg++ <--> Eth1G <--> groundStation.ethg++;
+//        hostB.ethg++ <--> Eth1G <--> groundStation.ethg++;
+////        hostA.ethg++ <--> Eth1G <--> hostB.ethg++;
 }

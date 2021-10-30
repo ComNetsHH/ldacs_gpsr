@@ -55,13 +55,22 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
     simtime_t maxJitter;
     simtime_t neighborValidityInterval;
     bool displayBubbles;
-
+    //////////////////////////////////////////////////////////////////////////
+    // Set the destination position (The ground station) in the GPSR packet (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    double GSx = 0.0;
+    double GSy = 0.0;
+    double GSz = 0.0;
     // context
     cModule *host = nullptr;
     IMobility *mobility = nullptr;
     IL3AddressType *addressType = nullptr;
     IInterfaceTable *interfaceTable = nullptr;
     const char *outputInterface = nullptr;
+    //////////////////////////////////////////////////////////////////////////
+    // Set interface to the interface used in A2G if next hop is GS (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    const char *a2gOutputInterface = nullptr;
     IRoutingTable *routingTable = nullptr;    // TODO: delete when necessary functions are moved to interface table
     INetfilter *networkProtocol = nullptr;
     static PositionTableModified globalPositionTable;    // KLUDGE: implement position registry protocol

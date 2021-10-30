@@ -39,6 +39,10 @@ simple GpsrModified like IManetRouting
         string routingTableModule = default("^.ipv4.routingTable");
         string networkProtocolModule = default("^.ipv4.ip");
         string outputInterface = default("wlan0");
+        //////////////////////////////////////////////////////////////////////////
+        // Set interface to the interface used in A2G if next hop is GS (Musab)
+        //////////////////////////////////////////////////////////////////////////
+        string a2gOutputInterface = default("eth0");
 
         // GPSR parameters
         string planarizationMode @enum("", "GG", "RNG") = default("GG");
@@ -50,9 +54,13 @@ simple GpsrModified like IManetRouting
         //////////////////////////////////////////////////////////////////////////
         // The ground station communication range (Musab)
         //////////////////////////////////////////////////////////////////////////
-        double groundStationRange @unit(m) = default(370400m);   // the range where the reception of transmissions produced by this transmitter is possible
-        
-
+        double groundStationRange @unit(m) = default(370400m);   // the range where A2G cimmunication is possible
+		//////////////////////////////////////////////////////////////////////////
+        // Set the destination position (The ground station) in the GPSR packet (Musab)
+        //////////////////////////////////////////////////////////////////////////
+		double GSx @unit(m) = default(4734222.285m);
+        double GSy @unit(m) = default(1381949.583m);
+        double GSz @unit(m) = default(662813.2938m);
         // visualization parameters
         bool displayBubbles = default(false);	// display bubble messages about changes in routing state for packets
     gates:

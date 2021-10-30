@@ -107,9 +107,13 @@ void GpsrModified::initialize(int stage)
         // KLUDGE: implement position registry protocol
         globalPositionTable.clear();
         //////////////////////////////////////////////////////////////////////////
-        // The ground station communication range (Musab)
+        // The ground station communication range + a2gOutputInterface (Musab)
         //////////////////////////////////////////////////////////////////////////
         groundStationRange = m(par("groundStationRange"));
+        GSx = par("GSx");
+        GSy = par("GSy");
+        GSz = par("GSz");
+        a2gOutputInterface = par("a2gOutputInterface");
     }
     else if (stage == INITSTAGE_ROUTING_PROTOCOLS) {
         registerService(Protocol::manet, nullptr, gate("ipIn"));
@@ -266,7 +270,13 @@ GpsrOption *GpsrModified::createGpsrOption(L3Address destination)
 {
     GpsrOption *gpsrOption = new GpsrOption();
     gpsrOption->setRoutingMode(GPSR_GREEDY_ROUTING);
-    gpsrOption->setDestinationPosition(lookupPositionInGlobalRegistry(destination));
+    //////////////////////////////////////////////////////////////////////////
+    // Set the destination position (The ground station) in the GPSR packet (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    const Coord GroundStationLocation = Coord(GSx, GSy, GSz);
+    EV_INFO << "Ground station (Destination) position = " << GroundStationLocation << endl;
+    gpsrOption->setDestinationPosition(GroundStationLocation);
+//    gpsrOption->setDestinationPosition(lookupPositionInGlobalRegistry(destination));
     gpsrOption->setLength(computeOptionLength(gpsrOption));
     return gpsrOption;
 }
@@ -499,7 +509,7 @@ L3Address GpsrModified::findNextHop(const L3Address& destination, GpsrOption *gp
     m distanceToGroundStation = m(mobility->getCurrentPosition().distance(gpsrOption->getDestinationPosition()));
     if (distanceToGroundStation <= groundStationRange) {
         EV_INFO << "The ground station is within communication range" << endl;
-        return destination;
+        return destination; // The next hop is the destination (the ground station)
     }
     switch (gpsrOption->getRoutingMode()) {
         case GPSR_GREEDY_ROUTING: return findGreedyRoutingNextHop(destination, gpsrOption);
@@ -621,6 +631,15 @@ INetfilter::IHook::Result GpsrModified::routeDatagram(Packet *datagram, GpsrOpti
         EV_INFO << "Next hop found: source = " << source << ", destination = " << destination << ", nextHop: " << nextHop << endl;
         gpsrOption->setSenderAddress(getSelfAddress());
         auto interfaceEntry = CHK(interfaceTable->findInterfaceByName(outputInterface));
+        //////////////////////////////////////////////////////////////////////////
+        // Set interface to the interface used in A2G if next hop is GS (Musab)
+        //////////////////////////////////////////////////////////////////////////
+        auto a2gInterfaceEntry = CHK(interfaceTable->findInterfaceByName(a2gOutputInterface));
+        m distanceToGroundStation = m(mobility->getCurrentPosition().distance(gpsrOption->getDestinationPosition()));
+        if (distanceToGroundStation <= groundStationRange) {
+            datagram->addTagIfAbsent<InterfaceReq>()->setInterfaceId(a2gInterfaceEntry->getInterfaceId());
+            return ACCEPT;
+        }
         datagram->addTagIfAbsent<InterfaceReq>()->setInterfaceId(interfaceEntry->getInterfaceId());
         return ACCEPT;
     }

@@ -1,0 +1,1486 @@
+<scenario>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[0]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[1]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[2]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[3]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1140" module="aircraft[4]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[5]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1140" module="aircraft[6]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[7]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1020" module="aircraft[8]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[9]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[10]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[11]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[12]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[13]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="600" module="aircraft[14]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[15]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[16]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[17]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[18]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[19]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[20]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[21]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[22]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[23]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[24]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[25]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[26]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[27]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[28]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[29]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[30]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[31]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="0" module="aircraft[32]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="0" module="aircraft[33]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[34]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="540" module="aircraft[35]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[36]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[37]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="300" module="aircraft[38]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[39]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[40]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[41]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[42]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[43]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[44]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="720" module="aircraft[45]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[46]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[47]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[48]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1680" module="aircraft[49]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[50]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[51]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[52]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[53]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="840" module="aircraft[54]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[55]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[56]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[57]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[58]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[59]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[60]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[61]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[62]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[63]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[64]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[65]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[66]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="780" module="aircraft[67]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[68]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[69]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[70]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[71]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[72]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[73]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[74]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[75]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[76]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[77]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[78]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[79]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[80]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[81]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[82]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[83]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[84]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[85]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[86]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[87]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[88]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[89]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[90]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1620" module="aircraft[91]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[92]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[93]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[94]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[95]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[96]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[97]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[98]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[99]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[100]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[101]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[102]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[103]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[104]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[105]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[106]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[107]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[108]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[109]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[110]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[111]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[112]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[113]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[114]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[115]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[116]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[117]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[118]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[119]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[120]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[121]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[122]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="840" module="aircraft[123]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[124]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[125]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[126]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[127]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[128]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[129]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1140" module="aircraft[130]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[131]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[132]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[133]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[134]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[135]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[136]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[137]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[138]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="240" module="aircraft[139]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[140]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[141]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[142]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[143]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[144]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[145]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1740" module="aircraft[146]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[147]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[148]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[149]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="720" module="aircraft[150]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[151]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[152]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[153]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[154]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[155]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[156]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[157]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[158]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[159]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[160]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[161]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[162]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[163]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[164]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[165]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[166]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[167]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[168]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[169]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[170]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[171]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[172]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[173]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[174]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[175]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[176]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[177]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[178]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[179]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[180]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1500" module="aircraft[181]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[182]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[183]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[184]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[185]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1680" module="aircraft[186]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="540" module="aircraft[187]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[188]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[189]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[190]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[191]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[192]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[193]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1080" module="aircraft[194]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="480" module="aircraft[195]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[196]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[197]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[198]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[199]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[200]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="960" module="aircraft[201]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[202]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[203]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[204]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1020" module="aircraft[205]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[206]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[207]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[208]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[209]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[210]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[211]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[212]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[213]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[214]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[215]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[216]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[217]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[218]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[219]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[220]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[221]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[222]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[223]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1320" module="aircraft[224]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="420" module="aircraft[225]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="0" module="aircraft[226]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[227]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[228]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[229]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[230]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[231]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[232]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[233]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[234]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[235]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[236]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="60" module="aircraft[237]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[238]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[239]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1440" module="aircraft[240]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[241]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[242]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[243]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[244]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[245]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[246]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[247]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[248]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[249]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[250]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[251]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[252]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="720" module="aircraft[253]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[254]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[255]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[256]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[257]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="300" module="aircraft[258]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[259]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[260]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[261]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[262]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[263]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[264]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[265]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[266]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[267]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[268]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[269]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[270]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1740" module="aircraft[271]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[272]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[273]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[274]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[275]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1260" module="aircraft[276]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1140" module="aircraft[277]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[278]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[279]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[280]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[281]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[282]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="960" module="aircraft[283]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[284]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[285]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[286]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1620" module="aircraft[287]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[288]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[289]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[290]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[291]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[292]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[293]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[294]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[295]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1200" module="aircraft[296]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1740" module="aircraft[297]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[298]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[299]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1320" module="aircraft[300]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[301]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[302]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[303]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[304]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[305]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[306]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[307]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1560" module="aircraft[308]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[309]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="0" module="aircraft[310]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[311]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[312]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[313]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[314]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[315]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[316]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[317]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[318]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[319]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1440" module="aircraft[320]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="720" module="aircraft[321]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[322]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[323]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[324]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[325]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[326]"/>
+	<at t="60">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[327]"/>
+	<at t="120">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="420" module="aircraft[328]"/>
+	<at t="120">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[329]"/>
+	<at t="120">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[330]"/>
+	<at t="120">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[331]"/>
+	<at t="180">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[332]"/>
+	<at t="180">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[333]"/>
+	<at t="180">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[334]"/>
+	<at t="240">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[335]"/>
+	<at t="300">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[336]"/>
+	<at t="300">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[337]"/>
+	<at t="300">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[338]"/>
+	<at t="420">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[339]"/>
+	<at t="420">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[340]"/>
+	<at t="420">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[341]"/>
+	<at t="480">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[342]"/>
+	<at t="480">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[343]"/>
+	<at t="600">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[344]"/>
+	<at t="600">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[345]"/>
+	<at t="600">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[346]"/>
+	<at t="720">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[347]"/>
+	<at t="780">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[348]"/>
+	<at t="900">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[349]"/>
+	<at t="960">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[350]"/>
+	<at t="960">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[351]"/>
+	<at t="1020">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[352]"/>
+	<at t="1020">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[353]"/>
+	<at t="1020">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[354]"/>
+	<at t="1080">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[355]"/>
+	<at t="1080">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[356]"/>
+	<at t="1140">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[357]"/>
+	<at t="1140">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[358]"/>
+	<at t="1260">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[359]"/>
+	<at t="1380">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[360]"/>
+	<at t="1440">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[361]"/>
+	<at t="1440">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[362]"/>
+	<at t="1500">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[363]"/>
+	<at t="1500">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[364]"/>
+	<at t="1500">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[365]"/>
+	<at t="1560">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[366]"/>
+	<at t="1620">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[367]"/>
+	<at t="1680">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[368]"/>
+	<at t="1680">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[369]"/>
+	<at t="1740">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+	</at>
+	<shutdown t="1800" module="aircraft[370]"/>
+</scenario>

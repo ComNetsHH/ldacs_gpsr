@@ -1,8 +1,8 @@
 inet/*
 /.metadata/
-/intairnet-gpsr/simulations/results
-/intairnet-gpsr/.settings
-/intairnet-gpsr/out
-/intairnet-gpsr/src/intairnet-gpsr
-/intairnet-gpsr/Makefile
+/simulations/results
+/.settings
+/out
+/src/intairnet-gpsr
+/Makefile
 .DS_Store

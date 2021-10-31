@@ -22,8 +22,10 @@ import inet.physicallayer.contract.packetlevel.IRadioMedium;
 import inet.visualizer.integrated.IntegratedMultiVisualizer;
 import inet.visualizer.contract.IIntegratedVisualizer;
 import tdma.scheduler.TdmaScheduler;
+import inet.common.scenario.ScenarioManager;
 import inet.node.ethernet.Eth1G;
 import inet.node.ethernet.EtherSwitch;
+
 
 
 //module AircraftManet extends ManetRouter {
@@ -33,12 +35,24 @@ import inet.node.ethernet.EtherSwitch;
 //        eth[0].phys <--> ethg[0]; // Ethernet sends frames to cable
 //}
 
-network Modifiedgpsr
+network IntAirNet
 {
     parameters:
-        @display("bgb=650,500;bgl=2");
+        int numAircrafts = default(0);
+        int numGroundStations = default(1);
+        string mobility_file = "NAT1515d3_data/NAT1515d3_mobility.txt";
+        string scenarioManager_file = "NAT1515d3_data/NAT1515d3_scenarioManager.xml";
+
+        @display("bgb=10000000,10000000;bgl=2");
         @figure[title](type=label; pos=0,-1; anchor=sw; color=darkblue);
     submodules:
+        scenarioManager: ScenarioManager;
+        //		responsible of assigning slots to the aircrafts based in their transmission buffer		
+        scheduler: TdmaScheduler {
+            parameters:
+                @display("p=100,400;is=s");
+        }
+        
         radioMedium: <default("UnitDiskRadioMedium")> like IRadioMedium {
             @display("p=580,275");
         }
@@ -46,44 +60,25 @@ network Modifiedgpsr
         visualizer: IntegratedMultiVisualizer {
             @display("p=100,200");
         }
-
         configurator: Ipv4NetworkConfigurator {
             parameters:
                 @display("p=100,100;is=s");
         }
 
-        //		responsible of assigning slots to the aircrafts based in their transmission buffer		
-        scheduler: TdmaScheduler {
-            parameters:
-                @display("p=100,400;is=s");
+        aircraft[numAircrafts]: ManetRouter {
         }
 
-        hostA: ManetRouter {
+        groundStation[numGroundStations]: ManetRouter {
             parameters:
-                @display("p=50,325");
-        }
-
-        hostB: ManetRouter {
-            parameters:
-                @display("p=250,325");
-        }
-
-        groundStation: StandardHost {
-            parameters:
-                @display("p=250,125");
+                @display("i=device/receiverdish_vl");
         }
         
         switch1: EtherSwitch {
             parameters:
-                @display("p=250,200");
-            gates:
-                ethg[];
+                @display("p=4700000.285,1381949.583");
+            gates: 
+                ethg[400];
         }
-    connections:
-        switch1.ethg++  <--> Eth1G <--> hostA.ethg++;
-        switch1.ethg++  <--> Eth1G <--> hostB.ethg++;
-        groundStation.ethg++ <--> Eth1G <--> switch1.ethg++ ;
-//        hostA.ethg++ <--> Eth1G <--> groundStation.ethg++;
-//        hostB.ethg++ <--> Eth1G <--> groundStation.ethg++;
-////        hostA.ethg++ <--> Eth1G <--> hostB.ethg++;
+    connections allowunconnected:
+        groundStation[0].ethg++ <--> Eth1G <--> switch1.ethg++ ;
 }

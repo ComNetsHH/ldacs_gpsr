@@ -507,6 +507,7 @@ L3Address GpsrModified::findNextHop(const L3Address& destination, GpsrOption *gp
     // Check whether the GS is in communication range (Musab)
     //////////////////////////////////////////////////////////////////////////
     m distanceToGroundStation = m(mobility->getCurrentPosition().distance(gpsrOption->getDestinationPosition()));
+    EV_INFO << "The distance to the ground station = " << km(distanceToGroundStation) << endl;
     if (distanceToGroundStation <= groundStationRange) {
         EV_INFO << "The ground station is within communication range" << endl;
         return destination; // The next hop is the destination (the ground station)

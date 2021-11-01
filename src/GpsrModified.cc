@@ -106,10 +106,10 @@ void GpsrModified::initialize(int stage)
         positionByteLength = par("positionByteLength");
         // KLUDGE: implement position registry protocol
         globalPositionTable.clear();
-        //////////////////////////////////////////////////////////////////////////
-        // Register Hop Count Signal (Musab)
-        //////////////////////////////////////////////////////////////////////////
-        hopCountSignal = registerSignal("hopCount");
+//        //////////////////////////////////////////////////////////////////////////
+//        // Register Hop Count Signal (Musab)
+//        //////////////////////////////////////////////////////////////////////////
+//        hopCountSignal = registerSignal("hopCount");
         //////////////////////////////////////////////////////////////////////////
         // The ground station communication range + a2gOutputInterface (Musab)
         //////////////////////////////////////////////////////////////////////////
@@ -282,11 +282,11 @@ GpsrOption *GpsrModified::createGpsrOption(L3Address destination)
     gpsrOption->setDestinationPosition(GroundStationLocation);
 //    gpsrOption->setDestinationPosition(lookupPositionInGlobalRegistry(destination));
     gpsrOption->setLength(computeOptionLength(gpsrOption));
-    //////////////////////////////////////////////////////////////////////////
-    // Emit Hop Count Signal (Musab)
-    //////////////////////////////////////////////////////////////////////////
-    // Initially create a packet with a hop count value of 0 (Musab)
-    gpsrOption->setHopCount(0);
+//    //////////////////////////////////////////////////////////////////////////
+//    // Emit Hop Count Signal (Musab)
+//    //////////////////////////////////////////////////////////////////////////
+//    // Initially create a packet with a hop count value of 0 (Musab)
+//    gpsrOption->setHopCount(0);
     return gpsrOption;
 }
 
@@ -651,12 +651,12 @@ INetfilter::IHook::Result GpsrModified::routeDatagram(Packet *datagram, GpsrOpti
             return ACCEPT;
         }
         datagram->addTagIfAbsent<InterfaceReq>()->setInterfaceId(interfaceEntry->getInterfaceId());
-        //////////////////////////////////////////////////////////////////////////
-        // Emit Hop Count Signal (Musab)
-        //////////////////////////////////////////////////////////////////////////
-        // Increment the hop count value by 1 (Musab)
-        gpsrOption->setHopCount(gpsrOption->getHopCount() + 1);
-        EV_INFO << "Current hop count = " << gpsrOption->getHopCount() << endl;
+//        //////////////////////////////////////////////////////////////////////////
+//        // Emit Hop Count Signal (Musab)
+//        //////////////////////////////////////////////////////////////////////////
+//        // Increment the hop count value by 1 (Musab)
+//        gpsrOption->setHopCount(gpsrOption->getHopCount() + 1);
+//        EV_INFO << "Current hop count = " << gpsrOption->getHopCount() << endl;
         return ACCEPT;
     }
 }
@@ -830,24 +830,24 @@ INetfilter::IHook::Result GpsrModified::datagramLocalOutHook(Packet *packet)
     }
 }
 
+////
+//// This allows emitting the hop count signal for application packets only (Musab)
+////
 //
-// This allows emitting the hop count signal for application packets only (Musab)
-//
-
-INetfilter::IHook::Result GpsrModified::datagramLocalInHook(Packet *packet)
-{
-    Enter_Method("datagramLocalInHook");
-    const auto& networkHeader = getNetworkProtocolHeader(packet);
-    const L3Address& destination = networkHeader->getDestinationAddress();
-    //////////////////////////////////////////////////////////////////////////
-    // Emit Hop Count Signal (Musab)
-    //////////////////////////////////////////////////////////////////////////
-    const GpsrOption *gpsrOption = findGpsrOptionInNetworkDatagram(networkHeader);
-    // Emit signal only in the case if gpsrOption exist (Musab)
-    if (gpsrOption != nullptr)
-        emit(hopCountSignal, gpsrOption->getHopCount());
-    return ACCEPT;
-}
+//INetfilter::IHook::Result GpsrModified::datagramLocalInHook(Packet *packet)
+//{
+//    Enter_Method("datagramLocalInHook");
+//    const auto& networkHeader = getNetworkProtocolHeader(packet);
+//    const L3Address& destination = networkHeader->getDestinationAddress();
+//    //////////////////////////////////////////////////////////////////////////
+//    // Emit Hop Count Signal (Musab)
+//    //////////////////////////////////////////////////////////////////////////
+//    const GpsrOption *gpsrOption = findGpsrOptionInNetworkDatagram(networkHeader);
+//    // Emit signal only in the case if gpsrOption exist (Musab)
+//    if (gpsrOption != nullptr)
+//        emit(hopCountSignal, gpsrOption->getHopCount());
+//    return ACCEPT;
+//}
 
 //
 // lifecycle

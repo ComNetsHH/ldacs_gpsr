@@ -63,11 +63,11 @@ simple GpsrModified like IManetRouting
         double GSz @unit(m) = default(662813.2938m);
         // visualization parameters
         bool displayBubbles = default(false);	// display bubble messages about changes in routing state for packets
-        //////////////////////////////////////////////////////////////////////////
-        // Emit Hop Count Signal (Musab)
-        //////////////////////////////////////////////////////////////////////////
-        @signal[hopCount](type=unsigned int);
-        @statistic[hopCount](source=hopCount; record=vector);
+//        //////////////////////////////////////////////////////////////////////////
+//        // Emit Hop Count Signal (Musab)
+//        //////////////////////////////////////////////////////////////////////////
+//        @signal[hopCount](type=unsigned int);
+//        @statistic[hopCount](source=hopCount; record=vector);
     gates:
         input ipIn;
         output ipOut;

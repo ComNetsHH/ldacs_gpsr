@@ -24,7 +24,7 @@ import inet.visualizer.contract.IIntegratedVisualizer;
 import data_traffic_applications.UdpTraceBasedApp;
 import tdma.scheduler.TdmaScheduler;
 import inet.common.scenario.ScenarioManager;
-import inet.node.ethernet.Eth1G;
+//import inet.node.ethernet.Eth1G;
 import inet.node.ethernet.EtherSwitch;
 import ned.DatarateChannel;
 
@@ -48,6 +48,14 @@ network IntAirNet
 
         @display("bgb=10000000,10000000;bgl=2");
         @figure[title](type=label; pos=0,-1; anchor=sw; color=darkblue);
+    types:
+        channel Eth1G extends DatarateChannel
+        {
+            parameters: 
+            datarate = 1Gbps;
+            delay = 0s;
+            ber = 0;
+        }
     submodules:
         scenarioManager: ScenarioManager;
         //		responsible of assigning slots to the aircrafts based in their transmission buffer		
@@ -80,7 +88,7 @@ network IntAirNet
             parameters:
                 @display("p=4700000.285,1381949.583");
             gates: 
-                ethg[400];
+                ethg[375]; // 371 aircraft + GS (372)
         }
     connections allowunconnected:
         groundStation[0].ethg++ <--> Eth1G <--> switchGS.ethg++ ;

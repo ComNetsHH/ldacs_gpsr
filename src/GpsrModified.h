@@ -173,11 +173,11 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
     virtual Result datagramPreRoutingHook(Packet *datagram) override;
     virtual Result datagramForwardHook(Packet *datagram) override { return ACCEPT; }
     virtual Result datagramPostRoutingHook(Packet *datagram) override { return ACCEPT; }
-    //////////////////////////////////////////////////////////////////////////
-    // Emit Hop Count Signal (Musab)
-    //////////////////////////////////////////////////////////////////////////
-    virtual Result datagramLocalInHook(Packet *datagram) override;
-    //    virtual Result datagramLocalInHook(Packet *datagram) override { return ACCEPT; }
+//    //////////////////////////////////////////////////////////////////////////
+//    // Emit Hop Count Signal (Musab)
+//    //////////////////////////////////////////////////////////////////////////
+//    virtual Result datagramLocalInHook(Packet *datagram) override;
+    virtual Result datagramLocalInHook(Packet *datagram) override { return ACCEPT; }
     virtual Result datagramLocalOutHook(Packet *datagram) override;
 
     // lifecycle
@@ -188,10 +188,10 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
     // notification
     virtual void receiveSignal(cComponent *source, simsignal_t signalID, cObject *obj, cObject *details) override;
 
-    //////////////////////////////////////////////////////////////////////////
-    // Emit Hop Count Signal (Musab)
-    //////////////////////////////////////////////////////////////////////////
-    simsignal_t hopCountSignal;
+//    //////////////////////////////////////////////////////////////////////////
+//    // Emit Hop Count Signal (Musab)
+//    //////////////////////////////////////////////////////////////////////////
+//    simsignal_t hopCountSignal;
 
 };
 

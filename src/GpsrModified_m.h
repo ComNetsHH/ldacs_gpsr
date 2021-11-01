@@ -138,10 +138,6 @@ inline void doParsimUnpacking(omnetpp::cCommBuffer *b, GpsrBeaconModified& obj) 
  *     L3Address currentFaceFirstSenderAddress;   // e0
  *     L3Address currentFaceFirstReceiverAddress; // e0
  *     L3Address senderAddress; // TODO: this field is not strictly needed by GPSR (should be eliminated)
- *     //////////////////////////////////////////////////////////////////////////
- *     // Record Hop Count Signal (Musab)
- *     //////////////////////////////////////////////////////////////////////////
- *     unsigned int hopCount;    // The number of hops traversed by each application message.
  * }
  * </pre>
  */
@@ -155,7 +151,6 @@ class GpsrOption : public ::inet::TlvOptionBase
     L3Address currentFaceFirstSenderAddress;
     L3Address currentFaceFirstReceiverAddress;
     L3Address senderAddress;
-    unsigned int hopCount = 0;
 
   private:
     void copy(const GpsrOption& other);
@@ -194,8 +189,6 @@ class GpsrOption : public ::inet::TlvOptionBase
     virtual const L3Address& getSenderAddress() const;
     virtual L3Address& getSenderAddressForUpdate() { return const_cast<L3Address&>(const_cast<GpsrOption*>(this)->getSenderAddress());}
     virtual void setSenderAddress(const L3Address& senderAddress);
-    virtual unsigned int getHopCount() const;
-    virtual void setHopCount(unsigned int hopCount);
 };
 
 inline void doParsimPacking(omnetpp::cCommBuffer *b, const GpsrOption& obj) {obj.parsimPack(b);}

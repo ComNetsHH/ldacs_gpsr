@@ -1,3 +1,11 @@
+[Inspector-0]
+classname=IdealChannel
+fullscreen=false
+geom=@Rect(72 62 400 300)
+id=@Variant(\0\0\0\x81\0\0\0\0\0\0\x1\xf0)
+object=IntAirNet.switchGS.ethg$i[0].channel
+type=1
+
 [RunModeProfiles]
 fast-max-animation-speed=nan
 fast-max-playback-speed=1e+06

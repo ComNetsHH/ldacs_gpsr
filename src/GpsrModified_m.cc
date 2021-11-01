@@ -559,6 +559,7 @@ void GpsrOption::copy(const GpsrOption& other)
     this->currentFaceFirstSenderAddress = other.currentFaceFirstSenderAddress;
     this->currentFaceFirstReceiverAddress = other.currentFaceFirstReceiverAddress;
     this->senderAddress = other.senderAddress;
+    this->hopCount = other.hopCount;
 }
 
 void GpsrOption::parsimPack(omnetpp::cCommBuffer *b) const
@@ -571,6 +572,7 @@ void GpsrOption::parsimPack(omnetpp::cCommBuffer *b) const
     doParsimPacking(b,this->currentFaceFirstSenderAddress);
     doParsimPacking(b,this->currentFaceFirstReceiverAddress);
     doParsimPacking(b,this->senderAddress);
+    doParsimPacking(b,this->hopCount);
 }
 
 void GpsrOption::parsimUnpack(omnetpp::cCommBuffer *b)
@@ -583,6 +585,7 @@ void GpsrOption::parsimUnpack(omnetpp::cCommBuffer *b)
     doParsimUnpacking(b,this->currentFaceFirstSenderAddress);
     doParsimUnpacking(b,this->currentFaceFirstReceiverAddress);
     doParsimUnpacking(b,this->senderAddress);
+    doParsimUnpacking(b,this->hopCount);
 }
 
 inet::GpsrForwardingMode GpsrOption::getRoutingMode() const
@@ -655,6 +658,16 @@ void GpsrOption::setSenderAddress(const L3Address& senderAddress)
     this->senderAddress = senderAddress;
 }
 
+unsigned int GpsrOption::getHopCount() const
+{
+    return this->hopCount;
+}
+
+void GpsrOption::setHopCount(unsigned int hopCount)
+{
+    this->hopCount = hopCount;
+}
+
 class GpsrOptionDescriptor : public omnetpp::cClassDescriptor
 {
   private:
@@ -667,6 +680,7 @@ class GpsrOptionDescriptor : public omnetpp::cClassDescriptor
         FIELD_currentFaceFirstSenderAddress,
         FIELD_currentFaceFirstReceiverAddress,
         FIELD_senderAddress,
+        FIELD_hopCount,
     };
   public:
     GpsrOptionDescriptor();
@@ -729,7 +743,7 @@ const char *GpsrOptionDescriptor::getProperty(const char *propertyname) const
 int GpsrOptionDescriptor::getFieldCount() const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
-    return basedesc ? 7+basedesc->getFieldCount() : 7;
+    return basedesc ? 8+basedesc->getFieldCount() : 8;
 }
 
 unsigned int GpsrOptionDescriptor::getFieldTypeFlags(int field) const
@@ -741,15 +755,16 @@ unsigned int GpsrOptionDescriptor::getFieldTypeFlags(int field) const
         field -= basedesc->getFieldCount();
     }
     static unsigned int fieldTypeFlags[] = {
-        FD_ISEDITABLE,    // FIELD_routingMode
+        0,    // FIELD_routingMode
         FD_ISCOMPOUND,    // FIELD_destinationPosition
         FD_ISCOMPOUND,    // FIELD_perimeterRoutingStartPosition
         FD_ISCOMPOUND,    // FIELD_perimeterRoutingForwardPosition
         0,    // FIELD_currentFaceFirstSenderAddress
         0,    // FIELD_currentFaceFirstReceiverAddress
         0,    // FIELD_senderAddress
+        FD_ISEDITABLE,    // FIELD_hopCount
     };
-    return (field >= 0 && field < 7) ? fieldTypeFlags[field] : 0;
+    return (field >= 0 && field < 8) ? fieldTypeFlags[field] : 0;
 }
 
 const char *GpsrOptionDescriptor::getFieldName(int field) const
@@ -768,8 +783,9 @@ const char *GpsrOptionDescriptor::getFieldName(int field) const
         "currentFaceFirstSenderAddress",
         "currentFaceFirstReceiverAddress",
         "senderAddress",
+        "hopCount",
     };
-    return (field >= 0 && field < 7) ? fieldNames[field] : nullptr;
+    return (field >= 0 && field < 8) ? fieldNames[field] : nullptr;
 }
 
 int GpsrOptionDescriptor::findField(const char *fieldName) const
@@ -783,6 +799,7 @@ int GpsrOptionDescriptor::findField(const char *fieldName) const
     if (fieldName[0] == 'c' && strcmp(fieldName, "currentFaceFirstSenderAddress") == 0) return base+4;
     if (fieldName[0] == 'c' && strcmp(fieldName, "currentFaceFirstReceiverAddress") == 0) return base+5;
     if (fieldName[0] == 's' && strcmp(fieldName, "senderAddress") == 0) return base+6;
+    if (fieldName[0] == 'h' && strcmp(fieldName, "hopCount") == 0) return base+7;
     return basedesc ? basedesc->findField(fieldName) : -1;
 }
 
@@ -802,8 +819,9 @@ const char *GpsrOptionDescriptor::getFieldTypeString(int field) const
         "inet::L3Address",    // FIELD_currentFaceFirstSenderAddress
         "inet::L3Address",    // FIELD_currentFaceFirstReceiverAddress
         "inet::L3Address",    // FIELD_senderAddress
+        "unsigned int",    // FIELD_hopCount
     };
-    return (field >= 0 && field < 7) ? fieldTypeStrings[field] : nullptr;
+    return (field >= 0 && field < 8) ? fieldTypeStrings[field] : nullptr;
 }
 
 const char **GpsrOptionDescriptor::getFieldPropertyNames(int field) const
@@ -884,6 +902,7 @@ std::string GpsrOptionDescriptor::getFieldValueAsString(void *object, int field,
         case FIELD_currentFaceFirstSenderAddress: return pp->getCurrentFaceFirstSenderAddress().str();
         case FIELD_currentFaceFirstReceiverAddress: return pp->getCurrentFaceFirstReceiverAddress().str();
         case FIELD_senderAddress: return pp->getSenderAddress().str();
+        case FIELD_hopCount: return ulong2string(pp->getHopCount());
         default: return "";
     }
 }
@@ -898,7 +917,7 @@ bool GpsrOptionDescriptor::setFieldValueAsString(void *object, int field, int i,
     }
     GpsrOption *pp = (GpsrOption *)object; (void)pp;
     switch (field) {
-        case FIELD_routingMode: pp->setRoutingMode((inet::GpsrForwardingMode)string2enum(value, "inet::GpsrForwardingMode")); return true;
+        case FIELD_hopCount: pp->setHopCount(string2ulong(value)); return true;
         default: return false;
     }
 }

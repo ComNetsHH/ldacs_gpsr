@@ -21,10 +21,12 @@ import inet.node.inet.StandardHost;
 import inet.physicallayer.contract.packetlevel.IRadioMedium;
 import inet.visualizer.integrated.IntegratedMultiVisualizer;
 import inet.visualizer.contract.IIntegratedVisualizer;
+import data_traffic_applications.UdpTraceBasedApp;
 import tdma.scheduler.TdmaScheduler;
 import inet.common.scenario.ScenarioManager;
 import inet.node.ethernet.Eth1G;
 import inet.node.ethernet.EtherSwitch;
+
 
 
 
@@ -73,12 +75,12 @@ network IntAirNet
                 @display("i=device/receiverdish_vl");
         }
         
-        switch1: EtherSwitch {
+        switchGS: EtherSwitch {
             parameters:
                 @display("p=4700000.285,1381949.583");
             gates: 
                 ethg[400];
         }
     connections allowunconnected:
-        groundStation[0].ethg++ <--> Eth1G <--> switch1.ethg++ ;
+        groundStation[0].ethg++ <--> Eth1G <--> switchGS.ethg++ ;
 }

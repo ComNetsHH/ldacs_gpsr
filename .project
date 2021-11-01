@@ -5,6 +5,7 @@
 	<projects>
 		<project>inet</project>
 		<project>tdma</project>
+		<project>UdpTracedBasicApp</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

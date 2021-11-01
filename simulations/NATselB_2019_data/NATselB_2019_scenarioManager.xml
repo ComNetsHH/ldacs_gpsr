@@ -2,7 +2,7 @@
 	<at t="0">
 		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
 		<connect src-module="aircraft[0]" src-gate="ethg[0]"
-                 dest-module="switch1" dest-gate="ethg[1]"
+                 dest-module="switchGS" dest-gate="ethg[1]"
                  channel-type="inet.node.ethernet.Eth1G">
         </connect>
 	</at>
@@ -10,7 +10,7 @@
 	<at t="0">
 		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
 		<connect src-module="aircraft[1]" src-gate="ethg[0]"
-                 dest-module="switch1" dest-gate="ethg[2]"
+                 dest-module="switchGS" dest-gate="ethg[2]"
                  channel-type="inet.node.ethernet.Eth1G">
         </connect>
 	</at>
@@ -18,7 +18,7 @@
 	<at t="0">
 		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
 		<connect src-module="aircraft[2]" src-gate="ethg[0]"
-                 dest-module="switch1" dest-gate="ethg[3]"
+                 dest-module="switchGS" dest-gate="ethg[3]"
                  channel-type="inet.node.ethernet.Eth1G">
         </connect>
 	</at>
@@ -26,7 +26,7 @@
 	<at t="0">
 		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
 		<connect src-module="aircraft[3]" src-gate="ethg[0]"
-                 dest-module="switch1" dest-gate="ethg[4]"
+                 dest-module="switchGS" dest-gate="ethg[4]"
                  channel-type="inet.node.ethernet.Eth1G">
         </connect>
 	</at>
@@ -34,7 +34,7 @@
 	<at t="0">
 		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
 		<connect src-module="aircraft[4]" src-gate="ethg[0]"
-                 dest-module="switch1" dest-gate="ethg[5]"
+                 dest-module="switchGS" dest-gate="ethg[5]"
                  channel-type="inet.node.ethernet.Eth1G">
         </connect>
 	</at>
@@ -42,7 +42,7 @@
 	<at t="0">
 		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
 		<connect src-module="aircraft[5]" src-gate="ethg[0]"
-                 dest-module="switch1" dest-gate="ethg[6]"
+                 dest-module="switchGS" dest-gate="ethg[6]"
                  channel-type="inet.node.ethernet.Eth1G">
         </connect>
 	</at>
@@ -50,7 +50,7 @@
 	<at t="0">
 		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
 		<connect src-module="aircraft[6]" src-gate="ethg[0]"
-                 dest-module="switch1" dest-gate="ethg[7]"
+                 dest-module="switchGS" dest-gate="ethg[7]"
                  channel-type="inet.node.ethernet.Eth1G">
         </connect>
 	</at>
@@ -58,7 +58,7 @@
 	<at t="0">
 		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
 		<connect src-module="aircraft[7]" src-gate="ethg[0]"
-                 dest-module="switch1" dest-gate="ethg[8]"
+                 dest-module="switchGS" dest-gate="ethg[8]"
                  channel-type="inet.node.ethernet.Eth1G">
         </connect>
 	</at>
@@ -66,7 +66,7 @@
 	<at t="0">
 		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
 		<connect src-module="aircraft[8]" src-gate="ethg[0]"
-                 dest-module="switch1" dest-gate="ethg[9]"
+                 dest-module="switchGS" dest-gate="ethg[9]"
                  channel-type="inet.node.ethernet.Eth1G">
         </connect>
 	</at>
@@ -74,7 +74,7 @@
 	<at t="0">
 		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
 		<connect src-module="aircraft[9]" src-gate="ethg[0]"
-                 dest-module="switch1" dest-gate="ethg[10]"
+                 dest-module="switchGS" dest-gate="ethg[10]"
                  channel-type="inet.node.ethernet.Eth1G">
         </connect>
 	</at>
@@ -82,7 +82,7 @@
 	<at t="0">
 		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
 		<connect src-module="aircraft[10]" src-gate="ethg[0]"
-                 dest-module="switch1" dest-gate="ethg[11]"
+                 dest-module="switchGS" dest-gate="ethg[11]"
                  channel-type="inet.node.ethernet.Eth1G">
         </connect>
 	</at>

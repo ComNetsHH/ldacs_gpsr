@@ -64,5 +64,9 @@ class GpsrOption extends TlvOptionBase {
     L3Address currentFaceFirstSenderAddress;   // e0
     L3Address currentFaceFirstReceiverAddress; // e0
     L3Address senderAddress; // TODO: this field is not strictly needed by GPSR (should be eliminated)
+    //////////////////////////////////////////////////////////////////////////
+    // Record Hop Count Signal (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    unsigned int hopCount;    // The number of hops traversed by each application message.
 }
 

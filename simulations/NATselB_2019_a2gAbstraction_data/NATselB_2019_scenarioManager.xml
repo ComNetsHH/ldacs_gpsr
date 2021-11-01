@@ -1,0 +1,1857 @@
+<scenario>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[0]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[1]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[0]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[1]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[2]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[1]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[2]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[3]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[2]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[3]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[4]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[3]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[4]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[5]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1140" module="aircraft[4]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[5]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[6]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[5]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[6]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[7]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1140" module="aircraft[6]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[7]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[8]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[7]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[8]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[9]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1020" module="aircraft[8]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[9]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[10]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[9]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[10]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[11]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[10]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[11]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[12]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[11]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[12]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[13]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[12]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[13]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[14]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[13]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[14]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[15]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="600" module="aircraft[14]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[15]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[16]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[15]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[16]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[17]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[16]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[17]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[18]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[17]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[18]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[19]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[18]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[19]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[20]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[19]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[20]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[21]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[20]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[21]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[22]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[21]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[22]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[23]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[22]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[23]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[24]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[23]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[24]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[25]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[24]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[25]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[26]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[25]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[26]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[27]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[26]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[27]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[28]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[27]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[28]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[29]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[28]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[29]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[30]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[29]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[30]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[31]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[30]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[31]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[32]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[31]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[32]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[33]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="0" module="aircraft[32]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[33]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[34]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="0" module="aircraft[33]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[34]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[35]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[34]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[35]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[36]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="540" module="aircraft[35]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[36]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[37]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[36]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[37]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[38]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[37]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[38]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[39]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="300" module="aircraft[38]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[39]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[40]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[39]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[40]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[41]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[40]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[41]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[42]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[41]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[42]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[43]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[42]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[43]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[44]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[43]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[44]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[45]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[44]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[45]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[46]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="720" module="aircraft[45]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[46]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[47]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[46]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[47]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[48]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[47]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[48]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[49]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[48]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[49]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[50]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1680" module="aircraft[49]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[50]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[51]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[50]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[51]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[52]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[51]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[52]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[53]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[52]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[53]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[54]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[53]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[54]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[55]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="840" module="aircraft[54]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[55]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[56]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[55]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[56]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[57]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[56]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[57]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[58]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[57]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[58]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[59]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[58]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[59]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[60]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[59]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[60]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[61]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[60]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[61]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[62]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[61]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[62]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[63]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[62]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[63]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[64]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[63]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[64]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[65]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[64]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[65]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[66]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[65]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[66]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[67]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[66]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[67]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[68]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="780" module="aircraft[67]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[68]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[69]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[68]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[69]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[70]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[69]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[70]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[71]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[70]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[71]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[72]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[71]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[72]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[73]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[72]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[73]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[74]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[73]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[74]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[75]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[74]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[75]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[76]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[75]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[76]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[77]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[76]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[77]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[78]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[77]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[78]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[79]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[78]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[79]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[80]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[79]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[80]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[81]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[80]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[81]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[82]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[81]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[82]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[83]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[82]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[83]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[84]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[83]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[84]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[85]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[84]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[85]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[86]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[85]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[86]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[87]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[86]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[87]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[88]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[87]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[88]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[89]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[88]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[89]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[90]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[89]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[90]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[91]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[90]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[91]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[92]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1620" module="aircraft[91]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[92]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[93]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[92]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[93]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[94]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[93]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[94]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[95]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[94]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[95]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[96]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[95]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[96]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[97]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[96]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[97]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[98]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[97]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[98]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[99]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[98]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[99]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[100]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[99]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[100]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[101]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[100]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[101]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[102]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[101]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[102]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[103]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[102]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[103]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[104]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[103]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[104]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[105]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[104]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[105]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[106]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[105]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[106]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[107]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[106]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[107]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[108]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[107]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[108]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[109]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[108]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[109]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[110]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[109]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[110]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[111]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[110]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[111]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[112]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[111]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[112]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[113]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[112]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[113]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[114]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[113]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[114]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[115]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[114]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[115]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[116]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[115]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[116]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[117]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[116]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[117]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[118]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[117]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[118]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[119]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[118]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[119]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[120]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[119]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[120]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[121]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[120]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[121]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[122]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[121]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[122]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[123]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[122]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[123]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[124]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="840" module="aircraft[123]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[124]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[125]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[124]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[125]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[126]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[125]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[126]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[127]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[126]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[127]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[128]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[127]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[128]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[129]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[128]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[129]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[130]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[129]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[130]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[131]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1140" module="aircraft[130]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[131]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[132]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[131]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[132]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[133]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[132]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[133]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[134]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[133]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[134]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[135]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[134]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[135]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[136]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[135]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[136]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[137]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[136]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[137]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[138]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[137]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[138]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[139]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[138]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[139]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[140]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="240" module="aircraft[139]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[140]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[141]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[140]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[141]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[142]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[141]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[142]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[143]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[142]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[143]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[144]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[143]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[144]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[145]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[144]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[145]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[146]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[145]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[146]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[147]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1740" module="aircraft[146]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[147]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[148]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[147]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[148]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[149]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[148]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[149]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[150]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[149]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[150]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[151]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="720" module="aircraft[150]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[151]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[152]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[151]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[152]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[153]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[152]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[153]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[154]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[153]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[154]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[155]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[154]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[155]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[156]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[155]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[156]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[157]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[156]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[157]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[158]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[157]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[158]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[159]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[158]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[159]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[160]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[159]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[160]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[161]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[160]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[161]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[162]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[161]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[162]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[163]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[162]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[163]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[164]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[163]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[164]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[165]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[164]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[165]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[166]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[165]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[166]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[167]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[166]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[167]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[168]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[167]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[168]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[169]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[168]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[169]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[170]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[169]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[170]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[171]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[170]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[171]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[172]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[171]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[172]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[173]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[172]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[173]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[174]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[173]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[174]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[175]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[174]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[175]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[176]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[175]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[176]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[177]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[176]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[177]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[178]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[177]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[178]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[179]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[178]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[179]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[180]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[179]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[180]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[181]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[180]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[181]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[182]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1500" module="aircraft[181]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[182]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[183]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[182]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[183]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[184]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[183]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[184]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[185]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[184]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[185]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[186]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[185]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[186]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[187]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1680" module="aircraft[186]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[187]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[188]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="540" module="aircraft[187]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[188]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[189]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[188]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[189]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[190]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[189]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[190]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[191]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[190]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[191]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[192]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[191]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[192]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[193]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[192]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[193]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[194]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[193]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[194]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[195]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1080" module="aircraft[194]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[195]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[196]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="480" module="aircraft[195]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[196]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[197]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[196]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[197]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[198]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[197]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[198]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[199]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[198]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[199]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[200]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[199]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[200]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[201]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[200]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[201]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[202]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="960" module="aircraft[201]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[202]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[203]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[202]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[203]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[204]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[203]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[204]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[205]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[204]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[205]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[206]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1020" module="aircraft[205]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[206]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[207]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[206]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[207]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[208]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[207]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[208]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[209]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[208]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[209]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[210]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[209]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[210]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[211]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[210]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[211]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[212]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[211]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[212]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[213]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[212]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[213]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[214]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[213]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[214]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[215]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[214]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[215]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[216]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[215]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[216]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[217]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[216]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[217]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[218]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[217]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[218]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[219]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[218]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[219]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[220]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[219]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[220]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[221]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[220]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[221]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[222]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[221]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[222]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[223]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[222]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[223]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[224]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[223]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[224]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[225]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1320" module="aircraft[224]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[225]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[226]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="420" module="aircraft[225]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[226]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[227]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="0" module="aircraft[226]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[227]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[228]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[227]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[228]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[229]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[228]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[229]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[230]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[229]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[230]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[231]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[230]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[231]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[232]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[231]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[232]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[233]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[232]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[233]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[234]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[233]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[234]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[235]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[234]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[235]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[236]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[235]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[236]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[237]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[236]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[237]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[238]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="60" module="aircraft[237]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[238]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[239]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[238]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[239]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[240]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[239]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[240]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[241]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1440" module="aircraft[240]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[241]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[242]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[241]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[242]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[243]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[242]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[243]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[244]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[243]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[244]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[245]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[244]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[245]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[246]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[245]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[246]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[247]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[246]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[247]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[248]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[247]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[248]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[249]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[248]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[249]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[250]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[249]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[250]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[251]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[250]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[251]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[252]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[251]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[252]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[253]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[252]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[253]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[254]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="720" module="aircraft[253]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[254]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[255]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[254]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[255]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[256]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[255]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[256]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[257]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[256]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[257]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[258]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[257]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[258]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[259]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="300" module="aircraft[258]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[259]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[260]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[259]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[260]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[261]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[260]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[261]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[262]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[261]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[262]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[263]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[262]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[263]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[264]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[263]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[264]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[265]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[264]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[265]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[266]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[265]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[266]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[267]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[266]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[267]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[268]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[267]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[268]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[269]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[268]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[269]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[270]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[269]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[270]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[271]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[270]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[271]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[272]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1740" module="aircraft[271]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[272]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[273]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[272]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[273]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[274]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[273]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[274]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[275]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[274]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[275]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[276]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[275]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[276]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[277]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1260" module="aircraft[276]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[277]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[278]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1140" module="aircraft[277]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[278]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[279]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[278]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[279]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[280]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[279]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[280]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[281]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[280]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[281]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[282]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[281]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[282]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[283]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[282]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[283]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[284]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="960" module="aircraft[283]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[284]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[285]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[284]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[285]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[286]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[285]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[286]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[287]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[286]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[287]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[288]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1620" module="aircraft[287]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[288]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[289]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[288]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[289]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[290]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[289]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[290]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[291]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[290]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[291]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[292]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[291]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[292]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[293]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[292]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[293]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[294]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[293]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[294]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[295]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[294]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[295]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[296]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[295]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[296]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[297]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1200" module="aircraft[296]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[297]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[298]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1740" module="aircraft[297]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[298]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[299]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[298]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[299]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[300]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[299]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[300]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[301]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1320" module="aircraft[300]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[301]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[302]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[301]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[302]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[303]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[302]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[303]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[304]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[303]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[304]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[305]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[304]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[305]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[306]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[305]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[306]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[307]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[306]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[307]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[308]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[307]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[308]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[309]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1560" module="aircraft[308]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[309]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[310]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[309]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[310]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[311]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="0" module="aircraft[310]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[311]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[312]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[311]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[312]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[313]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[312]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[313]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[314]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[313]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[314]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[315]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[314]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[315]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[316]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[315]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[316]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[317]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[316]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[317]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[318]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[317]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[318]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[319]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[318]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[319]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[320]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[319]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[320]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[321]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1440" module="aircraft[320]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[321]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[322]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="720" module="aircraft[321]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[322]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[323]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[322]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[323]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[324]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[323]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[324]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[325]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[324]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[325]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[326]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[325]"/>
+	<at t="0">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[326]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[327]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[326]"/>
+	<at t="60">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[327]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[328]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[327]"/>
+	<at t="120">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[328]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[329]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="420" module="aircraft[328]"/>
+	<at t="120">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[329]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[330]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[329]"/>
+	<at t="120">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[330]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[331]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[330]"/>
+	<at t="120">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[331]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[332]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[331]"/>
+	<at t="180">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[332]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[333]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[332]"/>
+	<at t="180">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[333]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[334]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[333]"/>
+	<at t="180">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[334]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[335]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[334]"/>
+	<at t="240">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[335]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[336]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[335]"/>
+	<at t="300">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[336]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[337]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[336]"/>
+	<at t="300">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[337]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[338]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[337]"/>
+	<at t="300">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[338]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[339]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[338]"/>
+	<at t="420">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[339]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[340]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[339]"/>
+	<at t="420">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[340]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[341]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[340]"/>
+	<at t="420">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[341]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[342]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[341]"/>
+	<at t="480">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[342]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[343]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[342]"/>
+	<at t="480">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[343]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[344]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[343]"/>
+	<at t="600">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[344]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[345]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[344]"/>
+	<at t="600">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[345]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[346]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[345]"/>
+	<at t="600">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[346]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[347]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[346]"/>
+	<at t="720">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[347]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[348]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[347]"/>
+	<at t="780">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[348]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[349]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[348]"/>
+	<at t="900">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[349]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[350]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[349]"/>
+	<at t="960">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[350]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[351]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[350]"/>
+	<at t="960">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[351]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[352]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[351]"/>
+	<at t="1020">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[352]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[353]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[352]"/>
+	<at t="1020">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[353]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[354]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[353]"/>
+	<at t="1020">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[354]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[355]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[354]"/>
+	<at t="1080">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[355]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[356]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[355]"/>
+	<at t="1080">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[356]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[357]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[356]"/>
+	<at t="1140">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[357]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[358]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[357]"/>
+	<at t="1140">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[358]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[359]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[358]"/>
+	<at t="1260">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[359]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[360]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[359]"/>
+	<at t="1380">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[360]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[361]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[360]"/>
+	<at t="1440">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[361]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[362]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[361]"/>
+	<at t="1440">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[362]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[363]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[362]"/>
+	<at t="1500">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[363]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[364]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[363]"/>
+	<at t="1500">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[364]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[365]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[364]"/>
+	<at t="1500">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[365]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[366]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[365]"/>
+	<at t="1560">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[366]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[367]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[366]"/>
+	<at t="1620">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[367]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[368]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[367]"/>
+	<at t="1680">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[368]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[369]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[368]"/>
+	<at t="1680">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[369]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[370]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[369]"/>
+	<at t="1740">
+		<create-module type="inet.node.inet.ManetRouter" parent="." submodule="aircraft" vector="true"/>
+		<connect src-module="aircraft[370]" src-gate="ethg[0]" dest-module="switchGS" dest-gate="ethg[371]" channel-type="inet.node.ethernet.Eth1G"/>
+	</at>
+	<shutdown t="1800" module="aircraft[370]"/>
+</scenario>

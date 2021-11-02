@@ -38,7 +38,7 @@ import ned.DatarateChannel;
 //        eth[0].phys <--> ethg[0]; // Ethernet sends frames to cable
 //}
 
-network IntAirNet
+network gpsr
 {
     parameters:
         int numAircrafts = default(0);
@@ -48,14 +48,6 @@ network IntAirNet
 
         @display("bgb=10000000,10000000;bgl=2");
         @figure[title](type=label; pos=0,-1; anchor=sw; color=darkblue);
-    types:
-        channel Eth1G extends DatarateChannel
-        {
-            parameters: 
-            datarate = 1Gbps;
-            delay = 0s;
-            ber = 0;
-        }
     submodules:
         scenarioManager: ScenarioManager;
         //		responsible of assigning slots to the aircrafts based in their transmission buffer		
@@ -84,7 +76,19 @@ network IntAirNet
             parameters:
                 @display("i=device/receiverdish_vl");
         }
-        
+}
+
+network gpsr_modified extends gpsr
+{
+    types:
+        channel Eth1G extends DatarateChannel
+        {
+            parameters: 
+            datarate = 1Gbps;
+            delay = 0s;
+            ber = 0;
+        }
+    submodules:
         switchGS: EtherSwitch {
             parameters:
                 @display("p=4700000.285,1381949.583");

@@ -77,6 +77,7 @@ network IntAirNet
         }
 
         aircraft[numAircrafts]: ManetRouter {
+            @display("i=aircraft");
         }
 
         groundStation[numGroundStations]: ManetRouter {

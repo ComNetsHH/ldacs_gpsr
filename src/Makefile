@@ -2,7 +2,7 @@
 # OMNeT++/OMNEST Makefile for $(LIB_PREFIX)IntAirNet-gpsr
 #
 # This file was generated with the command:
-#  opp_makemake --make-so -f --deep -KINET_PROJ=../../inet4 -KTDMA_PROJ=/home/musab/intairnet-data-link-layer-simulation-model/omnetpp-5.6.2/workspace/tdma/tdma -KUDPTRACEDBASICAPP_PROJ=../../intairnet-traceBasedApp -DINET_IMPORT -I$$\(INET_PROJ\)/src -I$$\(TDMA_PROJ\) -L$$\(INET_PROJ\)/src -L$$\(TDMA_PROJ\)/src -L$$\(UDPTRACEDBASICAPP_PROJ\)/src -lINET$$\(D\) -ltdma$$\(D\) -lUdpTracedBasicApp$$\(D\)
+#  opp_makemake --make-so -f --deep -KINET_PROJ=../../inet4 -KORIGINAL_GPSR_PROJ=../../original-gpsr -KTDMA_PROJ=/home/musab/intairnet-data-link-layer-simulation-model/omnetpp-5.6.2/workspace/tdma/tdma -KUDPTRACEDBASICAPP_PROJ=../../intairnet-traceBasedApp -DINET_IMPORT -I$$\(INET_PROJ\)/src -I$$\(TDMA_PROJ\) -L$$\(INET_PROJ\)/src -L$$\(ORIGINAL_GPSR_PROJ\)/src -L$$\(TDMA_PROJ\)/src -L$$\(UDPTRACEDBASICAPP_PROJ\)/src -lINET$$\(D\) -loriginal-gpsr$$\(D\) -ltdma$$\(D\) -lUdpTracedBasicApp$$\(D\)
 #
 
 # Name of target to be created (-o option)
@@ -16,7 +16,7 @@ INCLUDE_PATH = -I$(INET_PROJ)/src -I$(TDMA_PROJ)
 EXTRA_OBJS =
 
 # Additional libraries (-L, -l options)
-LIBS = $(LDFLAG_LIBPATH)$(INET_PROJ)/src $(LDFLAG_LIBPATH)$(TDMA_PROJ)/src $(LDFLAG_LIBPATH)$(UDPTRACEDBASICAPP_PROJ)/src  -lINET$(D) -ltdma$(D) -lUdpTracedBasicApp$(D)
+LIBS = $(LDFLAG_LIBPATH)$(INET_PROJ)/src $(LDFLAG_LIBPATH)$(ORIGINAL_GPSR_PROJ)/src $(LDFLAG_LIBPATH)$(TDMA_PROJ)/src $(LDFLAG_LIBPATH)$(UDPTRACEDBASICAPP_PROJ)/src  -lINET$(D) -loriginal-gpsr$(D) -ltdma$(D) -lUdpTracedBasicApp$(D)
 
 # Output directory
 PROJECT_OUTPUT_DIR = ../out
@@ -35,6 +35,7 @@ SMFILES =
 
 # Other makefile variables (-K)
 INET_PROJ=../../inet4
+ORIGINAL_GPSR_PROJ=../../original-gpsr
 TDMA_PROJ=/home/musab/intairnet-data-link-layer-simulation-model/omnetpp-5.6.2/workspace/tdma/tdma
 UDPTRACEDBASICAPP_PROJ=../../intairnet-traceBasedApp
 
@@ -61,7 +62,7 @@ include $(CONFIGFILE)
 # Simulation kernel and user interface libraries
 OMNETPP_LIBS = -loppenvir$D $(KERNEL_LIBS) $(SYS_LIBS)
 ifneq ($(TOOLCHAIN_NAME),clangc2)
-LIBS += -Wl,-rpath,$(abspath $(INET_PROJ)/src) -Wl,-rpath,$(abspath $(TDMA_PROJ)/src) -Wl,-rpath,$(abspath $(UDPTRACEDBASICAPP_PROJ)/src)
+LIBS += -Wl,-rpath,$(abspath $(INET_PROJ)/src) -Wl,-rpath,$(abspath $(ORIGINAL_GPSR_PROJ)/src) -Wl,-rpath,$(abspath $(TDMA_PROJ)/src) -Wl,-rpath,$(abspath $(UDPTRACEDBASICAPP_PROJ)/src)
 endif
 
 COPTS = $(CFLAGS) $(IMPORT_DEFINES) -DINET_IMPORT $(INCLUDE_PATH) -I$(OMNETPP_INCL_DIR)

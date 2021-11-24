@@ -4,6 +4,7 @@
 	<comment></comment>
 	<projects>
 		<project>inet</project>
+		<project>original-gpsr</project>
 		<project>tdma</project>
 		<project>UdpTracedBasicApp</project>
 	</projects>

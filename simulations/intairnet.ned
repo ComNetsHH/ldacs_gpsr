@@ -27,7 +27,7 @@ import inet.common.scenario.ScenarioManager;
 //import inet.node.ethernet.Eth1G;
 import inet.node.ethernet.EtherSwitch;
 import ned.DatarateChannel;
-
+import original_gpsr.GpsrOriginal;
 
 
 

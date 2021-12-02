@@ -45,7 +45,10 @@ network gpsr
         int numGroundStations = default(1);
         string mobility_file = "NAT1515d3_data/NAT1515d3_mobility.txt";
         string scenarioManager_file = "NAT1515d3_data/NAT1515d3_scenarioManager.xml";
-
+		@statistic[sumBeaconMsg](source=count(beacon); record=count);
+		@statistic[sumPacketSent](source=count(packetSent); record=count);
+		@statistic[sumAppPacketSent](source=count(appPacketSent); record=count);
+		
         @display("bgb=10000000,10000000;bgl=2");
         @figure[title](type=label; pos=0,-1; anchor=sw; color=darkblue);
     submodules:

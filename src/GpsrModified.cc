@@ -173,7 +173,10 @@ void GpsrModified::processBeaconTimer()
     EV_DEBUG << "Processing beacon timer" << endl;
     const L3Address selfAddress = getSelfAddress();
     if (!selfAddress.isUnspecified()) {
-        sendBeacon(createBeacon());
+        //////////////////////////////////////////////////////////////////////////
+        // Omit the sending of beacons from gpsr (Musab)
+        //////////////////////////////////////////////////////////////////////////
+        // sendBeacon(createBeacon());
         storeSelfPositionInGlobalRegistry();
     }
     scheduleBeaconTimer();

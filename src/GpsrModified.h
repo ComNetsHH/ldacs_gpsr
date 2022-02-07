@@ -87,6 +87,10 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
     GpsrModified();
     virtual ~GpsrModified();
     void processBeacon(Packet *packet);
+    // handling UDP packets
+    // move these to public from private
+//    void sendUdpPacket(Packet *packet);
+    void processUdpPacket(Packet *packet);
 
   protected:
     // module interface
@@ -113,7 +117,8 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
 
     // handling UDP packets
     void sendUdpPacket(Packet *packet);
-    void processUdpPacket(Packet *packet);
+    // move this to public
+//    void processUdpPacket(Packet *packet);
 
     // handling beacons
     const Ptr<GpsrBeaconModified> createBeacon();

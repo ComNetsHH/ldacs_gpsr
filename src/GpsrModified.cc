@@ -269,6 +269,13 @@ void GpsrModified::processBeacon(Packet *packet)
     neighborPositionTable.setPosition(beacon->getAddress(), beacon->getPosition());
     delete packet;
 }
+
+void GpsrModified::processBeaconMCSOTDMA(const L3Address rcvdIpAddress, const Coord& rcvdPosition)
+{
+    EV_INFO << "Processing beacon: address = " << rcvdIpAddress << ", position = " << rcvdPosition << endl;
+    neighborPositionTable.setPosition(rcvdIpAddress, rcvdPosition);
+}
+
 //
 // handling packets
 //

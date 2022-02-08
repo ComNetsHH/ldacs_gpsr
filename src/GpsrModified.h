@@ -91,6 +91,7 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
     // move these to public from private
 //    void sendUdpPacket(Packet *packet);
     void processUdpPacket(Packet *packet);
+    void processBeaconMCSOTDMA(const L3Address rcvdIpAddress, const Coord& rcvdPosition);
 
   protected:
     // module interface

@@ -81,7 +81,8 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
     // internal
     cMessage *beaconTimer = nullptr;
     cMessage *purgeNeighborsTimer = nullptr;
-    PositionTableModified neighborPositionTable;
+    // comment for now to test and move to public
+//    PositionTableModified neighborPositionTable;
 
   public:
     GpsrModified();
@@ -91,7 +92,9 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
     // move these to public from private
 //    void sendUdpPacket(Packet *packet);
     void processUdpPacket(Packet *packet);
-    void processBeaconMCSOTDMA(const L3Address rcvdIpAddress, const Coord& rcvdPosition);
+    void processBeaconMCSOTDMA(const L3Address& address, const Coord& coord);
+    // add temporiraly to public
+    PositionTableModified neighborPositionTable;
 
   protected:
     // module interface

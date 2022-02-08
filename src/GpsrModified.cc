@@ -270,10 +270,10 @@ void GpsrModified::processBeacon(Packet *packet)
     delete packet;
 }
 
-void GpsrModified::processBeaconMCSOTDMA(const L3Address rcvdIpAddress, const Coord& rcvdPosition)
+void GpsrModified::processBeaconMCSOTDMA(const L3Address& address, const Coord& coord)
 {
-    EV_INFO << "Processing beacon: address = " << rcvdIpAddress << ", position = " << rcvdPosition << endl;
-    neighborPositionTable.setPosition(rcvdIpAddress, rcvdPosition);
+    EV_INFO << "Processing beacon: address = " << address << ", position = " << coord << endl;
+    neighborPositionTable.setPosition(address, coord);
 }
 
 //

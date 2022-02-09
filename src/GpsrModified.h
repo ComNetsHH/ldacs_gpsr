@@ -93,7 +93,7 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
 //    void sendUdpPacket(Packet *packet);
     void processUdpPacket(Packet *packet);
     void processBeaconMCSOTDMA(const L3Address& address, const Coord& coord);
-    // add temporiraly to public
+    // add temporarily to public
     PositionTableModified neighborPositionTable;
 
   protected:

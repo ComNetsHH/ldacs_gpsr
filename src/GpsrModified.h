@@ -81,20 +81,16 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
     // internal
     cMessage *beaconTimer = nullptr;
     cMessage *purgeNeighborsTimer = nullptr;
-    // comment for now to test and move to public
-//    PositionTableModified neighborPositionTable;
+    PositionTableModified neighborPositionTable;
 
   public:
     GpsrModified();
     virtual ~GpsrModified();
-    void processBeacon(Packet *packet);
-    // handling UDP packets
-    // move these to public from private
-//    void sendUdpPacket(Packet *packet);
-    void processUdpPacket(Packet *packet);
+    //////////////////////////////////////////////////////////////////////////
+    // Process MCSOTDMA beacons (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    // process beacons that are received from MCSOTDMA and pass information to GpsrModified
     void processBeaconMCSOTDMA(const L3Address& address, const Coord& coord);
-    // add temporarily to public
-    PositionTableModified neighborPositionTable;
 
   protected:
     // module interface
@@ -121,13 +117,13 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
 
     // handling UDP packets
     void sendUdpPacket(Packet *packet);
-    // move this to public
-//    void processUdpPacket(Packet *packet);
+    void processUdpPacket(Packet *packet);
 
     // handling beacons
     const Ptr<GpsrBeaconModified> createBeacon();
     void sendBeacon(const Ptr<GpsrBeaconModified>& beacon);
-
+    void processBeacon(Packet *packet);
+    
     // handling packets
     GpsrOption *createGpsrOption(L3Address destination);
     int computeOptionLength(GpsrOption *gpsrOption);

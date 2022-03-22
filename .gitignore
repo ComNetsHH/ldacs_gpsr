@@ -6,3 +6,4 @@ inet/*
 /src/intairnet-gpsr
 /Makefile
 .DS_Store
+*.so

@@ -59,10 +59,10 @@ gpsr-tdma-demo-qtenv:
 	opp_runall -j1 $(SIM_BINARY) intairnet.ini -c $(GPSR_TDMA_DEMO_CONFIGNAME) $(INCL) -u Qtenv
 
 gpsr-tdma-demo-debug:
-	gdbgui --args $(SIM_BINARY_DBG) intairnet.ini -u Cmdenv -c $(GPSR_TDMA_DEMO_CONFIGNAME) -n $(INCL)
+	gdbgui --args $(SIM_BINARY_DBG) intairnet.ini -u Cmdenv -c $(GPSR_TDMA_DEMO_CONFIGNAME) $(INCL)
 
 gpsr-tdma-demo-A2G-qtenv:
-	opp_runall -j1 $(SIM_BINARY) intairnet.ini -c $(GPSR_TDMA_DEMO_A2G_CONFIGNAME) -n $(INCL) -u Qtenv 
+	opp_runall -j1 $(SIM_BINARY) intairnet.ini -c $(GPSR_TDMA_DEMO_A2G_CONFIGNAME) $(INCL) -u Qtenv 
 
 gpsr-tdma-demo-A2G-debug:
-	gdbgui --args $(SIM_BINARY_DBG) intairnet.ini -u Cmdenv -c $(GPSR_TDMA_DEMO_A2G_CONFIGNAME) -n $(INCL)
+	gdbgui --args $(SIM_BINARY_DBG) intairnet.ini -u Cmdenv -c $(GPSR_TDMA_DEMO_A2G_CONFIGNAME) $(INCL)

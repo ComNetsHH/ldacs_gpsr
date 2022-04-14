@@ -68,11 +68,15 @@ network Modifiedgpsr
                 @display("p=250,325");
         }
 
-        groundStation: StandardHost {
+        groundStation: ManetRouter {
             parameters:
                 @display("p=250,125");
         }
-        
+}
+
+network ModifiedgpsrA2G extends Modifiedgpsr
+{
+    submodules:
         switch1: EtherSwitch {
             parameters:
                 @display("p=250,200");
@@ -83,7 +87,4 @@ network Modifiedgpsr
         switch1.ethg++  <--> Eth1G <--> hostA.ethg++;
         switch1.ethg++  <--> Eth1G <--> hostB.ethg++;
         groundStation.ethg++ <--> Eth1G <--> switch1.ethg++ ;
-//        hostA.ethg++ <--> Eth1G <--> groundStation.ethg++;
-//        hostB.ethg++ <--> Eth1G <--> groundStation.ethg++;
-////        hostA.ethg++ <--> Eth1G <--> hostB.ethg++;
 }

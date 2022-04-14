@@ -61,6 +61,10 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
     double GSx = 0.0;
     double GSy = 0.0;
     double GSz = 0.0;
+    //////////////////////////////////////////////////////////////////////////
+    // Enable/Disable creation of beacons (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    bool beaconForwardedFromGpsr;
     // context
     cModule *host = nullptr;
     IMobility *mobility = nullptr;

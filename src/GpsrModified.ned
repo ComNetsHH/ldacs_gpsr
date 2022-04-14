@@ -43,6 +43,10 @@ simple GpsrModified like IManetRouting
         // Set interface to the interface used in A2G if next hop is GS (Musab)
         //////////////////////////////////////////////////////////////////////////
         string a2gOutputInterface = default("eth0");
+        //////////////////////////////////////////////////////////////////////////
+        // Enable/Disable creation of beacons (Musab)
+        //////////////////////////////////////////////////////////////////////////
+        bool beaconForwardedFromGpsr = default(false);
 
         // GPSR parameters
         string planarizationMode @enum("", "GG", "RNG") = default("GG");

@@ -118,6 +118,10 @@ void GpsrModified::initialize(int stage)
         GSy = par("GSy");
         GSz = par("GSz");
         a2gOutputInterface = par("a2gOutputInterface");
+        //////////////////////////////////////////////////////////////////////////
+        // Enable/Disable creation of beacons (Musab)
+        //////////////////////////////////////////////////////////////////////////
+        beaconForwardedFromGpsr = par("beaconForwardedFromGpsr");
     }
     else if (stage == INITSTAGE_ROUTING_PROTOCOLS) {
         registerService(Protocol::manet, nullptr, gate("ipIn"));
@@ -176,7 +180,9 @@ void GpsrModified::processBeaconTimer()
         //////////////////////////////////////////////////////////////////////////
         // Omit the sending of beacons from gpsr (Musab)
         //////////////////////////////////////////////////////////////////////////
-        // sendBeacon(createBeacon());
+        if(beaconForwardedFromGpsr) {
+            sendBeacon(createBeacon());
+        }
         storeSelfPositionInGlobalRegistry();
     }
     scheduleBeaconTimer();

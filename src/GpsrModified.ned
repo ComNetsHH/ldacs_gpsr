@@ -70,8 +70,8 @@ simple GpsrModified like IManetRouting
 //        //////////////////////////////////////////////////////////////////////////
 //        // Emit Hop Count Signal (Musab)
 //        //////////////////////////////////////////////////////////////////////////
-//        @signal[hopCount](type=unsigned int);
-//        @statistic[hopCount](source=hopCount; record=vector);
+        @signal[hopCount](type=unsigned int);
+        @statistic[hopCount](source=hopCount; record=vector);
     gates:
         input ipIn;
         output ipOut;

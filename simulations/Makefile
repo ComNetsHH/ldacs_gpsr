@@ -12,20 +12,20 @@
 build-debug:	
 	cd ../../; \
 	echo -e "\ntracebasedapp"; \
-	cd intairnet-tracebasedapp/src; opp_makemake -f -s --deep -O out -KINET4_PROJ=../../inet4 -DINET_IMPORT -I../../inet4 -I. -I../../inet4/src -L../../inet4/src -lINET_dbg; make -j8 MODE=debug; cd ../..; \
+	cd intairnet-traceBasedApp/src; opp_makemake -f -s --deep -O out -KINET4_PROJ=../../inet4 -DINET_IMPORT -I../../inet4 -I. -I../../inet4/src -L../../inet4/src -lINET_dbg; make -j8 MODE=debug; cd ../..; \
 	echo -e "\nTDMA"; \
 	cd tdma/tdma/src; opp_makemake --make-so -f --deep -KINET_PROJ=../../../inet4 -DINET_IMPORT -I../../../inet4/src -L../../../inet4/src -lINET_dbg; make -j8 MODE=debug; cd ../../..; \
 	echo -e "\nIntAirNetGPSR"; \
-	cd intairnet-gpsr/src; opp_makemake -f --deep -O out -KINET4_PROJ=../../inet4 -DINET_IMPORT -I../../inet4 -I../../intairnet-tracebasedapp/src -I../../tdma/tdma/src -I. -I../../inet4/src -L../../inet4/src -L../../intairnet-tracebasedapp/out/gcc-debug/src/ -L../../tdma/tdma/out/gcc-debug/src/ -lINET_dbg -lintairnet-tracebasedapp_dbg -ltdma_dbg; make -j$(NUM_CPUS) MODE=debug; \
+	cd intairnet-gpsr/src; opp_makemake -f --deep -O out -KINET4_PROJ=../../inet4 -DINET_IMPORT -I../../inet4 -I../../intairnet-traceBasedApp/src -I../../tdma/tdma/src -I. -I../../inet4/src -L../../inet4/src -L../../intairnet-traceBasedApp/out/gcc-debug/src/ -L../../tdma/tdma/out/gcc-debug/src/ -lINET_dbg -lintairnet-traceBasedApp_dbg -ltdma_dbg; make -j$(NUM_CPUS) MODE=debug; \
 
 build-release:	
 	cd ../../; \
 	echo -e "\ntracebasedapp"; \
-	cd intairnet-tracebasedapp/src; opp_makemake -f -s --deep -O out -KINET4_PROJ=../../inet4 -DINET_IMPORT -I../../inet4 -I. -I../../inet4/src -L../../inet4/src -lINET; make -j8 MODE=release; cd ../..; \
+	cd intairnet-traceBasedApp/src; opp_makemake -f -s --deep -O out -KINET4_PROJ=../../inet4 -DINET_IMPORT -I../../inet4 -I. -I../../inet4/src -L../../inet4/src -lINET; make -j8 MODE=release; cd ../..; \
 	echo -e "\nTDMA"; \
 	cd tdma/tdma/src; opp_makemake --make-so -f --deep -KINET_PROJ=../../../inet4 -DINET_IMPORT -I../../../inet4/src -L../../../inet4/src -lINET; make -j8 MODE=release; cd ../../..; \
 	echo -e "\nIntAirNetGPSR"; \
-	cd intairnet-gpsr/src; opp_makemake -f --deep -O out -KINET4_PROJ=../../inet4 -DINET_IMPORT -I../../inet4 -I../../intairnet-tracebasedapp/src -I../../tdma/tdma/src -I. -I../../inet4/src -L../../inet4/src -L../../intairnet-tracebasedapp/out/gcc-release/src/ -L../../tdma/tdma/out/gcc-release/src/ -lINET -lintairnet-tracebasedapp -ltdma; make -j$(NUM_CPUS) MODE=release
+	cd intairnet-gpsr/src; opp_makemake -f --deep -O out -KINET4_PROJ=../../inet4 -DINET_IMPORT -I../../inet4 -I../../intairnet-traceBasedApp/src -I../../tdma/tdma/src -I. -I../../inet4/src -L../../inet4/src -L../../intairnet-traceBasedApp/out/gcc-release/src/ -L../../tdma/tdma/out/gcc-release/src/ -lINET -lintairnet-traceBasedApp -ltdma; make -j$(NUM_CPUS) MODE=release
 
 
 # GLOBAL VARIABLES  can be shared among all targets
@@ -33,7 +33,7 @@ build-release:
 SIM_BINARY = ../out/gcc-release/src/intairnet-gpsr
 SIM_BINARY_DBG = ../out/gcc-debug/src/intairnet-gpsr_dbg
 # include .ned files
-INCL = -n ../src:./:../../inet4/src/:../../tdma/tdma/src:../../intairnet-tracebasedapp/src
+INCL = -n ../src:./:../../inet4/src/:../../tdma/tdma/src:../../intairnet-traceBasedApp/src
 
 # END-to-END SIMUlATIONS
 
@@ -60,6 +60,9 @@ gpsr-tdma-demo-qtenv:
 
 gpsr-tdma-demo-debug:
 	gdbgui --args $(SIM_BINARY_DBG) intairnet.ini -u Cmdenv -c $(GPSR_TDMA_DEMO_CONFIGNAME) $(INCL)
+
+gpsr-tdma-demo-A2G:
+	opp_runall -j1 $(SIM_BINARY) intairnet.ini -c $(GPSR_TDMA_DEMO_A2G_CONFIGNAME) $(INCL)
 
 gpsr-tdma-demo-A2G-qtenv:
 	opp_runall -j1 $(SIM_BINARY) intairnet.ini -c $(GPSR_TDMA_DEMO_A2G_CONFIGNAME) $(INCL) -u Qtenv 

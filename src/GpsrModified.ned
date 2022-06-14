@@ -34,6 +34,9 @@ simple GpsrModified like IManetRouting
         // properties
         @display("i=block/routing");
 
+        //Name of the Trace file where list of ground stations are given
+        string TraceFileName =default("ground_stations_coordinates.txt"); 
+
         // context parameters
         string interfaceTableModule;   // The path to the InterfaceTable module
         string routingTableModule = default("^.ipv4.routingTable");

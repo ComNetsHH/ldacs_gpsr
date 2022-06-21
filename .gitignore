@@ -11,4 +11,3 @@ src/Makefile
 /src/*.so
 src/GpsrModified_m.cc
 src/GpsrModified_m.h
-simulations/slurm*

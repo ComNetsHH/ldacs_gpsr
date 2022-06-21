@@ -954,8 +954,8 @@ INetfilter::IHook::Result GpsrModified::datagramLocalInHook(Packet *packet)
     // Emit signal only in the case if gpsrOption exist (Musab)
     if (gpsrOption != nullptr)
 //        emit(hopCountSignal, gpsrOption->getHopCount());
-        emit(hopCountSignal, 96 - (ipv4Header->getTimeToLive()) + 1);
-        EV_INFO << "Hop count for application packet = " << 96 - (ipv4Header->getTimeToLive()) + 1 << endl;
+        emit(hopCountSignal, 32 - (ipv4Header->getTimeToLive()) + 1);
+        EV_INFO << "Hop count for application packet = " << 32 - (ipv4Header->getTimeToLive()) + 1 << endl;
     return ACCEPT;
 }
 

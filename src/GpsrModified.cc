@@ -19,12 +19,6 @@
 
 #include <algorithm>
 
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
-
-
 #include "inet/common/INETUtils.h"
 #include "inet/common/IProtocolRegistrationListener.h"
 #include "inet/common/ModuleAccess.h"
@@ -52,8 +46,6 @@
 #include "inet/networklayer/nexthop/NextHopForwardingHeader_m.h"
 #endif
 
-using namespace std;
-
 using namespace inet;
 
 Define_Module(GpsrModified);
@@ -63,8 +55,7 @@ static inline double determinant(double a1, double a2, double b1, double b2)
     return a1 * b2 - a2 * b1;
 }
 
-GpsrModified::GpsrModified():
-    TraceFileName()
+GpsrModified::GpsrModified()
 {
 }
 
@@ -78,9 +69,6 @@ GpsrModified::~GpsrModified()
 // module interface
 //
 
-int line_number;
-vector<vector<double>> ground_stations_coordinates_array;
-
 void GpsrModified::initialize(int stage)
 {
     if (stage == INITSTAGE_ROUTING_PROTOCOLS)
@@ -89,84 +77,6 @@ void GpsrModified::initialize(int stage)
     RoutingProtocolBase::initialize(stage);
 
     if (stage == INITSTAGE_LOCAL) {
-        //new code added here
-        //reading the .txt file to read list of ground_stations_coordinates
-        int position_of_first_comma,position_of_second_comma,searching_position_output_textfile,position_at_output_textfile,assigning_position_x_coordinate,assigning_position_y_coordinate,assigning_position_z_coordinate;
-
-        // Creating a text string, which is used to output the text file
-        string output_textfile;
-
-        string file_name = par("TraceFileName");
-
-        // Read from the text file
-        ifstream MyReadFile(file_name);
-        line_number=0;
-        // Using a while loop together with the getline() function to read the file line by line
-        while (getline (MyReadFile, output_textfile)) {
-            
-            // finding the position of the first ","
-            for( searching_position_output_textfile = 0; searching_position_output_textfile < output_textfile.length(); searching_position_output_textfile++){
-                if(output_textfile[searching_position_output_textfile]==','){
-                    position_of_first_comma = searching_position_output_textfile;
-                    break;
-                }
-            }
-            
-            // finding the position of the second ","
-            for( searching_position_output_textfile = searching_position_output_textfile+1; searching_position_output_textfile < output_textfile.length(); searching_position_output_textfile++){
-                if(output_textfile[searching_position_output_textfile]==','){
-                    position_of_second_comma = searching_position_output_textfile;
-                }
-            }
-
-            char x_coordinate_Part[position_of_first_comma];
-            char y_coordinate_Part[position_of_second_comma-position_of_first_comma];
-            char z_coordinate_Part[output_textfile.length()-position_of_second_comma];
-
-            //assigning the x coordinate part of the trace file into the vector
-            position_at_output_textfile=0;
-            for(assigning_position_x_coordinate = 0;assigning_position_x_coordinate<position_of_first_comma;assigning_position_x_coordinate++){
-                x_coordinate_Part[assigning_position_x_coordinate]=output_textfile[position_at_output_textfile];
-                position_at_output_textfile++;
-            }
-            x_coordinate_Part[assigning_position_x_coordinate]='\0';
-            vector<double> temp;
-            
-            // convert string to double
-            temp.push_back(std::stod(x_coordinate_Part));
-            position_at_output_textfile++;
-
-            //assigning the y coordinate part of the trace file into the vector
-            for( assigning_position_y_coordinate=0;assigning_position_y_coordinate<position_of_second_comma-position_of_first_comma-1;assigning_position_y_coordinate++){
-                y_coordinate_Part[assigning_position_y_coordinate]=output_textfile[position_at_output_textfile];
-                position_at_output_textfile++;
-            }
-            y_coordinate_Part[assigning_position_y_coordinate]='\0';
-            
-            // convert string to double
-            temp.push_back(std::stod(y_coordinate_Part));
-            position_at_output_textfile++;
-
-            //assigning the z coordinate part of the trace file into vector
-            for(assigning_position_z_coordinate=0;assigning_position_z_coordinate<output_textfile.length()-position_of_second_comma-1;assigning_position_z_coordinate++){
-                z_coordinate_Part[assigning_position_z_coordinate]=output_textfile[position_at_output_textfile];
-                position_at_output_textfile++;
-            }
-            z_coordinate_Part[assigning_position_z_coordinate]='\0';
-            
-            // convert string to double
-            temp.push_back(std::stod(z_coordinate_Part));
-
-            ground_stations_coordinates_array.push_back(temp);
-            temp.clear();
-            line_number++;
-
-        }
-        
-        // Closing the file
-        MyReadFile.close();
-        //new code upto here
-        
         // Gpsr parameters
         const char *planarizationModeString = par("planarizationMode");
         if (!strcmp(planarizationModeString, ""))

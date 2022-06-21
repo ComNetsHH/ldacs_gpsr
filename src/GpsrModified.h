@@ -48,8 +48,6 @@ using namespace inet;
 class GpsrModified : public RoutingProtocolBase, public cListener, public NetfilterBase::HookBase
 {
   private:
-
-    string TraceFileName;  //Name of the Trace file where list of ground stations are given
     // GPSR parameters
     GpsrPlanarizationMode planarizationMode = static_cast<GpsrPlanarizationMode>(-1);
     const char *interfaces = nullptr;

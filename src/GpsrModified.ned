@@ -76,12 +76,12 @@ simple GpsrModified like IManetRouting
         // Route not found (Musab)
         //////////////////////////////////////////////////////////////////////////
         @signal[routingFailed](type=simtime_t);
-        @statistic[routingFailed](source=routingFailed; record=vector);
+        @statistic[routingFailed](source=routingFailed; record=vector,histogram,count);
         //////////////////////////////////////////////////////////////////////////
         // Switch to Perimeter Routing (Musab)
         //////////////////////////////////////////////////////////////////////////
         @signal[greedyForwardingFailed](type=simtime_t);
-        @statistic[greedyForwardingFailed](source=greedyForwardingFailed; record=vector);
+        @statistic[greedyForwardingFailed](source=greedyForwardingFailed; record=vector,histogram,count);
     gates:
         input ipIn;
         output ipOut;

@@ -106,10 +106,18 @@ void GpsrModified::initialize(int stage)
         positionByteLength = par("positionByteLength");
         // KLUDGE: implement position registry protocol
         globalPositionTable.clear();
-       //////////////////////////////////////////////////////////////////////////
-       // Register Hop Count Signal (Musab)
-       //////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////
+        // Register Hop Count Signal (Musab)
+        //////////////////////////////////////////////////////////////////////////
         hopCountSignal = registerSignal("hopCount");
+        //////////////////////////////////////////////////////////////////////////
+        // Route not found Signal (Musab)
+        //////////////////////////////////////////////////////////////////////////
+        routingFailedSignal = registerSignal("routingFailed");
+        //////////////////////////////////////////////////////////////////////////
+        // Switch to Perimeter Routing Signal (Musab)
+        //////////////////////////////////////////////////////////////////////////
+        greedyForwardingFailedSignal = registerSignal("greedyForwardingFailed");
         //////////////////////////////////////////////////////////////////////////
         // The ground station communication range + a2gOutputInterface (Musab)
         //////////////////////////////////////////////////////////////////////////
@@ -563,6 +571,10 @@ L3Address GpsrModified::findGreedyRoutingNextHop(const L3Address& destination, G
     }
     if (bestNeighbor.isUnspecified()) {
         EV_DEBUG << "Switching to perimeter routing: destination = " << destination << endl;
+        //////////////////////////////////////////////////////////////////////////
+        // Switch to Perimeter Routing Signal (Musab)
+        //////////////////////////////////////////////////////////////////////////
+        emit(greedyForwardingFailedSignal, simTime());
         if (displayBubbles && hasGUI())
             getContainingNode(host)->bubble("Switching to perimeter routing");
         gpsrOption->setRoutingMode(GPSR_PERIMETER_ROUTING);
@@ -649,6 +661,10 @@ INetfilter::IHook::Result GpsrModified::routeDatagram(Packet *datagram, GpsrOpti
     datagram->addTagIfAbsent<NextHopAddressReq>()->setNextHopAddress(nextHop);
     if (nextHop.isUnspecified()) {
         EV_WARN << "No next hop found, dropping packet: source = " << source << ", destination = " << destination << endl;
+        //////////////////////////////////////////////////////////////////////////
+        // Route not found Signal (Musab)
+        //////////////////////////////////////////////////////////////////////////
+        emit(routingFailedSignal, simTime());
         if (displayBubbles && hasGUI())
             getContainingNode(host)->bubble("No next hop found, dropping packet");
         return DROP;
@@ -864,7 +880,7 @@ INetfilter::IHook::Result GpsrModified::datagramLocalInHook(Packet *packet)
     // Emit signal only in the case if gpsrOption exist (Musab)
     if (gpsrOption != nullptr)
 //        emit(hopCountSignal, gpsrOption->getHopCount());
-        emit(hopCountSignal, 32 - (ipv4Header->getTimeToLive()) + 1);
+        emit(hopCountSignal, 96 - (ipv4Header->getTimeToLive()) + 1);
         EV_INFO << "Hop count for application packet = " << 32 - (ipv4Header->getTimeToLive()) + 1 << endl;
     return ACCEPT;
 }

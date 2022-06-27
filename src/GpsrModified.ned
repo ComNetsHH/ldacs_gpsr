@@ -34,6 +34,10 @@ simple GpsrModified like IManetRouting
         // properties
         @display("i=block/routing");
 
+        // Multi-Link parameters
+        bool useMultiLink = default(false);
+        double pSatcom = default(0);
+
         // context parameters
         string interfaceTableModule;   // The path to the InterfaceTable module
         string routingTableModule = default("^.ipv4.routingTable");

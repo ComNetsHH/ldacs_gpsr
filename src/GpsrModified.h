@@ -48,6 +48,10 @@ using namespace inet;
 class GpsrModified : public RoutingProtocolBase, public cListener, public NetfilterBase::HookBase
 {
   private:
+    // Multi-Link Parameters
+    bool useMultiLink = false;
+    double pSatcom = 0.0;
+
     // GPSR parameters
     GpsrPlanarizationMode planarizationMode = static_cast<GpsrPlanarizationMode>(-1);
     const char *interfaces = nullptr;

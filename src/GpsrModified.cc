@@ -92,6 +92,9 @@ void GpsrModified::initialize(int stage)
         maxJitter = par("maxJitter");
         neighborValidityInterval = par("neighborValidityInterval");
         displayBubbles = par("displayBubbles");
+        // MULTI-LINK
+        useMultiLink = par("useMultiLink");
+        pSatcom = par("pSatcom");
         // context
         host = getContainingNode(this);
         interfaceTable = getModuleFromPar<IInterfaceTable>(par("interfaceTableModule"), this);
@@ -644,6 +647,19 @@ INetfilter::IHook::Result GpsrModified::routeDatagram(Packet *datagram, GpsrOpti
     const auto& networkHeader = getNetworkProtocolHeader(datagram);
     const L3Address& source = networkHeader->getSourceAddress();
     const L3Address& destination = networkHeader->getDestinationAddress();
+
+    //// START MULTI_LINK 
+    if(useMultiLink) {
+        if(uniform(0, 1.0) <= pSatcom) {
+            auto satcomInterfaceEntry = CHK(interfaceTable->findInterfaceByName("ppp0"));
+            datagram->addTagIfAbsent<InterfaceReq>()->setInterfaceId(satcomInterfaceEntry->getInterfaceId());
+            return ACCEPT;
+        }
+    }
+    //// END MULTI_LINK 
+
+
+
     EV_INFO << "Finding next hop: source = " << source << ", destination = " << destination << endl;
     auto nextHop = findNextHop(destination, gpsrOption);
     datagram->addTagIfAbsent<NextHopAddressReq>()->setNextHopAddress(nextHop);

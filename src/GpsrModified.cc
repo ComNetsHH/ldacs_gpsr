@@ -662,10 +662,14 @@ INetfilter::IHook::Result GpsrModified::routeDatagram(Packet *datagram, GpsrOpti
 
     //// START MULTI_LINK 
     if(useMultiLink) {
-        if(uniform(0, 1.0) <= pSatcom) {
+        const auto& multiLinkPacketTag = datagram->findTag<MultiLinkPacketTag>();
+        bool hasTag = multiLinkPacketTag != nullptr;
+
+        if(hasTag && multiLinkPacketTag->isSatcom()) {
             auto satcomInterfaceEntry = CHK(interfaceTable->findInterfaceByName("ppp0"));
             datagram->addTagIfAbsent<InterfaceReq>()->setInterfaceId(satcomInterfaceEntry->getInterfaceId());
             return ACCEPT;
+
         }
     }
     //// END MULTI_LINK 
@@ -867,6 +871,11 @@ INetfilter::IHook::Result GpsrModified::datagramPreRoutingHook(Packet *datagram)
 INetfilter::IHook::Result GpsrModified::datagramLocalOutHook(Packet *packet)
 {
     Enter_Method("datagramLocalOutHook");
+
+    if(useMultiLink) {
+        packet->addTagIfAbsent<MultiLinkPacketTag>()->setIsSatcom(uniform(0, 1.0) <= pSatcom);
+    }
+
     const auto& networkHeader = getNetworkProtocolHeader(packet);
     const L3Address& destination = networkHeader->getDestinationAddress();
     if (destination.isMulticast() || destination.isBroadcast() || routingTable->isLocalAddress(destination))

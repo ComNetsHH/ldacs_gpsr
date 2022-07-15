@@ -29,6 +29,7 @@
 #include "inet/networklayer/contract/IRoutingTable.h"
 #include "inet/routing/base/RoutingProtocolBase.h"
 #include "GpsrModified_m.h"
+#include "MultiLinkPacketTag_m.h"
 #include "inet/transportlayer/udp/UdpHeader_m.h"
 #include "PositionTableModified.h"
 

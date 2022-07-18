@@ -110,6 +110,10 @@ void GpsrModified::initialize(int stage)
         // KLUDGE: implement position registry protocol
         globalPositionTable.clear();
         //////////////////////////////////////////////////////////////////////////
+        // Cross-layer routing (Musab)
+        //////////////////////////////////////////////////////////////////////////
+        globalPositionCongestionLevelTable.clear();
+        //////////////////////////////////////////////////////////////////////////
         // Register Hop Count Signal (Musab)
         //////////////////////////////////////////////////////////////////////////
         hopCountSignal = registerSignal("hopCount");
@@ -360,6 +364,12 @@ void GpsrModified::configureInterfaces()
 
 // KLUDGE: implement position registry protocol
 PositionTableModified GpsrModified::globalPositionTable;
+
+// KLUDGE: implement position registry protocol
+//////////////////////////////////////////////////////////////////////////
+// Cross-layer routing (Musab)
+//////////////////////////////////////////////////////////////////////////
+PositionTableCongestionLevelModified GpsrModified::globalPositionCongestionLevelTable;
 
 Coord GpsrModified::lookupPositionInGlobalRegistry(const L3Address& address) const
 {

@@ -17,8 +17,8 @@
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 //
 
-#ifndef __INET_POSITIONTABLEMODIFIED_H
-#define __INET_POSITIONTABLEMODIFIED_H
+#ifndef __INET_POSITIONTABLECONGESTIONLEVELMODIFIED_H
+#define __INET_POSITIONTABLECONGESTIONLEVELMODIFIED_H
 
 #include <map>
 #include <vector>
@@ -32,21 +32,28 @@ namespace inet {
 /**
  * This class provides a mapping between node addresses and their positions.
  */
-class PositionTableModified
+class PositionTableCongestionLevelModified
 {
   private:
-    typedef std::pair<simtime_t, Coord> AddressToPositionMapValue;
-    typedef std::map<L3Address, AddressToPositionMapValue> AddressToPositionMap;
-    AddressToPositionMap addressToPositionMap;
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    typedef std::tuple<simtime_t, Coord, int> AddressToPositionCongestionLevelMapValue; 
+    typedef std::map<L3Address, AddressToPositionCongestionLevelMapValue> AddressToPositionCongestionLevelMap;
+    AddressToPositionCongestionLevelMap addressToPositionCongestionLevelMap;
 
   public:
-    PositionTableModified() {}
+    PositionTableCongestionLevelModified() {}
 
     std::vector<L3Address> getAddresses() const;
 
     bool hasPosition(const L3Address& address) const;
     Coord getPosition(const L3Address& address) const;
-    void setPosition(const L3Address& address, const Coord& coord);
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    int getCongestionLevel(const L3Address& address) const;
+    void setPositionCongestionLevel(const L3Address& address, const Coord& coord, const int& congestionLevel);
 
     void removePosition(const L3Address& address);
     void removeOldPositions(simtime_t timestamp);
@@ -55,10 +62,10 @@ class PositionTableModified
 
     simtime_t getOldestPosition() const;
 
-    friend std::ostream& operator << (std::ostream& o, const PositionTableModified& t);
+    friend std::ostream& operator << (std::ostream& o, const PositionTableCongestionLevelModified& t);
 };
 
 } // namespace inet
 
-#endif // ifndef __INET_POSITIONTABLEMODIFIED_H
+#endif // ifndef __INET_POSITIONTABLECONGESTIONLEVELMODIFIED_H
 

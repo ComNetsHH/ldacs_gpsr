@@ -32,6 +32,10 @@
 #include "MultiLinkPacketTag_m.h"
 #include "inet/transportlayer/udp/UdpHeader_m.h"
 #include "PositionTableModified.h"
+//////////////////////////////////////////////////////////////////////////
+// Cross-layer routing (Musab)
+//////////////////////////////////////////////////////////////////////////
+#include "PositionTableCongestionLevelModified.h"
 
 using namespace inet;
 
@@ -90,6 +94,10 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
     IRoutingTable *routingTable = nullptr;    // TODO: delete when necessary functions are moved to interface table
     INetfilter *networkProtocol = nullptr;
     static PositionTableModified globalPositionTable;    // KLUDGE: implement position registry protocol
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    static PositionTableCongestionLevelModified globalPositionCongestionLevelTable;    // KLUDGE: implement position registry protocol
 
     // packet size
     int positionByteLength = -1;
@@ -98,6 +106,10 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
     cMessage *beaconTimer = nullptr;
     cMessage *purgeNeighborsTimer = nullptr;
     PositionTableModified neighborPositionTable;
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    PositionTableCongestionLevelModified neighborPositionCongestionLevelTable;
 
   public:
     GpsrModified();

@@ -50,6 +50,15 @@ void PositionTableModified::setPosition(const L3Address& address, const Coord& c
     addressToPositionMap[address] = AddressToPositionMapValue(simTime(), coord);
 }
 
+//////////////////////////////////////////////////////////////////////////
+// Cross-layer routing (Musab)
+//////////////////////////////////////////////////////////////////////////
+void PositionTablem::setPositionCongestionLevel(const L3Address& address, const Coord& coord, const int& congestionLevel)
+{
+    ASSERT(!address.isUnspecified());
+    addressToPositionCongestionLevelMap[address] = AddressToPositionCongestionLevelMapValue(simTime(), coord, congestionLevel);
+}
+
 void PositionTableModified::removePosition(const L3Address& address)
 {
     auto it = addressToPositionMap.find(address);

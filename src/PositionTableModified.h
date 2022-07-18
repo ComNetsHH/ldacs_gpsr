@@ -38,6 +38,12 @@ class PositionTableModified
     typedef std::pair<simtime_t, Coord> AddressToPositionMapValue;
     typedef std::map<L3Address, AddressToPositionMapValue> AddressToPositionMap;
     AddressToPositionMap addressToPositionMap;
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    typedef std::tuple<simtime_t, Coord, int> AddressToPositionCongestionLevelMapValue; 
+    typedef std::map<L3Address, AddressToPositionCongestionLevelMapValue> AddressToPositionCongestionLevelMap;
+    AddressToPositionCongestionLevelMap addressToPositionCongestionLevelMap;
 
   public:
     PositionTableModified() {}
@@ -47,6 +53,11 @@ class PositionTableModified
     bool hasPosition(const L3Address& address) const;
     Coord getPosition(const L3Address& address) const;
     void setPosition(const L3Address& address, const Coord& coord);
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    int getcongestionLevel(const L3Address& address) const;
+    void setcongestionLevel(const L3Address& address, const int& congestionLevel);
 
     void removePosition(const L3Address& address);
     void removeOldPositions(simtime_t timestamp);

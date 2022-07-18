@@ -133,6 +133,7 @@ void GpsrModified::initialize(int stage)
         // Cross-layer routing (Musab)
         //////////////////////////////////////////////////////////////////////////
         weightingFactor = par("weightingFactor"); 
+        enableCrossLayerRouting = par("enableCrossLayerRouting");
         // packet size
         queueSizeLength = par("queueSizeLength");
         //////////////////////////////////////////////////////////////////////////

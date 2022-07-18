@@ -74,6 +74,7 @@ simple GpsrModified like IManetRouting
         //////////////////////////////////////////////////////////////////////////
         double weightingFactor = default(0.5); 
         int congestionLevel @unit(B) = default(1 * 1B); 
+        bool enableCrossLayerRouting = default(false);
         // visualization parameters
         bool displayBubbles = default(false);	// display bubble messages about changes in routing state for packets
 //        //////////////////////////////////////////////////////////////////////////

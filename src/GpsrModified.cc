@@ -130,6 +130,12 @@ void GpsrModified::initialize(int stage)
         GSz = par("GSz");
         a2gOutputInterface = par("a2gOutputInterface");
         //////////////////////////////////////////////////////////////////////////
+        // Cross-layer routing (Musab)
+        //////////////////////////////////////////////////////////////////////////
+        weightingFactor = par("weightingFactor"); 
+        // packet size
+        queueSizeLength = par("queueSizeLength");
+        //////////////////////////////////////////////////////////////////////////
         // Enable/Disable creation of beacons (Musab)
         //////////////////////////////////////////////////////////////////////////
         beaconForwardedFromGpsr = par("beaconForwardedFromGpsr");

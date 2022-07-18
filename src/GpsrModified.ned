@@ -69,6 +69,11 @@ simple GpsrModified like IManetRouting
 		double GSx @unit(m) = default(4734222.285m);
         double GSy @unit(m) = default(1381949.583m);
         double GSz @unit(m) = default(662813.2938m);
+        //////////////////////////////////////////////////////////////////////////
+        // Cross-layer routing (Musab)
+        //////////////////////////////////////////////////////////////////////////
+        double weightingFactor = default(0.5); 
+        int congestionLevel @unit(B) = default(1 * 1B); 
         // visualization parameters
         bool displayBubbles = default(false);	// display bubble messages about changes in routing state for packets
 //        //////////////////////////////////////////////////////////////////////////

@@ -70,7 +70,8 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
     // Cross-layer routing (Musab)
     //////////////////////////////////////////////////////////////////////////
     double weightingFactor; 
-    int queueSizeLength = -1;  
+    int congestionLevel; 
+    int congestionLevelByteLength = -1;  
     bool enableCrossLayerRouting;
     //////////////////////////////////////////////////////////////////////////
     // Enable/Disable creation of beacons (Musab)

@@ -133,9 +133,10 @@ void GpsrModified::initialize(int stage)
         // Cross-layer routing (Musab)
         //////////////////////////////////////////////////////////////////////////
         weightingFactor = par("weightingFactor"); 
+        congestionLevel = par("congestionLevel"); 
         enableCrossLayerRouting = par("enableCrossLayerRouting");
         // packet size
-        queueSizeLength = par("queueSizeLength");
+        congestionLevelByteLength = par("congestionLevelByteLength");
         //////////////////////////////////////////////////////////////////////////
         // Enable/Disable creation of beacons (Musab)
         //////////////////////////////////////////////////////////////////////////

@@ -55,7 +55,7 @@ int PositionTableCongestionLevelModified::getCongestionLevel(const L3Address& ad
     if (it == addressToPositionCongestionLevelMap.end())
         return 0;
     else
-        return std::get<2>(it->second);     //Rudan
+        return std::get<2>(it->second);    
 }
 
 void PositionTableCongestionLevelModified::setPositionCongestionLevel(const L3Address& address, const Coord& coord, const int& congestionLevel)

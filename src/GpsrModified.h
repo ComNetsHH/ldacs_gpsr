@@ -119,6 +119,7 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
     //////////////////////////////////////////////////////////////////////////
     // process beacons that are received from MCSOTDMA and pass information to GpsrModified
     void processBeaconMCSOTDMA(const L3Address& address, const Coord& coord);
+    void processBeaconCongestionLevelMCSOTDMA(const L3Address& address, const Coord& coord, const int& congestionLevel);
 
   protected:
     // module interface
@@ -149,8 +150,20 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
 
     // handling beacons
     const Ptr<GpsrBeaconModified> createBeacon();
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    const Ptr<GpsrBeaconCongestionLevelModified> createBeaconCongestionLevel();
     void sendBeacon(const Ptr<GpsrBeaconModified>& beacon);
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    void sendBeaconCongestionLevel(const Ptr<GpsrBeaconCongestionLevelModified>& beacon);
     void processBeacon(Packet *packet);
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    void processBeaconCongestionLevel(Packet *packet);
     
     // handling packets
     GpsrOption *createGpsrOption(L3Address destination);
@@ -171,9 +184,21 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
     // position
     Coord lookupPositionInGlobalRegistry(const L3Address& address) const;
     void storePositionInGlobalRegistry(const L3Address& address, const Coord& position) const;
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    void storePositionCongestionLevelInGlobalRegistry(const L3Address& address, const Coord& position,const int& congestionLevel) const; 
     void storeSelfPositionInGlobalRegistry() const;
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    void storeSelfPositionCongestionLevelInGlobalRegistry() const;
     Coord computeIntersectionInsideLineSegments(Coord& begin1, Coord& end1, Coord& begin2, Coord& end2) const;
     Coord getNeighborPosition(const L3Address& address) const;
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    Coord getNeighborPositionCongestionLevel(const L3Address& address) const;
     //////////////////////////////////////////////////////////////////////////
     // The ground station communication range (Musab)
     //////////////////////////////////////////////////////////////////////////

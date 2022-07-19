@@ -50,6 +50,16 @@ class GpsrBeaconModified extends FieldsChunk
     Coord position;
 }
 
+//////////////////////////////////////////////////////////////////////////
+// Cross-layer routing (Musab)
+//////////////////////////////////////////////////////////////////////////
+class GpsrBeaconCongestionLevelModified extends FieldsChunk
+{
+    L3Address address;
+    Coord position;
+    int congestionLevel;
+}
+
 //
 // The GPSROption is used to add extra routing information for network datagrams.
 //

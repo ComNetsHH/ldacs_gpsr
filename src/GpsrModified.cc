@@ -738,7 +738,10 @@ L3Address GpsrModified::findGreedyRoutingNextHop(const L3Address& destination, G
     L3Address selfAddress = getSelfAddress();
     Coord selfPosition = mobility->getCurrentPosition();
     Coord destinationPosition = gpsrOption->getDestinationPosition();
-    double bestDistance = (destinationPosition - selfPosition).length();
+    double bestDistance = (destinationPosition - selfPosition).length(); // distance of the closest neighbor to the destination
+    double destinationDistance = (destinationPosition - selfPosition).length(); // distance of the current node to the distination
+    int bestCongestionLevel = 4; // 1:congested, 2:moderately_congested, 3:slightly_congested, 4:uncongested
+    float bestDistanceCongestionLevelRatio = 0; // neighbor that is closest to the GS than the current node and give the best distance/congestion level ratio
     L3Address bestNeighbor;
     // std::vector<L3Address> neighborAddresses = neighborPositionTable.getAddresses();
     //////////////////////////////////////////////////////////////////////////
@@ -755,15 +758,38 @@ L3Address GpsrModified::findGreedyRoutingNextHop(const L3Address& destination, G
         // Cross-layer routing (Musab)
         //////////////////////////////////////////////////////////////////////////
         Coord neighborPosition;
-        if (enableCrossLayerRouting)
+        int neighborCongestionLevel;
+        if (enableCrossLayerRouting){
+            // If cross-layer routing is used we get additionally the congestion level
             neighborPosition = neighborPositionCongestionLevelTable.getPosition(neighborAddress);
+            neighborCongestionLevel = neighborPositionCongestionLevelTable.getCongestionLevel(neighborAddress);
+        }
         else
             neighborPosition = neighborPositionTable.getPosition(neighborAddress);
         double neighborDistance = (destinationPosition - neighborPosition).length();
-        if (neighborDistance < bestDistance) {
-            bestDistance = neighborDistance;
-            bestNeighbor = neighborAddress;
+        if (enableCrossLayerRouting){
+            // If cross-layer routing is enabled best neighbor is selected based on the equation
+            // best_ratio = alpha * neighborDistance / destinationDistance + (1 - alpha) * neighborCongestionLevel / bestCongestionLevel
+            // This is applied only if neighborDistance < destinationDistance: the node is closer to the destination than the current node
+            if (neighborDistance < destinationDistance){
+                float neighborDistanceCongestionLevelRatio = (float)(weightingFactor * neighborDistance / destinationDistance) +(float) ((1 - weightingFactor) * neighborCongestionLevel / bestCongestionLevel);
+                if (neighborDistanceCongestionLevelRatio > bestDistanceCongestionLevelRatio){    
+                    bestDistanceCongestionLevelRatio = neighborDistanceCongestionLevelRatio;
+                    bestNeighbor = neighborAddress;
+                }
+            }
         }
+        else{
+            // If the cross-layer routing is not enabled do it as conventional GPSR
+            if (neighborDistance < bestDistance) {
+                bestDistance = neighborDistance;
+                bestNeighbor = neighborAddress;
+            }
+        }
+        // if (neighborDistance < bestDistance) {
+        //     bestDistance = neighborDistance;
+        //     bestNeighbor = neighborAddress;
+        // }
     }
     if (bestNeighbor.isUnspecified()) {
         EV_DEBUG << "Switching to perimeter routing: destination = " << destination << endl;

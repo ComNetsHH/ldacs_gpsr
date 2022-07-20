@@ -7,7 +7,7 @@
 #SBATCH --time=5-12:00:00
 
 # Execute simulation
-opp_runall -j1 ../out/gcc-release/src/intairnet-gpsr intairnet.ini -c intairnet-gpsr -n ../src:./:../../inet4/src/:../../tdma/tdma/src:../../intairnet-tracebasedapp/src -r ${SLURM_ARRAY_TASK_ID}
+opp_runall -j1 ../out/gcc-release/src/intairnet-gpsr omnetpp.ini -c intairnet-gpsr -n ../src:./:../../inet4/src/:../../tdma/tdma/src:../../intairnet-tracebasedapp/src -r ${SLURM_ARRAY_TASK_ID}
 
 # Exit job
 exit7

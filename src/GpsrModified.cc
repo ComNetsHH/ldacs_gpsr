@@ -374,9 +374,7 @@ void GpsrModified::processBeaconCongestionLevel(Packet *packet)
 void GpsrModified::processBeaconMCSOTDMA(const L3Address& address, const Coord& coord)
 {
     EV_INFO << "Processing beacon: address = " << address << ", position = " << coord << endl;
-    // neighborPositionTable.setPosition(address, coord);
-    neighborPositionCongestionLevelTable.setPositionCongestionLevel(address, coord, congestionLevel);
-
+    neighborPositionTable.setPosition(address, coord);
 }
 
 //////////////////////////////////////////////////////////////////////////

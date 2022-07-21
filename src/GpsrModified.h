@@ -76,7 +76,6 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
     double weightingFactor; 
     int congestionLevel; 
     int congestionLevelByteLength = -1;  
-    bool enableCrossLayerRouting;
     //////////////////////////////////////////////////////////////////////////
     // Enable/Disable creation of beacons (Musab)
     //////////////////////////////////////////////////////////////////////////
@@ -120,7 +119,10 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
     // process beacons that are received from MCSOTDMA and pass information to GpsrModified
     void processBeaconMCSOTDMA(const L3Address& address, const Coord& coord);
     void processBeaconCongestionLevelMCSOTDMA(const L3Address& address, const Coord& coord, const int& congestionLevel);
-
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    bool enableCrossLayerRouting;
   protected:
     // module interface
     virtual int numInitStages() const override { return NUM_INIT_STAGES; }

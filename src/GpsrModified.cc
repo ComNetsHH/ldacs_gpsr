@@ -151,7 +151,10 @@ void GpsrModified::initialize(int stage)
         registerProtocol(Protocol::manet, gate("ipOut"), nullptr);
         host->subscribe(linkBrokenSignal, this);
         networkProtocol->registerHook(0, this);
-        WATCH(neighborPositionTable);
+        if (enableCrossLayerRouting)
+            WATCH(neighborPositionCongestionLevelTable);
+        else
+            WATCH(neighborPositionTable);
     }
 }
 
@@ -371,7 +374,9 @@ void GpsrModified::processBeaconCongestionLevel(Packet *packet)
 void GpsrModified::processBeaconMCSOTDMA(const L3Address& address, const Coord& coord)
 {
     EV_INFO << "Processing beacon: address = " << address << ", position = " << coord << endl;
-    neighborPositionTable.setPosition(address, coord);
+    // neighborPositionTable.setPosition(address, coord);
+    neighborPositionCongestionLevelTable.setPositionCongestionLevel(address, coord, congestionLevel);
+
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -740,8 +745,8 @@ L3Address GpsrModified::findGreedyRoutingNextHop(const L3Address& destination, G
     Coord destinationPosition = gpsrOption->getDestinationPosition();
     double bestDistance = (destinationPosition - selfPosition).length(); // distance of the closest neighbor to the destination
     double destinationDistance = (destinationPosition - selfPosition).length(); // distance of the current node to the distination
-    int bestCongestionLevel = 4; // 1:congested, 2:moderately_congested, 3:slightly_congested, 4:uncongested
-    float bestDistanceCongestionLevelRatio = 0; // neighbor that is closest to the GS than the current node and give the best distance/congestion level ratio
+    int maxCongestionLevel = 4; // 1:uncongested, 2:slightly_congested, 3:moderately_congested, 4:congested
+    float bestDistanceCongestionLevelRatio = 1; // neighbor that is closest to the GS than the current node and give the best distance/congestion level ratio
     L3Address bestNeighbor;
     // std::vector<L3Address> neighborAddresses = neighborPositionTable.getAddresses();
     //////////////////////////////////////////////////////////////////////////
@@ -769,11 +774,11 @@ L3Address GpsrModified::findGreedyRoutingNextHop(const L3Address& destination, G
         double neighborDistance = (destinationPosition - neighborPosition).length();
         if (enableCrossLayerRouting){
             // If cross-layer routing is enabled best neighbor is selected based on the equation
-            // best_ratio = alpha * neighborDistance / destinationDistance + (1 - alpha) * neighborCongestionLevel / bestCongestionLevel
+            // best_ratio = alpha * neighborDistance / destinationDistance + (1 - alpha) * neighborCongestionLevel / maxCongestionLevel
             // This is applied only if neighborDistance < destinationDistance: the node is closer to the destination than the current node
             if (neighborDistance < destinationDistance){
-                float neighborDistanceCongestionLevelRatio = (float)(weightingFactor * neighborDistance / destinationDistance) +(float) ((1 - weightingFactor) * neighborCongestionLevel / bestCongestionLevel);
-                if (neighborDistanceCongestionLevelRatio > bestDistanceCongestionLevelRatio){    
+                float neighborDistanceCongestionLevelRatio = (float)(weightingFactor * neighborDistance / destinationDistance) +(float) ((1 - weightingFactor) * neighborCongestionLevel / maxCongestionLevel);
+                if (neighborDistanceCongestionLevelRatio < bestDistanceCongestionLevelRatio){    
                     bestDistanceCongestionLevelRatio = neighborDistanceCongestionLevelRatio;
                     bestNeighbor = neighborAddress;
                 }

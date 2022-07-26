@@ -94,6 +94,8 @@ void GpsrModified::initialize(int stage)
         displayBubbles = par("displayBubbles");
         // MULTI-LINK
         useMultiLink = par("useMultiLink");
+        useIntelligentMultiLinkMode = par("useIntelligentMultiLinkMode");
+        multiLinkCutoffDistance = m(par("multiLinkCutoffDistance"));
         pSatcom = par("pSatcom");
         // context
         host = getContainingNode(this);
@@ -873,7 +875,13 @@ INetfilter::IHook::Result GpsrModified::datagramLocalOutHook(Packet *packet)
     Enter_Method("datagramLocalOutHook");
 
     if(useMultiLink) {
-        packet->addTagIfAbsent<MultiLinkPacketTag>()->setIsSatcom(uniform(0, 1.0) <= pSatcom);
+        if(useIntelligentMultiLinkMode) {
+            const Coord groundStationLocation = Coord(GSx, GSy, GSz);
+            m distanceToGroundStation = m(mobility->getCurrentPosition().distance(groundStationLocation));
+            packet->addTagIfAbsent<MultiLinkPacketTag>()->setIsSatcom(distanceToGroundStation >= multiLinkCutoffDistance);
+        } else {
+            packet->addTagIfAbsent<MultiLinkPacketTag>()->setIsSatcom(uniform(0, 1.0) <= pSatcom);
+        }
     }
 
     const auto& networkHeader = getNetworkProtocolHeader(packet);

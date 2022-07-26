@@ -36,6 +36,9 @@ simple GpsrModified like IManetRouting
 
         // Multi-Link parameters
         bool useMultiLink = default(false);
+        bool useIntelligentMultiLinkMode = default(false);
+        double multiLinkCutoffDistance @unit(m) = default(0m);
+
         double pSatcom = default(0);
 
         // context parameters

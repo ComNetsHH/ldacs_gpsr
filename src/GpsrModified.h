@@ -51,6 +51,8 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
   private:
     // Multi-Link Parameters
     bool useMultiLink = false;
+    bool useIntelligentMultiLinkMode = false;
+    m multiLinkCutoffDistance;
     double pSatcom = 0.0;
 
     // GPSR parameters

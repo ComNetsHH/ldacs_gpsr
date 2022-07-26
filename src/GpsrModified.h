@@ -32,6 +32,10 @@
 #include "MultiLinkPacketTag_m.h"
 #include "inet/transportlayer/udp/UdpHeader_m.h"
 #include "PositionTableModified.h"
+//////////////////////////////////////////////////////////////////////////
+// Cross-layer routing (Musab)
+//////////////////////////////////////////////////////////////////////////
+#include "PositionTableCongestionLevelModified.h"
 
 using namespace inet;
 
@@ -69,6 +73,12 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
     double GSy = 0.0;
     double GSz = 0.0;
     //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    double weightingFactor; 
+    int congestionLevel; 
+    int congestionLevelByteLength = -1;  
+    //////////////////////////////////////////////////////////////////////////
     // Enable/Disable creation of beacons (Musab)
     //////////////////////////////////////////////////////////////////////////
     bool beaconForwardedFromGpsr;
@@ -85,6 +95,10 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
     IRoutingTable *routingTable = nullptr;    // TODO: delete when necessary functions are moved to interface table
     INetfilter *networkProtocol = nullptr;
     static PositionTableModified globalPositionTable;    // KLUDGE: implement position registry protocol
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    static PositionTableCongestionLevelModified globalPositionCongestionLevelTable;    // KLUDGE: implement position registry protocol
 
     // packet size
     int positionByteLength = -1;
@@ -93,6 +107,10 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
     cMessage *beaconTimer = nullptr;
     cMessage *purgeNeighborsTimer = nullptr;
     PositionTableModified neighborPositionTable;
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    PositionTableCongestionLevelModified neighborPositionCongestionLevelTable;
 
   public:
     GpsrModified();
@@ -102,7 +120,11 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
     //////////////////////////////////////////////////////////////////////////
     // process beacons that are received from MCSOTDMA and pass information to GpsrModified
     void processBeaconMCSOTDMA(const L3Address& address, const Coord& coord);
-
+    void processBeaconCongestionLevelMCSOTDMA(const L3Address& address, const Coord& coord, const int& congestionLevel);
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    bool enableCrossLayerRouting;
   protected:
     // module interface
     virtual int numInitStages() const override { return NUM_INIT_STAGES; }
@@ -132,8 +154,20 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
 
     // handling beacons
     const Ptr<GpsrBeaconModified> createBeacon();
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    const Ptr<GpsrBeaconCongestionLevelModified> createBeaconCongestionLevel();
     void sendBeacon(const Ptr<GpsrBeaconModified>& beacon);
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    void sendBeaconCongestionLevel(const Ptr<GpsrBeaconCongestionLevelModified>& beacon);
     void processBeacon(Packet *packet);
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    void processBeaconCongestionLevel(Packet *packet);
     
     // handling packets
     GpsrOption *createGpsrOption(L3Address destination);
@@ -154,9 +188,21 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
     // position
     Coord lookupPositionInGlobalRegistry(const L3Address& address) const;
     void storePositionInGlobalRegistry(const L3Address& address, const Coord& position) const;
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    void storePositionCongestionLevelInGlobalRegistry(const L3Address& address, const Coord& position,const int& congestionLevel) const; 
     void storeSelfPositionInGlobalRegistry() const;
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    void storeSelfPositionCongestionLevelInGlobalRegistry() const;
     Coord computeIntersectionInsideLineSegments(Coord& begin1, Coord& end1, Coord& begin2, Coord& end2) const;
     Coord getNeighborPosition(const L3Address& address) const;
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    Coord getNeighborPositionCongestionLevel(const L3Address& address) const;
     //////////////////////////////////////////////////////////////////////////
     // The ground station communication range (Musab)
     //////////////////////////////////////////////////////////////////////////

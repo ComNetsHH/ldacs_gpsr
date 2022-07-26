@@ -112,6 +112,10 @@ void GpsrModified::initialize(int stage)
         // KLUDGE: implement position registry protocol
         globalPositionTable.clear();
         //////////////////////////////////////////////////////////////////////////
+        // Cross-layer routing (Musab)
+        //////////////////////////////////////////////////////////////////////////
+        globalPositionCongestionLevelTable.clear();
+        //////////////////////////////////////////////////////////////////////////
         // Register Hop Count Signal (Musab)
         //////////////////////////////////////////////////////////////////////////
         hopCountSignal = registerSignal("hopCount");
@@ -132,6 +136,14 @@ void GpsrModified::initialize(int stage)
         GSz = par("GSz");
         a2gOutputInterface = par("a2gOutputInterface");
         //////////////////////////////////////////////////////////////////////////
+        // Cross-layer routing (Musab)
+        //////////////////////////////////////////////////////////////////////////
+        weightingFactor = par("weightingFactor"); 
+        congestionLevel = par("congestionLevel"); 
+        enableCrossLayerRouting = par("enableCrossLayerRouting");
+        // packet size
+        congestionLevelByteLength = par("congestionLevelByteLength");
+        //////////////////////////////////////////////////////////////////////////
         // Enable/Disable creation of beacons (Musab)
         //////////////////////////////////////////////////////////////////////////
         beaconForwardedFromGpsr = par("beaconForwardedFromGpsr");
@@ -141,7 +153,10 @@ void GpsrModified::initialize(int stage)
         registerProtocol(Protocol::manet, gate("ipOut"), nullptr);
         host->subscribe(linkBrokenSignal, this);
         networkProtocol->registerHook(0, this);
-        WATCH(neighborPositionTable);
+        if (enableCrossLayerRouting)
+            WATCH(neighborPositionCongestionLevelTable);
+        else
+            WATCH(neighborPositionTable);
     }
 }
 
@@ -194,9 +209,24 @@ void GpsrModified::processBeaconTimer()
         // Omit the sending of beacons from gpsr (Musab)
         //////////////////////////////////////////////////////////////////////////
         if(beaconForwardedFromGpsr) {
-            sendBeacon(createBeacon());
+            //////////////////////////////////////////////////////////////////////////
+            // Cross-layer routing (Musab)
+            //////////////////////////////////////////////////////////////////////////
+            if (enableCrossLayerRouting)
+                sendBeaconCongestionLevel(createBeaconCongestionLevel());
+            else
+                sendBeacon(createBeacon());
+            // sendBeacon(createBeacon());
         }
-        storeSelfPositionInGlobalRegistry();
+        //////////////////////////////////////////////////////////////////////////
+        // Cross-layer routing (Musab)
+        //////////////////////////////////////////////////////////////////////////
+        if (enableCrossLayerRouting)
+            storeSelfPositionCongestionLevelInGlobalRegistry();
+        else
+            storeSelfPositionInGlobalRegistry();
+        // sendBeacon(createBeacon());
+        // storeSelfPositionInGlobalRegistry();
     }
     scheduleBeaconTimer();
     schedulePurgeNeighborsTimer();
@@ -245,7 +275,14 @@ void GpsrModified::sendUdpPacket(Packet *packet)
 void GpsrModified::processUdpPacket(Packet *packet)
 {
     packet->popAtFront<UdpHeader>();
-    processBeacon(packet);
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    if (enableCrossLayerRouting)
+        processBeaconCongestionLevel(packet);
+    else
+        processBeacon(packet);
+    // processBeacon(packet);
     schedulePurgeNeighborsTimer();
 }
 
@@ -262,10 +299,46 @@ const Ptr<GpsrBeaconModified> GpsrModified::createBeacon()
     return beacon;
 }
 
+//////////////////////////////////////////////////////////////////////////
+// Cross-layer routing (Musab)
+//////////////////////////////////////////////////////////////////////////
+const Ptr<GpsrBeaconCongestionLevelModified> GpsrModified::createBeaconCongestionLevel()
+{
+    const auto& beacon = makeShared<GpsrBeaconCongestionLevelModified>();
+    auto selfCongestionLevel = congestionLevel;
+    beacon->setAddress(getSelfAddress());
+    beacon->setPosition(mobility->getCurrentPosition());
+    beacon->setCongestionLevel(selfCongestionLevel);
+    beacon->setChunkLength(B(getSelfAddress().getAddressType()->getAddressByteLength() + positionByteLength + congestionLevelByteLength));
+    return beacon;
+}
+
 void GpsrModified::sendBeacon(const Ptr<GpsrBeaconModified>& beacon)
 {
     EV_INFO << "Sending beacon: address = " << beacon->getAddress() << ", position = " << beacon->getPosition() << endl;
     Packet *udpPacket = new Packet("GpsrBeaconModified");
+    udpPacket->insertAtBack(beacon);
+    auto udpHeader = makeShared<UdpHeader>();
+    udpHeader->setSourcePort(GPSR_UDP_PORT);
+    udpHeader->setDestinationPort(GPSR_UDP_PORT);
+    udpHeader->setCrcMode(CRC_DISABLED);
+    udpPacket->insertAtFront(udpHeader);
+    auto addresses = udpPacket->addTag<L3AddressReq>();
+    addresses->setSrcAddress(getSelfAddress());
+    addresses->setDestAddress(addressType->getLinkLocalManetRoutersMulticastAddress());
+    udpPacket->addTag<HopLimitReq>()->setHopLimit(255);
+    udpPacket->addTag<PacketProtocolTag>()->setProtocol(&Protocol::manet);
+    udpPacket->addTag<DispatchProtocolReq>()->setProtocol(addressType->getNetworkProtocol());
+    sendUdpPacket(udpPacket);
+}
+
+//////////////////////////////////////////////////////////////////////////
+// Cross-layer routing (Musab)
+//////////////////////////////////////////////////////////////////////////
+void GpsrModified::sendBeaconCongestionLevel(const Ptr<GpsrBeaconCongestionLevelModified>& beacon)
+{
+    EV_INFO << "Sending beacon: address = " << beacon->getAddress() << ", position = " << beacon->getPosition() << ", congestion level = " << beacon->getCongestionLevel() << endl;
+    Packet *udpPacket = new Packet("GpsrBeaconCongestionLevelModified");
     udpPacket->insertAtBack(beacon);
     auto udpHeader = makeShared<UdpHeader>();
     udpHeader->setSourcePort(GPSR_UDP_PORT);
@@ -289,10 +362,30 @@ void GpsrModified::processBeacon(Packet *packet)
     delete packet;
 }
 
+//////////////////////////////////////////////////////////////////////////
+// Cross-layer routing (Musab)
+//////////////////////////////////////////////////////////////////////////
+void GpsrModified::processBeaconCongestionLevel(Packet *packet)
+{
+    const auto& beacon = packet->peekAtFront<GpsrBeaconCongestionLevelModified>();
+    EV_INFO << "Processing beacon: address = " << beacon->getAddress() << ", position = " << beacon->getPosition() << ", congestion level = " << beacon->getCongestionLevel() << endl;
+    neighborPositionCongestionLevelTable.setPositionCongestionLevel(beacon->getAddress(), beacon->getPosition(), beacon->getCongestionLevel());
+    delete packet;
+}
+
 void GpsrModified::processBeaconMCSOTDMA(const L3Address& address, const Coord& coord)
 {
     EV_INFO << "Processing beacon: address = " << address << ", position = " << coord << endl;
     neighborPositionTable.setPosition(address, coord);
+}
+
+//////////////////////////////////////////////////////////////////////////
+// Cross-layer routing (Musab)
+//////////////////////////////////////////////////////////////////////////
+void GpsrModified::processBeaconCongestionLevelMCSOTDMA(const L3Address& address, const Coord& coord, const int& congestionLevel)
+{
+    EV_INFO << "Processing beacon: address = " << address << ", position = " << coord << ", congestion level = " << congestionLevel << endl;
+    neighborPositionCongestionLevelTable.setPositionCongestionLevel(address, coord, congestionLevel);
 }
 
 //
@@ -355,10 +448,23 @@ void GpsrModified::configureInterfaces()
 // KLUDGE: implement position registry protocol
 PositionTableModified GpsrModified::globalPositionTable;
 
+// KLUDGE: implement position registry protocol
+//////////////////////////////////////////////////////////////////////////
+// Cross-layer routing (Musab)
+//////////////////////////////////////////////////////////////////////////
+PositionTableCongestionLevelModified GpsrModified::globalPositionCongestionLevelTable;
+
 Coord GpsrModified::lookupPositionInGlobalRegistry(const L3Address& address) const
 {
-    // KLUDGE: implement position registry protocol
-    return globalPositionTable.getPosition(address);
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    if (enableCrossLayerRouting)
+        return globalPositionCongestionLevelTable.getPosition(address);
+    else
+        return globalPositionTable.getPosition(address);
+    // // KLUDGE: implement position registry protocol
+    // return globalPositionTable.getPosition(address);
 }
 
 void GpsrModified::storePositionInGlobalRegistry(const L3Address& address, const Coord& position) const
@@ -367,11 +473,31 @@ void GpsrModified::storePositionInGlobalRegistry(const L3Address& address, const
     globalPositionTable.setPosition(address, position);
 }
 
+//////////////////////////////////////////////////////////////////////////
+// Cross-layer routing (Musab)
+//////////////////////////////////////////////////////////////////////////
+void GpsrModified::storePositionCongestionLevelInGlobalRegistry(const L3Address& address, const Coord& position, const int& congestionLevel) const
+{
+    // KLUDGE: implement position registry protocol
+    globalPositionCongestionLevelTable.setPositionCongestionLevel(address, position, congestionLevel);
+}
+
 void GpsrModified::storeSelfPositionInGlobalRegistry() const
 {
     auto selfAddress = getSelfAddress();
     if (!selfAddress.isUnspecified())
         storePositionInGlobalRegistry(selfAddress, mobility->getCurrentPosition());
+}
+
+//////////////////////////////////////////////////////////////////////////
+// Cross-layer routing (Musab)
+//////////////////////////////////////////////////////////////////////////
+void GpsrModified::storeSelfPositionCongestionLevelInGlobalRegistry() const
+{
+    auto selfAddress = getSelfAddress();
+    auto selfCongestionLevel = congestionLevel;
+    if (!selfAddress.isUnspecified())
+        storePositionCongestionLevelInGlobalRegistry(selfAddress, mobility->getCurrentPosition(), selfCongestionLevel);
 }
 
 Coord GpsrModified::computeIntersectionInsideLineSegments(Coord& begin1, Coord& end1, Coord& begin2, Coord& end2) const
@@ -406,6 +532,14 @@ Coord GpsrModified::getNeighborPosition(const L3Address& address) const
     return neighborPositionTable.getPosition(address);
 }
 
+//////////////////////////////////////////////////////////////////////////
+// Cross-layer routing (Musab)
+//////////////////////////////////////////////////////////////////////////
+Coord GpsrModified::getNeighborPositionCongestionLevel(const L3Address& address) const
+{
+    return neighborPositionCongestionLevelTable.getPosition(address);
+}
+
 //
 // angle
 //
@@ -421,7 +555,14 @@ double GpsrModified::getVectorAngle(Coord vector) const
 
 double GpsrModified::getNeighborAngle(const L3Address& address) const
 {
-    return getVectorAngle(getNeighborPosition(address) - mobility->getCurrentPosition());
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    if (enableCrossLayerRouting)
+        return getVectorAngle(getNeighborPositionCongestionLevel(address) - mobility->getCurrentPosition());
+    else
+        return getVectorAngle(getNeighborPosition(address) - mobility->getCurrentPosition());
+    // return getVectorAngle(getNeighborPosition(address) - mobility->getCurrentPosition());
 }
 
 //
@@ -474,23 +615,54 @@ simtime_t GpsrModified::getNextNeighborExpiration()
 
 void GpsrModified::purgeNeighbors()
 {
-    neighborPositionTable.removeOldPositions(simTime() - neighborValidityInterval);
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    if (enableCrossLayerRouting)
+        neighborPositionTable.removeOldPositions(simTime() - neighborValidityInterval);
+    else
+        neighborPositionCongestionLevelTable.removeOldPositions(simTime() - neighborValidityInterval);
+    // neighborPositionTable.removeOldPositions(simTime() - neighborValidityInterval);
 }
 
 std::vector<L3Address> GpsrModified::getPlanarNeighbors() const
 {
     std::vector<L3Address> planarNeighbors;
-    std::vector<L3Address> neighborAddresses = neighborPositionTable.getAddresses();
+    // std::vector<L3Address> neighborAddresses = neighborPositionTable.getAddresses();
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    std::vector<L3Address> neighborAddresses;
+    if (enableCrossLayerRouting)
+        neighborAddresses = neighborPositionCongestionLevelTable.getAddresses();
+    else
+        neighborAddresses = neighborPositionTable.getAddresses();
     Coord selfPosition = mobility->getCurrentPosition();
     for (auto it = neighborAddresses.begin(); it != neighborAddresses.end(); it++) {
         auto neighborAddress = *it;
-        Coord neighborPosition = neighborPositionTable.getPosition(neighborAddress);
+        // Coord neighborPosition = neighborPositionTable.getPosition(neighborAddress);
+        //////////////////////////////////////////////////////////////////////////
+        // Cross-layer routing (Musab)
+        //////////////////////////////////////////////////////////////////////////
+        Coord neighborPosition;
+        if (enableCrossLayerRouting)
+            neighborPosition = neighborPositionCongestionLevelTable.getPosition(neighborAddress);
+        else
+            neighborPosition = neighborPositionTable.getPosition(neighborAddress);
         if (planarizationMode == GPSR_NO_PLANARIZATION)
             return neighborAddresses;
         else if (planarizationMode == GPSR_RNG_PLANARIZATION) {
             double neighborDistance = (neighborPosition - selfPosition).length();
             for (auto & witnessAddress : neighborAddresses) {
-                Coord witnessPosition = neighborPositionTable.getPosition(witnessAddress);
+                // Coord witnessPosition = neighborPositionTable.getPosition(witnessAddress);
+                //////////////////////////////////////////////////////////////////////////
+                // Cross-layer routing (Musab)
+                //////////////////////////////////////////////////////////////////////////
+                Coord witnessPosition;
+                if (enableCrossLayerRouting)
+                    witnessPosition = neighborPositionCongestionLevelTable.getPosition(witnessAddress);
+                else
+                    witnessPosition = neighborPositionTable.getPosition(witnessAddress);
                 double witnessDistance = (witnessPosition - selfPosition).length();
                 double neighborWitnessDistance = (witnessPosition - neighborPosition).length();
                 if (neighborAddress == witnessAddress)
@@ -503,7 +675,15 @@ std::vector<L3Address> GpsrModified::getPlanarNeighbors() const
             Coord middlePosition = (selfPosition + neighborPosition) / 2;
             double neighborDistance = (neighborPosition - middlePosition).length();
             for (auto & witnessAddress : neighborAddresses) {
-                Coord witnessPosition = neighborPositionTable.getPosition(witnessAddress);
+                // Coord witnessPosition = neighborPositionTable.getPosition(witnessAddress);
+                //////////////////////////////////////////////////////////////////////////
+                // Cross-layer routing (Musab)
+                //////////////////////////////////////////////////////////////////////////
+                Coord witnessPosition;
+                if (enableCrossLayerRouting)
+                    witnessPosition = neighborPositionCongestionLevelTable.getPosition(witnessAddress);
+                else
+                    witnessPosition = neighborPositionTable.getPosition(witnessAddress);
                 double witnessDistance = (witnessPosition - middlePosition).length();
                 if (neighborAddress == witnessAddress)
                     continue;
@@ -563,16 +743,58 @@ L3Address GpsrModified::findGreedyRoutingNextHop(const L3Address& destination, G
     L3Address selfAddress = getSelfAddress();
     Coord selfPosition = mobility->getCurrentPosition();
     Coord destinationPosition = gpsrOption->getDestinationPosition();
-    double bestDistance = (destinationPosition - selfPosition).length();
+    double bestDistance = (destinationPosition - selfPosition).length(); // distance of the closest neighbor to the destination
+    double destinationDistance = (destinationPosition - selfPosition).length(); // distance of the current node to the distination
+    int maxCongestionLevel = 4; // 1:uncongested, 2:slightly_congested, 3:moderately_congested, 4:congested
+    float bestDistanceCongestionLevelRatio = 1; // neighbor that is closest to the GS than the current node and give the best distance/congestion level ratio
     L3Address bestNeighbor;
-    std::vector<L3Address> neighborAddresses = neighborPositionTable.getAddresses();
+    // std::vector<L3Address> neighborAddresses = neighborPositionTable.getAddresses();
+    //////////////////////////////////////////////////////////////////////////
+    // Cross-layer routing (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    std::vector<L3Address> neighborAddresses;
+    if (enableCrossLayerRouting)
+        neighborAddresses = neighborPositionCongestionLevelTable.getAddresses();
+    else
+        neighborAddresses = neighborPositionTable.getAddresses();
     for (auto& neighborAddress: neighborAddresses) {
-        Coord neighborPosition = neighborPositionTable.getPosition(neighborAddress);
-        double neighborDistance = (destinationPosition - neighborPosition).length();
-        if (neighborDistance < bestDistance) {
-            bestDistance = neighborDistance;
-            bestNeighbor = neighborAddress;
+        // Coord neighborPosition = neighborPositionTable.getPosition(neighborAddress);
+        //////////////////////////////////////////////////////////////////////////
+        // Cross-layer routing (Musab)
+        //////////////////////////////////////////////////////////////////////////
+        Coord neighborPosition;
+        int neighborCongestionLevel;
+        if (enableCrossLayerRouting){
+            // If cross-layer routing is used we get additionally the congestion level
+            neighborPosition = neighborPositionCongestionLevelTable.getPosition(neighborAddress);
+            neighborCongestionLevel = neighborPositionCongestionLevelTable.getCongestionLevel(neighborAddress);
         }
+        else
+            neighborPosition = neighborPositionTable.getPosition(neighborAddress);
+        double neighborDistance = (destinationPosition - neighborPosition).length();
+        if (enableCrossLayerRouting){
+            // If cross-layer routing is enabled best neighbor is selected based on the equation
+            // best_ratio = alpha * neighborDistance / destinationDistance + (1 - alpha) * neighborCongestionLevel / maxCongestionLevel
+            // This is applied only if neighborDistance < destinationDistance: the node is closer to the destination than the current node
+            if (neighborDistance < destinationDistance){
+                float neighborDistanceCongestionLevelRatio = (float)(weightingFactor * neighborDistance / destinationDistance) +(float) ((1 - weightingFactor) * neighborCongestionLevel / maxCongestionLevel);
+                if (neighborDistanceCongestionLevelRatio < bestDistanceCongestionLevelRatio){    
+                    bestDistanceCongestionLevelRatio = neighborDistanceCongestionLevelRatio;
+                    bestNeighbor = neighborAddress;
+                }
+            }
+        }
+        else{
+            // If the cross-layer routing is not enabled do it as conventional GPSR
+            if (neighborDistance < bestDistance) {
+                bestDistance = neighborDistance;
+                bestNeighbor = neighborAddress;
+            }
+        }
+        // if (neighborDistance < bestDistance) {
+        //     bestDistance = neighborDistance;
+        //     bestNeighbor = neighborAddress;
+        // }
     }
     if (bestNeighbor.isUnspecified()) {
         EV_DEBUG << "Switching to perimeter routing: destination = " << destination << endl;
@@ -621,7 +843,15 @@ L3Address GpsrModified::findPerimeterRoutingNextHop(const L3Address& destination
         L3Address selectedNeighborAddress;
         std::vector<L3Address> neighborAddresses = getPlanarNeighborsCounterClockwise(neighborAngle);
         for (auto& neighborAddress : neighborAddresses) {
-            Coord neighborPosition = getNeighborPosition(neighborAddress);
+            //////////////////////////////////////////////////////////////////////////
+            // Cross-layer routing (Musab)
+            //////////////////////////////////////////////////////////////////////////
+            Coord neighborPosition;
+            if (enableCrossLayerRouting)
+                neighborPosition = getNeighborPositionCongestionLevel(neighborAddress);
+            else
+                neighborPosition = getNeighborPosition(neighborAddress);
+            // Coord neighborPosition = getNeighborPosition(neighborAddress);
             Coord intersection = computeIntersectionInsideLineSegments(perimeterRoutingStartPosition, destinationPosition, selfPosition, neighborPosition);
             if (std::isnan(intersection.x)) {
                 selectedNeighborAddress = neighborAddress;
@@ -925,21 +1155,38 @@ INetfilter::IHook::Result GpsrModified::datagramLocalInHook(Packet *packet)
 void GpsrModified::handleStartOperation(LifecycleOperation *operation)
 {
     configureInterfaces();
-    storeSelfPositionInGlobalRegistry();
+    if (enableCrossLayerRouting)
+        return storeSelfPositionCongestionLevelInGlobalRegistry();
+    else
+        return storeSelfPositionInGlobalRegistry();
     scheduleBeaconTimer();
 }
 
 void GpsrModified::handleStopOperation(LifecycleOperation *operation)
 {
     // TODO: send a beacon to remove ourself from peers neighbor position table
-    neighborPositionTable.clear();
+    // neighborPositionTable.clear();
+    //////////////////////////////////////////////////////////////////////////
+    // Emit Hop Count Signal (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    if (enableCrossLayerRouting)
+        neighborPositionCongestionLevelTable.clear();
+    else
+        neighborPositionTable.clear();
     cancelEvent(beaconTimer);
     cancelEvent(purgeNeighborsTimer);
 }
 
 void GpsrModified::handleCrashOperation(LifecycleOperation *operation)
 {
-    neighborPositionTable.clear();
+    // neighborPositionTable.clear();
+    //////////////////////////////////////////////////////////////////////////
+    // Emit Hop Count Signal (Musab)
+    //////////////////////////////////////////////////////////////////////////
+    if (enableCrossLayerRouting)
+        neighborPositionCongestionLevelTable.clear();
+    else
+        neighborPositionTable.clear();
     cancelEvent(beaconTimer);
     cancelEvent(purgeNeighborsTimer);
 }

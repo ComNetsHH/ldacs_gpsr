@@ -32,6 +32,10 @@
 #include "inet/networklayer/common/NextHopAddressTag_m.h"
 #include "inet/networklayer/contract/IInterfaceTable.h"
 #include "GpsrModified.h"
+#include <string>
+#include<fstream>
+
+
 
 #ifdef WITH_IPv4
 #include "inet/networklayer/ipv4/Ipv4Header_m.h"
@@ -134,7 +138,11 @@ void GpsrModified::initialize(int stage)
         GSx = par("GSx");
         GSy = par("GSy");
         GSz = par("GSz");
+        const char *file_name = par("groundstationsTraceFile");
+        parseGroundstationTraceFile2Vector(file_name);
         a2gOutputInterface = par("a2gOutputInterface");
+        //new code added here
+        int destination_index = findClosestGroundStation();
         //////////////////////////////////////////////////////////////////////////
         // Cross-layer routing (Musab)
         //////////////////////////////////////////////////////////////////////////
@@ -189,6 +197,82 @@ void GpsrModified::processMessage(cMessage *message)
     else
         throw cRuntimeError("Unknown message");
 }
+
+//////////////////////////////////////////////////////////////////////////
+// Allow multuple groundstations (Musab) 
+//////////////////////////////////////////////////////////////////////////
+//The following function reads a trace file to store the coordinates of the ground stations
+void GpsrModified::parseGroundstationTraceFile2Vector(const char* file_name)
+{
+    // std::vector<double> groundstationCoordinate;
+    std::ifstream in(file_name, std::ios::in);
+    // Check if the file is opened (we modified the error message here to just  return in order to enable scripting the application)
+    if (in.fail()){
+         throw std::invalid_argument( "file does not exist" );
+    }
+    std::string lineStr;
+    std::string ethernetInterface;
+    double x;
+    double y;
+    double z;
+    std::istringstream iss;
+    // Read the file line by line until the end.
+    while (std::getline(in, lineStr))
+    {
+        std::istringstream iss(lineStr);
+        iss >> x >> y >> z >> ethernetInterface;
+        //std::cout << "x=" << x << ",y=" << y << ",z=" << z << ",interface=" << ethernetInterface << std::endl;
+        // insert the x, y, z coordinates of one groundstation into groundstationCoordinate vector
+        // groundstationCoordinate.insert(groundstationCoordinate.end(), { x,y,z });
+        // ground_stations_coordinates_array.insert(ground_stations_coordinates_array.end(), { groundstationCoordinate });
+        ground_stations_coordinates_array.push_back({x,y,z });
+        // clear the vector that contains a row of the grounstation trace file
+        // groundstationCoordinate.clear();
+        // insert the groundstationCoordinate vector into the vector of vectors groundstationCoordinates
+        ethernet_vector.insert(ethernet_vector.end(), { ethernetInterface });
+    }
+    int num_of_GS = ground_stations_coordinates_array.size();
+    for (int i = 0; i < num_of_GS; i++){
+        EV_INFO << "Ground station " << i << " location: " << ground_stations_coordinates_array.at(i).at(0) << ", " << ground_stations_coordinates_array.at(i).at(1) << ", " << ground_stations_coordinates_array.at(i).at(2) << endl;
+    }
+    // auto array_test = ground_stations_coordinates_array;
+    // auto array_test1 = ground_stations_coordinates_array[0];
+    // auto array_test2= ground_stations_coordinates_array[1];
+    // Close The File
+    in.close();
+}
+
+//////////////////////////////////////////////////////////////////////////
+// The ground station communication range + a2gOutputInterface (Musab)
+//////////////////////////////////////////////////////////////////////////
+////The following function calculates distance to all ground stations and finds the closest one
+int GpsrModified::findClosestGroundStation()
+{
+    int closest_ground_station=0;
+    //getting the position of the current aircraft
+    Coord aircraft_position = check_and_cast<IMobility *>(getContainingNode(this)->getSubmodule("mobility"))->getCurrentPosition();
+    EV << " aircraft_position: " << aircraft_position << " \n";
+    
+    std::vector<double> distance_vector;
+    //applying the formula sqrt((x_2-x_1)^2+(y_2-y_1)^2+(z_2-z1)^2) to get the distance between aircraft and all ground stations
+    double min_distance = sqrt(pow((aircraft_position.x-ground_stations_coordinates_array.at(0).at(0)),2) + pow((aircraft_position.y-ground_stations_coordinates_array.at(0).at(1)),2)+ pow((aircraft_position.z-ground_stations_coordinates_array.at(0).at(2)),2));
+    int num_of_GS = ground_stations_coordinates_array.size();
+    for(int i = 0; i < num_of_GS; i++){
+        double distance = sqrt(pow((aircraft_position.x-ground_stations_coordinates_array.at(i).at(0)),2) + pow((aircraft_position.y-ground_stations_coordinates_array.at(i).at(1)),2)+ pow((aircraft_position.z-ground_stations_coordinates_array.at(i).at(2)),2));
+        distance_vector.push_back(distance);
+
+        //find the closest ground station
+        if (distance < min_distance){
+            min_distance = distance;
+            closest_ground_station=i;
+        }
+    }
+    EV << " closest_ground_station is: " << closest_ground_station << " \n";
+    EV << " Corresponding Ethernet is: " << ethernet_vector[closest_ground_station] << " \n";
+    //new code upto here
+    return closest_ground_station;
+}
+
 
 //
 // beacon timers
@@ -399,9 +483,12 @@ GpsrOption *GpsrModified::createGpsrOption(L3Address destination)
     //////////////////////////////////////////////////////////////////////////
     // Set the destination position (The ground station) in the GPSR packet (Musab)
     //////////////////////////////////////////////////////////////////////////
-    const Coord GroundStationLocation = Coord(GSx, GSy, GSz);
+    int destination_index = findClosestGroundStation();
+    // const Coord GroundStationLocation = Coord(GSx, GSy, GSz);
+    const Coord GroundStationLocation = Coord(ground_stations_coordinates_array[destination_index][0], ground_stations_coordinates_array[destination_index][1], ground_stations_coordinates_array[destination_index][2]);
     EV_INFO << "Ground station (Destination) position = " << GroundStationLocation << endl;
     gpsrOption->setDestinationPosition(GroundStationLocation);
+    // gpsrOption->setDestinationIndex(destination_index);
 //    gpsrOption->setDestinationPosition(lookupPositionInGlobalRegistry(destination));
     gpsrOption->setLength(computeOptionLength(gpsrOption));
 //    //////////////////////////////////////////////////////////////////////////
@@ -923,14 +1010,23 @@ INetfilter::IHook::Result GpsrModified::routeDatagram(Packet *datagram, GpsrOpti
     }
     else {
         EV_INFO << "Next hop found: source = " << source << ", destination = " << destination << ", nextHop: " << nextHop << endl;
+        // EV_INFO << "getSelfAddress() = " << getSelfAddress() << endl;
+        // EV_INFO << "gpsrOption->getDestinationIndex() = " << gpsrOption->getDestinationIndex() << endl;
         gpsrOption->setSenderAddress(getSelfAddress());
+        // auto destination_index = gpsrOption->getDestinationIndex();
         auto interfaceEntry = CHK(interfaceTable->findInterfaceByName(outputInterface));
         //////////////////////////////////////////////////////////////////////////
         // Set interface to the interface used in A2G if next hop is GS (Musab)
         //////////////////////////////////////////////////////////////////////////
-        auto a2gInterfaceEntry = CHK(interfaceTable->findInterfaceByName(a2gOutputInterface));
+        // need to covert string to character array
+        // auto a2gInterfaceEntry = CHK(interfaceTable->findInterfaceByName(ethernet_vector[destination_index].c_str()));
+        // auto a2gInterfaceEntry = CHK(interfaceTable->findInterfaceByName(a2gOutputInterface));
+        // EV_INFO << "A2G output interface = " << ethernet_vector[0] << endl;
         m distanceToGroundStation = m(mobility->getCurrentPosition().distance(gpsrOption->getDestinationPosition()));
         if (distanceToGroundStation <= groundStationRange) {
+            int destination_index = findClosestGroundStation();
+            auto a2gInterfaceEntry = CHK(interfaceTable->findInterfaceByName(ethernet_vector[destination_index].c_str()));
+            EV_INFO << "OutputInterface = " << ethernet_vector[destination_index].c_str() << " Interface ID = " << a2gInterfaceEntry << endl;
             datagram->addTagIfAbsent<InterfaceReq>()->setInterfaceId(a2gInterfaceEntry->getInterfaceId());
             return ACCEPT;
         }

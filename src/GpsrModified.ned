@@ -72,6 +72,7 @@ simple GpsrModified like IManetRouting
 		double GSx @unit(m) = default(4734222.285m);
         double GSy @unit(m) = default(1381949.583m);
         double GSz @unit(m) = default(662813.2938m);
+        string groundstationsTraceFile =default("GS_coordinates.txt"); 
         //////////////////////////////////////////////////////////////////////////
         // Cross-layer routing (Musab)
         //////////////////////////////////////////////////////////////////////////

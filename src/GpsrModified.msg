@@ -69,6 +69,7 @@ class GpsrBeaconCongestionLevelModified extends FieldsChunk
 class GpsrOption extends TlvOptionBase {
     GpsrForwardingMode routingMode;
     Coord destinationPosition;               // D
+    // unsigned int DestinationIndex;
     Coord perimeterRoutingStartPosition;     // Lp
     Coord perimeterRoutingForwardPosition;   // Lf
     L3Address currentFaceFirstSenderAddress;   // e0

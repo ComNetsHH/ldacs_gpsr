@@ -52,8 +52,14 @@ gpsr-tdma-demo-3-debug:
 gpsr-tdma-demo-3-A2G-qtenv:
 	opp_runall -j1 $(SIM_BINARY) omnetpp.ini -c $(GPSR_TDMA_DEMO_3_A2G_CONFIGNAME) $(INCL) -u Qtenv
 
+gpsr-tdma-demo-3-A2G-2GS-qtenv:
+	opp_runall -j1 $(SIM_BINARY) omnetpp_2GS.ini -c $(GPSR_TDMA_DEMO_3_A2G_CONFIGNAME) $(INCL) -u Qtenv
+
 gpsr-tdma-demo-3-A2G-debug:
 	gdbgui --args $(SIM_BINARY_DBG) omnetpp.ini -u Cmdenv -c $(GPSR_TDMA_DEMO_3_A2G_CONFIGNAME) $(INCL)
+
+gpsr-tdma-demo-3-A2G-2GS-debug:
+	gdbgui --args $(SIM_BINARY_DBG) omnetpp_2GS.ini -u Cmdenv -c $(GPSR_TDMA_DEMO_3_A2G_CONFIGNAME) $(INCL)
 
 gpsr-tdma-demo-qtenv:
 	opp_runall -j1 $(SIM_BINARY) intairnet.ini -c $(GPSR_TDMA_DEMO_CONFIGNAME) $(INCL) -u Qtenv

@@ -72,6 +72,14 @@ class GpsrModified : public RoutingProtocolBase, public cListener, public Netfil
     double GSx = 0.0;
     double GSy = 0.0;
     double GSz = 0.0;
+    //Name of the Trace file where list of ground stations are given
+    const char* groundstationsTraceFile ;
+    virtual void parseGroundstationTraceFile2Vector(const char* file_name);
+    virtual int findClosestGroundStation();
+    //Declaring Vector to store the ground station coordinates and ethernet
+    std::vector<std::vector<double>> ground_stations_coordinates_array;
+    std::vector<std::string> ethernet_vector;
+
     //////////////////////////////////////////////////////////////////////////
     // Cross-layer routing (Musab)
     //////////////////////////////////////////////////////////////////////////

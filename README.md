@@ -1,18 +1,19 @@
-This is the IntAirNet modified GPSR repository. The targets to build and run the simulation is available at /simulations/Makefile
+    The L-Band Digital Aeronautical Communications System (LDACS) Greedy Perimeter Stateless Routing (GPSR) Library provides a custom GPSR implementation for the LDACS Air-Air Medium Access Control simulator.
+    Copyright (C) 2023  Sebastian Lindner, Konrad Fuger, Musab Ahmed Eltayeb Ahmed, Andreas Timm-Giel, Institute of Communication Networks, Hamburg University of Technology, Hamburg, Germany
 
-# Scenarios
-Each scenario is described in a respective `<scenario>.ini` file.
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-## omnetpp.ini
-An example scenario with 2 nodes and a ground station.
-It also configures all nodes to use the `TdmaInterface`.
-- It contains two configurations:
-    - intairnet-gpsr-without-a2g: consider all nodes to use wireless transmission for A2A/A2G.
-    - intairnet-gpsr: consider all nodes to use wireless transmission for A2A links and ethernet transmission for A2G links.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Lesser General Public License for more details.
 
-## intairnet.ini
-An example scenario with the full mobility data in the NAC for 30 mins.
-It also configures all nodes to use the `TdmaInterface`.
-- It contains two configurations:
-    - original-gpsr: consider all nodes to use wireless transmission for A2A/A2G.
-    - intairnet-gpsr: consider all nodes to use wireless transmission for A2A links and ethernet transmission for A2G links.
+    You should have received a copy of the GNU Lesser General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+This repository is part of the L-Band Digital Aeronautical Communications System (LDACS) Air-Air (A/A) mode simulator that implements the proposed Medium Access Control (MAC) protocol "Multi Channel Self-Organized TDMA (MCSOTDMA)".
+
+This library implements the custom GPSR protocol that is proposed alongside MCSOTDMA.
